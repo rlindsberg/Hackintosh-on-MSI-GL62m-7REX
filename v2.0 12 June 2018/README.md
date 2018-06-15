@@ -11,3 +11,22 @@ Solved:
   Auto-convert to apfs
 Remaining:
   Cannot unmount a partition
+
+## Step 3
+  Did:
+    Install kexts
+    Modify config.plist
+    Use clover efi 4509 to install bootloader EMU and RC Scripts.
+    Change nvram to Always in Clover pane directly after EMU and RC. Then reboot.
+      http://bbs.pcbeta.com/viewthread-1701188-1-7.html
+      http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1712515
+    Install nvidia webdriver https://github.com/Benjamin-Dobell/nvidia-update
+    Install CUDA 396.64 https://hackintosher.com/guides/get-nvidia-graphic-cards-working-hackintosh/
+  Solved:
+    IG wrong memory
+  Remaining:
+    Cannot unmount a partition
+    No audio output or input
+    No Bluetooth or Wi-Fi
+    Cannot adjust brightness
+    DisplayPort doesn't work
