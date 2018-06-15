@@ -30,3 +30,18 @@ Remaining:
     No Bluetooth or Wi-Fi
     Cannot adjust brightness
     DisplayPort doesn't work
+
+## Step 4
+  Did:
+    In Clover, patch "change HDAS to HDEF"
+    Put AppleALC.kext into Other https://bitbucket.org/RehabMan/os-x-eapd-codec-commander
+  Solved: Sound
+  Remaining:
+    Cannot unmount a partition
+    No audio input
+    No Bluetooth or Wi-Fi
+    Cannot adjust brightness
+    DisplayPort doesn't work
+
+
+fix wifi and bluetooth https://blog.daliansky.net/Broadcom-WiFi-BlueTooth-BCM94352z-DW1560-the%20correct-drive-posture.html
