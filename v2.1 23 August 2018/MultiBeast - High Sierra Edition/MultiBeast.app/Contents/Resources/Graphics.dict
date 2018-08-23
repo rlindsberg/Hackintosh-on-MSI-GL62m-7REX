@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Name</key>
+        <array>
+            <string>Graphics</string>
+            <string>Choose from the following additional graphics configurations.</string>
+        </array>
+        <key>Children</key>
+        <array>
+            <array>
+                <string>Intel HD 3000</string>
+                <string>For desktop systems with Intel HD 3000 graphics. Adds Devices/FakeID/IntelGFX=0x01268086 and Devices/AddProperties/AAPL,snb-platform- id/10000300 to CustoMac Default config.plist. Equivalent to Chimera IGPEnabler=Yes.</string>
+                <string>Clover-HD3000-Graphics.pkg</string>
+            </array>
+            <array>
+                <string>Intel HD 5xx</string>
+                <string>Fixes most Intel HD 5xx graphics issues on desktop systems. Adds 4 display patch for AppleIntelSKLGraphicsFramebuffer and Graphics/ig-platform-id=0x19120000 to /Volumes/EFI/EFI/CLOVER/config.plist. Also requires installation of Customize -> Graphics Configuration -> Intel Graphics Fixup.</string>
+                <string>Clover-HD5xx-Graphics.pkg</string>
+            </array>
+            <array>
+                <string>Intel HD 6xx</string>
+                <string>Fixes most Intel HD 6xx graphics issues on desktop systems. Adds Devices/Graphics/ig-platform-id=0x59120000 and -disablegfxfirmware boot flag to /Volumes/EFI/EFI/CLOVER/config.plist. Also requires installation of Customize -> Graphics Configuration -> Intel Graphics Fixup.</string>
+                <string>Clover-HD6xx-Graphics.pkg</string>
+            </array>
+            <array>
+                <string>Inject ATI</string>
+                <string>For desktop systems with older ATI graphics cards such as ATI Radeon 4xxx. Adds Graphics/Inject/ATI=YES to CustoMac Default /Volumes/EFI/EFI/CLOVER/config.plist. Equivalent to Chimera/Chameleon GraphicsEnabler=Yes.</string>
+                <string>InjectATI</string>
+            </array>
+            <array>
+                <string>Inject NVIDIA</string>
+                <string>For desktop systems with older NVIDIA graphics cards such as GeForce 8xxx, 9xxx, 2xx, 4xx, 610, and 630. Adds Graphics/Inject/NVIDIA=YES to CustoMac Default /Volumes/EFI/EFI/CLOVER/config.plist. Equivalent to Chimera/Chameleon GraphicsEnabler=Yes.</string>
+                <string>InjectNVIDIA</string>
+            </array>
+            <array>
+                <string>NVIDIA Web Drivers Boot Flag</string>
+                <string>For desktop systems with newer NVIDIA graphics cards based on Kepler, Maxwell or Pascal GPUs. Adds SystemParameters/NvidiaWeb =YES to CustoMac default /Volumes/EFI/EFI/CLOVER/config.plist.</string>
+                <string>Clover-NVIDIA-Web.pkg</string>
+            </array>
+            <array>
+                <string>AMD Graphics Fixup</string>
+                <string>For AMD Radeon HD6xxx and newer cards that won't wake from sleep if it's the first or only video card installed.  Adds Devices/Graphics/RadeonDeInit=Yes flag to /Volumes/EFI/EFI/CLOVER/config.plist. </string>
+                <string>Clover-AMDGraphicsFixup.pkg</string>
+            </array>
+            <array>
+                <string>Intel Graphics Fixup</string>
+                <string>Uses vit9696's Lilu kernel extension platform for arbitrary kext, library and program patching and lvs1974's IntelGraphicsFixup for Lilu to fix numerous display issues when using Intel GPUs. Recommended for Intel 5xx and HD6xx GPUs. Also works with HD4xxx GPUs. Installs Lilu.kext and IntelGraphicsFixup.kext.kext to /Library/Extensions.</string>
+                <string>IntelGraphicsFixup-v1.2.7.pkg</string>
+            </array>
+            <array>
+                <string>Nvidia Graphics Fixup</string>
+                <string>Uses vit9696's Lilu kernel extension platform for arbitrary kext, library and program patching and lvs1974's NvidiaGraphicsFixup for Lilu to fix numerous display issues when using NVIDIA GPUs with MacPro6,1, iMac17,x and iMac18,x system definitions. Installs Lilu.kext and NvidiaGraphicsFixup.kext to /Library/Extensions.</string>
+                <string>NvidiaGraphicsFixup-v1.2.6.pkg</string>
+            </array>
+        </array>
+    </dict>
+</plist>

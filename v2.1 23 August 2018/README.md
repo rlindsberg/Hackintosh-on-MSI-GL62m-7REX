@@ -8,3 +8,5 @@
 
 ## Install Clover on Mac
 1. Install "Clover_v2.4k_r4644.pkg", choose "Clover for UEFI booting only"
+2. Boot into Mac using Macintosh SSD bootloader
+3. Install drivers using "MultiBeast - High Sierra Edition", see screenshot "Screen Shot 2018-08-23 at 22.48.29.png"
