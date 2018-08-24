@@ -24,6 +24,21 @@ IntelGraphicsFixup.kext: https://github.com/lvs1974/IntelGraphicsFixup
 With 4k laptop display panel, you will likely need CoreDisplayFixup.kext:
 https://github.com/PMheart/CoreDisplayFixup
 
+GenericUSBXHCI.kext is optional if USB3 ports work with AppleUSBXHCI.kext. GenericUSBXHCI.kext is not compatible with 10.11+. The current version has been modified to do nothing on 10.11+.
+
+The FakeSMC package includes FakeSMC "plugins" (FakeSMC_ACPISensors.kext, FakeSMC_CPUSensors.kext, FakeSMC_LPCSensors.kext, FakeSMC_GPUSensors.kext). You do not need these kexts for installation, although you may wish to try them for getting sensor data to HWMonitor.app after you install. Note: FakeSMC_CPUSensors.kext may have issues on Kaby Lake hardware.
+
+Unlike installing kexts to /System/Library/Extensions, where a kext installer (such as Kext Wizard) must be used, for EFI/Clover/kexts/Other, it is simple copy/paste with Finder.
+
+Also, some Skylake SATA controller device-ids are not in the AppleAHCIPort.kext Info.plist (yet). If you have an unsupported SATA controller (8086:a103, 8086:9d03), use SATA-100-series-unsupported.kext.
+
+Install your Ethernet kext.
+For example:
+RealtekRTL8111.kext: https://github.com/RehabMan/OS-X-Realtek-Network
+RealtekRTL8100.kext: http://www.insanelymac.com/forum/topic/296190-driver-for-realteks-rtl810x-fast-ethernet-series/
+AppleIntelE1000e.kext: http://www.insanelymac.com/forum/topic/205771-appleintele1000ekext-for-108107106105/
+IntelMausiEthernet.kext: https://github.com/RehabMan/OS-X-Intel-Network
+
 ## Install from 1TB drive
 1. Format 512GB SSD. 350G Macintosh SSD and the rest for Windows 10 SSD
 2. Install on Macintosh SSD
