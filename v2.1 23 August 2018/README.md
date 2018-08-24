@@ -59,6 +59,6 @@ If no native support, install OsxAptioFix2Drv-64.efi, EmuVar...64.efi and RC scr
 [Guide] Booting the OS X installer on LAPTOPS with Clover https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/
 
 ## Install Clover on Mac
-1. Install "Clover_v2.4k_r4644.pkg", choose "Clover for UEFI booting only"
+1. Install "Clover_v2.4k_r4644.pkg", choose "Clover for UEFI booting only", Install OsxAptioFix2Drv-64.efi, EmuVar...64.efi and RC scripts in Clover EFI.
 2. Boot into Mac using Macintosh SSD bootloader
-3. Install drivers using "MultiBeast - High Sierra Edition", see screenshot "Screen Shot 2018-08-23 at 22.48.29.png"
+3. Install drivers using "MultiBeast - High Sierra Edition", see screenshot "Screen Shot 2018-08-24 at 17.55.28.png"
