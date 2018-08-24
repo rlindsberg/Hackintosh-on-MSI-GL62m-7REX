@@ -115,6 +115,22 @@ Of course, essential kexts should be installed to EFI/Clover/kexts/Other as they
 
 So...the kexts there I tend to not update as often and the full set is not there (less unneeded kexts, less problems). Placing kexts into kernel cache for day-to-day use is "more native" (as it would be on a real Mac) vs. injection (which is very non-Mac)
 
+## Disable Hibernation
+Be aware that hibernation (suspend to disk or S4 sleep) is not supported on hackintosh. Always check your hibernatemode after updates and disable it. System updates tend to re-enable it.
+
+```sh
+sudo pmset -a hibernatemode 0
+sudo rm /var/vm/sleepimage
+sudo mkdir /var/vm/sleepimage
+```
+
+And it may be a good idea to disable the other hibernation related options:
+
+```sh
+sudo pmset -a standby 0
+sudo pmset -a autopoweroff 0
+```
+
 Problems remaining:
 * Change brightness
 * Speaker and microphone
