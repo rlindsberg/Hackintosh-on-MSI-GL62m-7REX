@@ -87,7 +87,7 @@ Disable GPU in ACPI as per this guide: https://www.tonymacx86.com/threads/guide-
 2. Boot into Mac using Macintosh SSD bootloader
 3. Install drivers using "MultiBeast - High Sierra Edition", see screenshot "Screen Shot 2018-08-24 at 17.55.28.png"
 
-## Post Installation
+# Post Installation
 After installing the bootloader, you should take an inventory of things working and not working. Typically, at this point you will have:
 
 * working bootloader via Clover (system should boot relatively quickly from the HDD)
@@ -99,8 +99,24 @@ After installing the bootloader, you should take an inventory of things working 
 
 **For each problem there may be a combination of DSDT/SSDT patches required or kexts you need to seek out and install. DPCIManager should be used to get an inventory of the various hardware devices you need drivers/fixes for.**
 
+## Installing Kexts
+
+You should install all kexts you need (including FakeSMC, VoodooPS2Controller, etc) to /Library/Extensions (/L/E) or /System/Library/Extensions (/S/L/E) for 10.10.x and prior using a kext installer or Terminal. Think carefully about "kexts you need".
+
+Of course, essential kexts should be installed to EFI/Clover/kexts/Other as they are needed to boot the installer (during updates) or the recovery partition.
+
+**It is a mistake to install everything to Clover/kexts.** Contrary to popular hackintosh myth, it does not result in a cleaner install (the opposite is true). Many kexts will not work from Clover/kexts, so installing them to /S/L/E where they can be included in kernel cache is the best approach.
+
+## Install kexts to /S/L/E because..
+
+* placing them in /S/L/E (or /L/E on 10.11+) and including in kernel cache, makes kextcache do a lot of error checking.
+* some kexts don't work from Clover/kexts (AppleHDA injector, CodecCommander, BrcmFirmware*)
+* the idea behind Clover/kexts is to have a set of *stable* and *minimalistic* kexts that will allow booting of the installer/recovery, not full functionality
+
+So...the kexts there I tend to not update as often and the full set is not there (less unneeded kexts, less problems). Placing kexts into kernel cache for day-to-day use is "more native" (as it would be on a real Mac) vs. injection (which is very non-Mac)
 
 Problems remaining:
 * Change brightness
 * Speaker and microphone
 * Unplugging DisplayPort freezes the OS
+* iMessage
