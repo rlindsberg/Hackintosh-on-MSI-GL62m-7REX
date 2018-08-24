@@ -57,6 +57,18 @@ Alternately, you can use IntelGraphicsDVMTFixup.kext, which implements the 32MB 
 It is available here:
 https://github.com/BarbaraPalvin/IntelGraphicsDVMTFixup
 
+### BIOS settings
+
+In order to boot the Clover from the USB, you should visit your BIOS settings:
+- "VT-d" (virtualization for directed i/o) should be disabled if possible (the config.plist includes dart=0 in case you can't do this)
+- "DEP" (data execution prevention) should be enabled for OS X
+- "secure boot " should be disabled
+- "legacy boot" optional (recommend enabled, but boot UEFI if you have it)
+- "CSM" (compatibility support module) enabled or disabled (varies) (recommend enabled, but boot UEFI)
+- "fast boot" (if available) should be disabled.
+- "boot from USB" or "boot from external" enabled
+- SATA mode (if available) should be AHCI
+
 
 ## Install from 1TB drive
 1. Format 512GB SSD. 350G Macintosh SSD and the rest for Windows 10 SSD
