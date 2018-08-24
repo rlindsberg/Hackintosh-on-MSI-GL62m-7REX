@@ -86,3 +86,21 @@ Disable GPU in ACPI as per this guide: https://www.tonymacx86.com/threads/guide-
 1. Install "Clover_v2.4k_r4644.pkg", choose "Clover for UEFI booting only", Install OsxAptioFix2Drv-64.efi, EmuVar...64.efi and RC scripts in Clover EFI.
 2. Boot into Mac using Macintosh SSD bootloader
 3. Install drivers using "MultiBeast - High Sierra Edition", see screenshot "Screen Shot 2018-08-24 at 17.55.28.png"
+
+## Post Installation
+After installing the bootloader, you should take an inventory of things working and not working. Typically, at this point you will have:
+
+* working bootloader via Clover (system should boot relatively quickly from the HDD)
+* graphics QE/CI working via Clover's config.plist settings
+* PS2 keyboard/trackpad (although perhaps not optimal if you don't have a Synaptics trackpad)
+* audio not working
+* brightness controls not working
+* certain function keys may not work
+
+**For each problem there may be a combination of DSDT/SSDT patches required or kexts you need to seek out and install. DPCIManager should be used to get an inventory of the various hardware devices you need drivers/fixes for.**
+
+
+Problems remaining:
+* Change brightness
+* Speaker and microphone
+* Unplugging DisplayPort freezes the OS
