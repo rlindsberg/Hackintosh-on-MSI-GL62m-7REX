@@ -132,6 +132,7 @@ sudo pmset -a autopoweroff 0
 ```
 
 Problems remaining:
+* Installer crashes at the second installation stage. Reboot after crash will solve the problem
 * Change brightness
 * Speaker and microphone
 * Unplugging DisplayPort freezes the OS
