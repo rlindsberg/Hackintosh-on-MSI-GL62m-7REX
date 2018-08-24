@@ -39,6 +39,11 @@ RealtekRTL8100.kext: http://www.insanelymac.com/forum/topic/296190-driver-for-re
 AppleIntelE1000e.kext: http://www.insanelymac.com/forum/topic/205771-appleintele1000ekext-for-108107106105/
 IntelMausiEthernet.kext: https://github.com/RehabMan/OS-X-Intel-Network
 
+Choosing a config.plist
+
+The Clover installer places a default config.plist at /EFI/Clover/config.plist. It is almost universally wrong and most likely will not work at all for most laptops.
+
+
 ## Install from 1TB drive
 1. Format 512GB SSD. 350G Macintosh SSD and the rest for Windows 10 SSD
 2. Install on Macintosh SSD
