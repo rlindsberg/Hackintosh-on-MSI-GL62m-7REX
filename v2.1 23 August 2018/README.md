@@ -43,6 +43,11 @@ Choosing a config.plist
 
 The Clover installer places a default config.plist at /EFI/Clover/config.plist. It is almost universally wrong and most likely will not work at all for most laptops.
 
+NVRAM
+NVRAM Testing: You can test if your NVRAM is working by running the following Terminal command and rebooting: sudo nvram TestVar=HelloWorld; once you reboot, run sudo nvram -p | grep 'TestVar'; if you see a result, your NVRAM is working; if not, your NVRAM is broken and needs to be fixed, or otherwise iMessage won't work; after testing, you can delete the TestVar variable by running sudo nvram -d TestVar
+
+If no native support, install OsxAptioFix2Drv-64.efi, EmuVar...64.efi and RC scripts in Clover EFI.
+
 
 ## Install from 1TB drive
 1. Format 512GB SSD. 350G Macintosh SSD and the rest for Windows 10 SSD
