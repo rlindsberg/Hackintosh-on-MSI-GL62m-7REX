@@ -69,6 +69,9 @@ In order to boot the Clover from the USB, you should visit your BIOS settings:
 - "boot from USB" or "boot from external" enabled
 - SATA mode (if available) should be AHCI
 
+### Disable dGPU
+Disable GPU in ACPI as per this guide: https://www.tonymacx86.com/threads/guide-disabling-discrete-graphics-in-dual-gpu-laptops.163772/
+
 
 ## Install from 1TB drive
 1. Format 512GB SSD. 350G Macintosh SSD and the rest for Windows 10 SSD
