@@ -211,7 +211,7 @@
 		<key>Debug</key>
 		<true/>
 		<key>DefaultVolume</key>
-		<string>Macintosh HDD</string>
+		<string>Install macOS High Sierra</string>
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>Secure</key>
