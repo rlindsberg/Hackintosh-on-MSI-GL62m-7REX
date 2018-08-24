@@ -3,7 +3,7 @@
 ## Make Bootable USB drive (from https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/)
 (How to write disk image to USB skipped)
 
-Preparing essential kexts
+### Preparing essential kexts
 
 Copy essential kexts to the 'Other' directory (FakeSMC, VoodooPS2Controller). You only need the kexts that allow you to boot and operate the installer. Other kexts that you might use in the final installation can wait.
 
@@ -39,11 +39,11 @@ RealtekRTL8100.kext: http://www.insanelymac.com/forum/topic/296190-driver-for-re
 AppleIntelE1000e.kext: http://www.insanelymac.com/forum/topic/205771-appleintele1000ekext-for-108107106105/
 IntelMausiEthernet.kext: https://github.com/RehabMan/OS-X-Intel-Network
 
-Choosing a config.plist
+### Choosing a config.plist
 
 The Clover installer places a default config.plist at /EFI/Clover/config.plist. It is almost universally wrong and most likely will not work at all for most laptops.
 
-NVRAM
+### NVRAM
 NVRAM Testing: You can test if your NVRAM is working by running the following Terminal command and rebooting: sudo nvram TestVar=HelloWorld; once you reboot, run sudo nvram -p | grep 'TestVar'; if you see a result, your NVRAM is working; if not, your NVRAM is broken and needs to be fixed, or otherwise iMessage won't work; after testing, you can delete the TestVar variable by running sudo nvram -d TestVar
 
 If no native support, install OsxAptioFix2Drv-64.efi, EmuVar...64.efi and RC scripts in Clover EFI.
