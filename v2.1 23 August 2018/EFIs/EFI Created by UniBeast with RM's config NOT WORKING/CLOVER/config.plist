@@ -473,6 +473,24 @@
 				<key>Replace</key>
 				<data>/wAAAAEAAAAgAAAA/wAAAAEAAAAgAAAA/wAAAAEAAAAgAAAA</data>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Change 15 port limit to 24 in XHCI kext 10.13.4</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				g32UDw+DlwQ=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>AppleUSBXHCIPCI</string>
+				<key>Replace</key>
+				<data>
+				g32UFA+DlwQ=
+				</data>
+			</dict>
 		</array>
 		<key>KernelToPatch</key>
 		<array>
