@@ -48,6 +48,15 @@ NVRAM Testing: You can test if your NVRAM is working by running the following Te
 
 If no native support, install OsxAptioFix2Drv-64.efi, EmuVar...64.efi and RC scripts in Clover EFI.
 
+### DVMT-prealloc on Broadwell/Skylake/Kaby Lake
+The Broadwell and Skylake graphics kexts provided by Apple require DVMT-prealloc to be set 64mb or larger. Many laptops set it by default to 32mb, which is not large enough and will cause a KP (kernel panic).
+
+Since most laptops come with inadequate DVMT-prealloc, all the plists linked by this guide have a patch for 32MB DVMT-prealloc, enabled by default. You can read about how that patch works here: https://www.tonymacx86.com/threads/...lensize-patch-with-32mb-dvmt-prealloc.221506/
+
+Alternately, you can use IntelGraphicsDVMTFixup.kext, which implements the 32MB DVMT-prealloc patch.
+It is available here:
+https://github.com/BarbaraPalvin/IntelGraphicsDVMTFixup
+
 
 ## Install from 1TB drive
 1. Format 512GB SSD. 350G Macintosh SSD and the rest for Windows 10 SSD
