@@ -90,8 +90,8 @@ Copy "v0.1 Seagate EFI 23 aug 2018 kl.10.30 CEST" EFI folder to 1TB EFI partitio
 3. Install drivers using "MultiBeast - High Sierra Edition", see screenshot "Screen Shot 2018-08-24 at 17.55.28.png"
 
 ## Install Clover on Mac (Replacing the section above)
-1. Mount 512SSD EFI partition and copy "Post-install 512GSSD 26 aug 2018 kl.06.33 CEST" there
-2. Install USBInjectAll (0.6.4) using "MultiBeast 10.3.0" to L/E
+5. Mount 512SSD EFI partition and copy "Post-install 512GSSD 26 aug 2018 kl.06.33 CEST" there
+6. Install USBInjectAll (0.6.7) to L/E and rebuild cache
 
 # Post Installation
 After installing the bootloader, you should take an inventory of things working and not working. Typically, at this point you will have:
@@ -124,13 +124,14 @@ So...the kexts there I tend to not update as often and the full set is not there
 ## Disable Hibernation
 Be aware that hibernation (suspend to disk or S4 sleep) is not supported on hackintosh. Always check your hibernatemode after updates and disable it. System updates tend to re-enable it.
 
+7. Disable sleep in Settings and hibernation in Command line using following commands
 ```sh
 sudo pmset -a hibernatemode 0
 sudo rm /var/vm/sleepimage
 sudo mkdir /var/vm/sleepimage
 ```
 
-And it may be a good idea to disable the other hibernation related options:
+8. And it may be a good idea to disable the other hibernation related options:
 
 ```sh
 sudo pmset -a standby 0
