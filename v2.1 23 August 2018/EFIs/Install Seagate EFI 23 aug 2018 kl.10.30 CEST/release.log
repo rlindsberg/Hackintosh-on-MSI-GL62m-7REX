@@ -1,0 +1,8 @@
+v0.1
+  - Copied from 1TB disk
+
+v1.0 Sun Aug 26 08:28:31 2018 +0200
+  - Change SMBIOS to 14,1
+  - Change default disk to Macintosh SSD
+  - Change language to en
+  - Change theme totonymacx86
