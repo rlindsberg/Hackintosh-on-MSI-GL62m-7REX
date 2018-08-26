@@ -74,6 +74,8 @@ Disable GPU in ACPI as per this guide: https://www.tonymacx86.com/threads/guide-
 
 
 ## Install from 1TB drive
+Copy "v0.1 Seagate EFI 23 aug 2018 kl.10.30 CEST" EFI folder to 1TB EFI partition.
+
 1. Format 512GB SSD. 350G Macintosh SSD and the rest for Windows 10 SSD
 2. Install on Macintosh SSD
 3. Reboot, choose default booting disk and finish installing
