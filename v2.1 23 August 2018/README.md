@@ -1,4 +1,4 @@
-# Installing macOS High Sierra 10.13.4
+# Installing macOS High Sierra 10.13.6
 
 ## Make Bootable USB drive (from https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/)
 (How to write disk image to USB skipped)
@@ -44,7 +44,19 @@ IntelMausiEthernet.kext: https://github.com/RehabMan/OS-X-Intel-Network
 The Clover installer places a default config.plist at /EFI/Clover/config.plist. It is almost universally wrong and most likely will not work at all for most laptops.
 
 ### NVRAM
-NVRAM Testing: You can test if your NVRAM is working by running the following Terminal command and rebooting: sudo nvram TestVar=HelloWorld; once you reboot, run sudo nvram -p | grep 'TestVar'; if you see a result, your NVRAM is working; if not, your NVRAM is broken and needs to be fixed, or otherwise iMessage won't work; after testing, you can delete the TestVar variable by running sudo nvram -d TestVar
+NVRAM Testing: You can test if your NVRAM is working by running the following Terminal command and rebooting:
+
+```sh
+sudo nvram TestVar=HelloWorld;
+```
+
+Once you reboot, run:
+
+```sh
+sudo nvram -p | grep 'TestVar';
+```
+
+If you see a result, your NVRAM is working; if not, your NVRAM is broken and needs to be fixed, or otherwise iMessage won't work; after testing, you can delete the TestVar variable by running sudo nvram -d TestVar
 
 If no native support, install OsxAptioFix2Drv-64.efi, EmuVar...64.efi and RC scripts in Clover EFI.
 
@@ -90,8 +102,14 @@ Copy "v0.1 Seagate EFI 23 aug 2018 kl.10.30 CEST" EFI folder to 1TB EFI partitio
 3. Install drivers using "MultiBeast - High Sierra Edition", see screenshot "Screen Shot 2018-08-24 at 17.55.28.png"
 
 ## Install Clover on Mac (Replacing the section above)
-5. Mount 512SSD EFI partition and copy "Post-install 512GSSD 26 aug 2018 kl.06.33 CEST" there
-6. Install USBInjectAll (0.6.7) to L/E and rebuild cache
+5. Run NVRAM test and choose Clover EFI version
+
+- v4428 installs OsxAptioFix3Drv-64.efi (Download: https://www.tonymacx86.com/resources/clover-uefi-boot-mode-v2-4k-r4428.376/)
+- v4586 installs AptioMemoryFix.efi
+(Download: https://www.tonymacx86.com/resources/clover-uefi-boot-mode-v2-4k-r4586.396/)
+
+6. In case Step 5 fails, Mount 512SSD EFI partition and copy "Post-install 512GSSD 26 aug 2018 kl.06.33 CEST" there
+7. Install USBInjectAll (0.6.7) to L/E and rebuild cache
 
 # Post Installation
 After installing the bootloader, you should take an inventory of things working and not working. Typically, at this point you will have:
