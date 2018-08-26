@@ -91,7 +91,7 @@ Copy "v0.1 Seagate EFI 23 aug 2018 kl.10.30 CEST" EFI folder to 1TB EFI partitio
 
 ## Install Clover on Mac (Replacing the section above)
 1. Mount 512SSD EFI partition and copy "Post-install 512GSSD 26 aug 2018 kl.06.33 CEST" there
-2. Install USBInjectAll using "MultiBeast 10.3.0"
+2. Install USBInjectAll (0.6.4) using "MultiBeast 10.3.0" to L/E
 
 # Post Installation
 After installing the bootloader, you should take an inventory of things working and not working. Typically, at this point you will have:
