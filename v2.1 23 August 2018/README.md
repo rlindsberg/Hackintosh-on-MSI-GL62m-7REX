@@ -156,9 +156,65 @@ sudo pmset -a standby 0
 sudo pmset -a autopoweroff 0
 ```
 
-Problems remaining:
-* Installer crashes at the second installation stage. Reboot after crash will solve the problem
-* Change brightness
-* Speaker and microphone
-* Unplugging DisplayPort freezes the OS
-* iMessage
+# Problems remaining:
+
+**Screen Brightness**
+
+&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS High Sierra 10.13.6
+
+&nbsp;&nbsp;&nbsp;&nbsp; Impact: User may not be able to adjust screen brightness without a re-configuration in BIOS
+
+&nbsp;&nbsp;&nbsp;&nbsp; Description: Device ID and Vendor ID are unknown to macOS
+
+&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2018-2441
+
+
+
+**DisplayPort**
+
+&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS High Sierra 10.13.6
+
+&nbsp;&nbsp;&nbsp;&nbsp; Impact: System freezes when unplugging the cable from Mini DisplayPort
+
+&nbsp;&nbsp;&nbsp;&nbsp; Description: macOS High Sierra doesn't support Mini DisplayPort
+
+&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2018-2442
+
+
+
+**Audio**
+
+&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS High Sierra 10.13.6
+
+&nbsp;&nbsp;&nbsp;&nbsp; Impact: Speaker and microphone has no functionality
+
+&nbsp;&nbsp;&nbsp;&nbsp; Description: Drivers for the built-in speaker and microphone miss in macOS.
+
+&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2018-3441
+
+
+
+**iMessage**
+
+&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS High Sierra 10.13.6
+
+&nbsp;&nbsp;&nbsp;&nbsp; Impact: User may not be able to sign in iMessage
+
+&nbsp;&nbsp;&nbsp;&nbsp; Description: Apple<sup>®</sup>'s iMessage server do not recognise the device because of incomplete SMBIOS
+
+&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2018-2511
+
+
+# Problem Solved:
+
+**Bootable Installer for macOS**
+
+&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS High Sierra 10.13.6
+
+&nbsp;&nbsp;&nbsp;&nbsp; Impact: Installer crashes at the second installation stage
+
+&nbsp;&nbsp;&nbsp;&nbsp; Description: Reason unknown
+
+&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2018-3451
+
+&nbsp;&nbsp;&nbsp;&nbsp; Resolving Note: The issue is believed to be a normal behaviour when installing macOS. Resolved by R.K. on Aug<sup>26</sup> 2018
