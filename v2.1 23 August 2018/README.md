@@ -170,6 +170,9 @@ defaults write com.apple.Finder AppleShowAllFiles true
 killall Finder
 ```
 
+11. Map keyboard. Install Karabiner, map from key "delete_forward" to key "eject"
+
+
 # Problems remaining:
 
 **Screen Brightness**
