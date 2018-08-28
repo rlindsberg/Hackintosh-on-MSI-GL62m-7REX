@@ -156,6 +156,20 @@ sudo pmset -a standby 0
 sudo pmset -a autopoweroff 0
 ```
 
+## System Settings
+9. Run Apps from Anywhere
+
+```sh
+sudo spctl --master-disable
+
+```
+10. Show hidden files
+
+```sh
+defaults write com.apple.Finder AppleShowAllFiles true
+killall Finder
+```
+
 # Problems remaining:
 
 **Screen Brightness**
