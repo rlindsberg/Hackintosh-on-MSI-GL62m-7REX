@@ -187,6 +187,18 @@ killall Finder
 
 
 
+**Graphics**
+
+&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS High Sierra 10.13.6
+
+&nbsp;&nbsp;&nbsp;&nbsp; Impact: System freezes after boot. See "Screen Shot 2018-08-29 at 21.27.14.jpg" for more information
+
+&nbsp;&nbsp;&nbsp;&nbsp; Description: Cause unknown
+
+&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2018-3531
+
+
+
 **DisplayPort**
 
 &nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS High Sierra 10.13.6
