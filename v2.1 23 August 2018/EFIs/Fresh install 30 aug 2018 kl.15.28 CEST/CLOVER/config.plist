@@ -96,8 +96,6 @@
 				<true/>
 				<key>FixHPET</key>
 				<true/>
-				<key>FixHeaders</key>
-				<true/>
 				<key>FixIDE</key>
 				<false/>
 				<key>FixIPIC</key>
@@ -135,7 +133,7 @@
 					<key>Comment</key>
 					<string>Add _SUN property for GIGE</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					UFhTWAhfQURSAAhfUFJXEgYC
@@ -294,8 +292,6 @@
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>DisableCloverHotkeys</key>
-		<false/>
-		<key>Fast</key>
 		<false/>
 		<key>Legacy</key>
 		<string>PBR</string>
