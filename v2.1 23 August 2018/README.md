@@ -234,6 +234,18 @@ killall Finder
 &nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2018-2511
 
 
+
+**USB 3.0/3.1**
+
+&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS High Sierra 10.13.6
+
+&nbsp;&nbsp;&nbsp;&nbsp; Impact: External drives connected to the computer via USB 3 cannot be detected
+
+&nbsp;&nbsp;&nbsp;&nbsp; Description: 15 port limit reached
+
+&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2018-3541
+
+
 # Problem Solved:
 
 **Bootable Installer for macOS**
