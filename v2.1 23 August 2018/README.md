@@ -235,17 +235,6 @@ killall Finder
 
 
 
-**USB 3.0/3.1**
-
-&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS High Sierra 10.13.6
-
-&nbsp;&nbsp;&nbsp;&nbsp; Impact: External drives connected to the computer via USB 3 cannot be detected
-
-&nbsp;&nbsp;&nbsp;&nbsp; Description: 15 port limit reached
-
-&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2018-3541
-
-
 # Problem Solved:
 
 **Bootable Installer for macOS**
@@ -259,3 +248,17 @@ killall Finder
 &nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2018-3451
 
 &nbsp;&nbsp;&nbsp;&nbsp; Resolving Note: The issue is believed to be a normal behaviour when installing macOS. Resolved by R.K. on Aug<sup>26</sup> 2018
+
+
+
+**USB 3.0/3.1**
+
+&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS High Sierra 10.13.6
+
+&nbsp;&nbsp;&nbsp;&nbsp; Impact: External drives connected to the computer via USB 3 cannot be detected
+
+&nbsp;&nbsp;&nbsp;&nbsp; Description: 15 port limit reached
+
+&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2018-3541
+
+&nbsp;&nbsp;&nbsp;&nbsp; Resolving Note: Solved in commit 81c7d8. R.K. Aug<sup>30</sup> 2018
