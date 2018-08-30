@@ -65,9 +65,9 @@
 			<key>Fixes</key>
 			<dict>
 				<key>AddDTGP</key>
-				<true/>
+				<false/>
 				<key>AddHDMI</key>
-				<true/>
+				<false/>
 				<key>AddIMEI</key>
 				<false/>
 				<key>AddMCHC</key>
@@ -75,74 +75,58 @@
 				<key>AddPNLF</key>
 				<true/>
 				<key>DeleteUnused</key>
-				<true/>
+				<false/>
 				<key>FakeLPC</key>
 				<false/>
 				<key>FixACST</key>
-				<true/>
+				<false/>
 				<key>FixADP1</key>
-				<true/>
+				<false/>
 				<key>FixAirport</key>
 				<false/>
 				<key>FixDarwin</key>
 				<false/>
 				<key>FixDarwin7</key>
-				<true/>
+				<false/>
 				<key>FixDisplay</key>
-				<true/>
+				<false/>
 				<key>FixFirewire</key>
 				<false/>
 				<key>FixHDA</key>
-				<true/>
+				<false/>
 				<key>FixHPET</key>
-				<true/>
+				<false/>
 				<key>FixIDE</key>
 				<false/>
 				<key>FixIPIC</key>
-				<true/>
+				<false/>
 				<key>FixIntelGfx</key>
 				<false/>
 				<key>FixLAN</key>
-				<true/>
+				<false/>
 				<key>FixMutex</key>
 				<false/>
 				<key>FixRTC</key>
-				<true/>
+				<false/>
 				<key>FixRegions</key>
-				<true/>
+				<false/>
 				<key>FixS3D</key>
-				<true/>
+				<false/>
 				<key>FixSATA</key>
 				<false/>
 				<key>FixSBUS</key>
-				<true/>
+				<false/>
 				<key>FixShutdown</key>
 				<true/>
 				<key>FixTMR</key>
-				<true/>
+				<false/>
 				<key>FixUSB</key>
-				<true/>
+				<false/>
 				<key>FixWAK</key>
-				<true/>
+				<false/>
 			</dict>
-			<key>Name</key>
-			<string>DSDT.aml</string>
 			<key>Patches</key>
 			<array>
-				<dict>
-					<key>Comment</key>
-					<string>Add _SUN property for GIGE</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					UFhTWAhfQURSAAhfUFJXEgYC
-					</data>
-					<key>Replace</key>
-					<data>
-					UFhTWAhfQURSAAhfU1VOCgQIX1BSVxIGAg==
-					</data>
-				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>Rename GFX0 to IGPU</string>
@@ -155,20 +139,6 @@
 					<key>Replace</key>
 					<data>
 					SUdQVQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename HDEF to AZAL</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					SERFRg==
-					</data>
-					<key>Replace</key>
-					<data>
-					QVpBTA==
 					</data>
 				</dict>
 				<dict>
@@ -199,6 +169,48 @@
 					SU1FSQ==
 					</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change HDAS to HDEF</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					SERBUw==
+					</data>
+					<key>Replace</key>
+					<data>
+					SERFRg==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change MEI to IMEI</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					TUVJXw==
+					</data>
+					<key>Replace</key>
+					<data>
+					SU1FSQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change SAT0 to SATA</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					U0FUMA==
+					</data>
+					<key>Replace</key>
+					<data>
+					U0FUQQ==
+					</data>
+				</dict>
 			</array>
 			<key>ReuseFFFF</key>
 			<false/>
@@ -227,9 +239,9 @@
 			</dict>
 		</array>
 		<key>FixHeaders</key>
-		<true/>
+		<false/>
 		<key>HaltEnabler</key>
-		<true/>
+		<false/>
 		<key>SSDT</key>
 		<dict>
 			<key>#C3Latency</key>
