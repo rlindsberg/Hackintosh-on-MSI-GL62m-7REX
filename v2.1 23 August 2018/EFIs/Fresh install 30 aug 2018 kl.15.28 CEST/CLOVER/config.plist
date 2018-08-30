@@ -575,9 +575,11 @@
 			<key>#Inject</key>
 			<string>0x0887</string>
 			<key>AFGLowPowerState</key>
-			<true/>
+			<false/>
+			<key>Inject</key>
+			<string>No</string>
 			<key>ResetHDA</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>NoDefaultProperties</key>
 		<false/>
