@@ -71,15 +71,50 @@ https://github.com/BarbaraPalvin/IntelGraphicsDVMTFixup
 
 ### BIOS settings
 
+1. Main
+
+2. Advanced
+  * Win/Fn Key Swap = Enabled
+  * VT-d = Disabled
+  * Power & Performance -> CPU -> Boot performance mode = Turbo Performance
+  * Power & Performance -> CPU -> Intel(R) Speed Shift Technology = Enabled
+  * Power & Performance -> CPU -> CPU Lock Configuration -> CFG Lock = Disabled
+  * System Agent (SA) Configuration -> Graphics Configuration -> Skip Scaning of External Gfx Card = Enabled
+  * System Agent (SA) Configuration -> Graphics Configuration -> DVMT Pre-Allocated = 64M
+  * Overclocking Performance Menu -> Overclocking Feature = Enabled
+  * Overclocking Performance Menu -> XTU Interface = Enabled
+  * Overclocking Performance Menu -> Processor -> Core Voltage Offset = 150
+  * Overclocking Performance Menu -> Processor -> Offset Prefix = -
+
+3. Boot
+  * Fast Boot = Disabled
+
+  * FIXED BOOT ORDER Priorities
+    1. Hard Disk
+    2. USB CD/DVD
+    3. USB Hard Disk
+    4. Network
+    5. CD/DVD
+
+  * UEFI Hard Disk Drive BBS Priorities
+    1. UEFI OS (HP SSD...)
+    2. Windows Boot Manager (P2: TS1...)
+
+4. Security
+  * Secure Boot -> Attempt Secure Boot = Disabled
+
+
 In order to boot the Clover from the USB, you should visit your BIOS settings:
 - "VT-d" (virtualization for directed i/o) should be disabled if possible (the config.plist includes dart=0 in case you can't do this)
-- "DEP" (data execution prevention) should be enabled for OS X
 - "secure boot " should be disabled
 - "legacy boot" optional (recommend enabled, but boot UEFI if you have it)
-- "CSM" (compatibility support module) enabled or disabled (varies) (recommend enabled, but boot UEFI)
 - "fast boot" (if available) should be disabled.
 - "boot from USB" or "boot from external" enabled
 - SATA mode (if available) should be AHCI
+
+- "DEP" (data execution prevention) should be enabled for OS X
+- "CSM" (compatibility support module) enabled or disabled (varies) (recommend enabled, but boot UEFI)
+
 
 ### Disable dGPU
 Disable GPU in ACPI as per this guide: https://www.tonymacx86.com/threads/guide-disabling-discrete-graphics-in-dual-gpu-laptops.163772/
