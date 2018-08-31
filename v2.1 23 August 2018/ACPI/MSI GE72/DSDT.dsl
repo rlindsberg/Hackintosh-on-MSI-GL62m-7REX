@@ -5,113 +5,94 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Fri Aug 31 22:46:12 2018
+ * Disassembly of DSDT.aml, Fri Aug 31 22:47:54 2018
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x00016325 (90917)
+ *     Length           0x0001679F (92063)
  *     Revision         0x02
- *     Checksum         0xF0
+ *     Checksum         0xF2
  *     OEM ID           "MSI_NB"
  *     OEM Table ID     "MEGABOOK"
  *     OEM Revision     0x01072009 (17244169)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20120913 (538052883)
+ *     Compiler Version 0x20160422 (538313762)
  */
 DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 {
-    /*
-     * iASL Warning: There were 16 external control methods found during
-     * disassembly, but only 7 were resolved (9 unresolved). Additional
-     * ACPI tables may be required to properly disassemble the code. This
-     * resulting disassembler output file may not compile because the
-     * disassembler did not know how many arguments to assign to the
-     * unresolved methods. Note: SSDTs can be dynamically loaded at
-     * runtime and may or may not be available via the host OS.
-     *
-     * In addition, the -fe option can be used to specify a file containing
-     * control method external declarations with the associated method
-     * argument counts. Each line of the file must be of the form:
-     *     External (<method pathname>, MethodObj, <argument count>)
-     * Invocation:
-     *     iasl -fe refs.txt -d dsdt.aml
-     *
-     * The following methods were unresolved and many not compile properly
-     * because the disassembler had to guess at the number of arguments
-     * required for each:
-     */
-    External (_PR_.BGIA, FieldUnitObj)
-    External (_PR_.BGMA, FieldUnitObj)
-    External (_PR_.BGMS, FieldUnitObj)
-    External (_PR_.CPU0._PPC, IntObj)
-    External (_PR_.CPU0._PSS, PkgObj)
-    External (_PR_.DSAE, FieldUnitObj)
-    External (_PR_.DTSE, FieldUnitObj)
-    External (_PR_.DTSF, FieldUnitObj)
-    External (_PR_.TRPD, FieldUnitObj)
-    External (_PR_.TRPF, FieldUnitObj)
-    External (_SB_.IAOE.ECTM, UnknownObj)    // Warning: Unknown object
-    External (_SB_.IAOE.FFSE, UnknownObj)    // Warning: Unknown object
-    External (_SB_.IAOE.IBT1, UnknownObj)    // Warning: Unknown object
-    External (_SB_.IAOE.IMDS, UnknownObj)    // Warning: Unknown object
-    External (_SB_.IAOE.ISEF, UnknownObj)    // Warning: Unknown object
-    External (_SB_.IAOE.ITMR, UnknownObj)    // Warning: Unknown object
-    External (_SB_.IAOE.RCTM, UnknownObj)    // Warning: Unknown object
-    External (_SB_.IAOE.WKRS, UnknownObj)    // Warning: Unknown object
-    External (_SB_.IFFS.FFSS, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCCD, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCCD.PENB, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCI0.B0D3.ABAR, FieldUnitObj)
-    External (_SB_.PCI0.B0D3.BARA, IntObj)
-    External (_SB_.PCI0.EPON, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.CLID, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.CPL2, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.CPL3, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.CPL4, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.DD1F, UnknownObj)
-    External (_SB_.PCI0.GFX0.GHDS, MethodObj)    // 1 Arguments
-    External (_SB_.PCI0.GFX0.GSCI, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.GSSE, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.IUEH, MethodObj)    // 1 Arguments
-    External (_SB_.PCI0.GFX0.STAT, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.TCHE, FieldUnitObj)
-    External (_SB_.PCI0.I2C0.SHUB.PS0X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (_SB_.PCI0.I2C0.SHUB.PS3X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (_SB_.PCI0.LPCB.H_EC.CHRG, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCI0.PAUD.PUAM, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (_SB_.PCI0.PEG0.HPME, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.PEG1.HPME, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.PEG2.HPME, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP03.SCLK, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCI0.RP04.SCLK, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCI0.RP06.SCLK, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCI0.XHC_.DUAM, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (_SB_.TPM_.PTS_, MethodObj)    // Warning: Unknown method, guessing 1 arguments
-    External (_TZ_.TZ00, UnknownObj)
-    External (_TZ_.TZ01, UnknownObj)
-    External (ALSE, FieldUnitObj)
-    External (DIDX, FieldUnitObj)
-    External (GSMI, FieldUnitObj)
-    External (IGDS, FieldUnitObj)
-    External (INIR, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (LHIH, FieldUnitObj)
-    External (LIDS, FieldUnitObj)
-    External (LLOW, FieldUnitObj)
-    External (M64B, FieldUnitObj)
-    External (M64L, FieldUnitObj)
-    External (MDBG, IntObj)    // Warning: Unknown object
-    External (PDC0, IntObj)
-    External (PDC1, IntObj)
-    External (PDC2, IntObj)
-    External (PDC3, IntObj)
-    External (PDC4, IntObj)
-    External (PDC5, IntObj)
-    External (PDC6, IntObj)
-    External (PDC7, IntObj)
-    External (PS0X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (PS2X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (PS3X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (SGMD, FieldUnitObj)
+    External (_PR_.BGIA, FieldUnitObj)    // (from opcode)
+    External (_PR_.BGMA, FieldUnitObj)    // (from opcode)
+    External (_PR_.BGMS, FieldUnitObj)    // (from opcode)
+    External (_PR_.CPU0._PPC, IntObj)    // (from opcode)
+    External (_PR_.CPU0._PSS, PkgObj)    // (from opcode)
+    External (_PR_.DSAE, FieldUnitObj)    // (from opcode)
+    External (_PR_.DTSE, FieldUnitObj)    // (from opcode)
+    External (_PR_.DTSF, FieldUnitObj)    // (from opcode)
+    External (_PR_.TRPD, FieldUnitObj)    // (from opcode)
+    External (_PR_.TRPF, FieldUnitObj)    // (from opcode)
+    External (_SB_.IAOE.ECTM, UnknownObj)    // (from opcode)
+    External (_SB_.IAOE.FFSE, UnknownObj)    // (from opcode)
+    External (_SB_.IAOE.IBT1, UnknownObj)    // (from opcode)
+    External (_SB_.IAOE.IMDS, UnknownObj)    // (from opcode)
+    External (_SB_.IAOE.ISEF, UnknownObj)    // (from opcode)
+    External (_SB_.IAOE.ITMR, UnknownObj)    // (from opcode)
+    External (_SB_.IAOE.RCTM, UnknownObj)    // (from opcode)
+    External (_SB_.IAOE.WKRS, UnknownObj)    // (from opcode)
+    External (_SB_.IFFS.FFSS, UnknownObj)    // (from opcode)
+    External (_SB_.PCCD, UnknownObj)    // (from opcode)
+    External (_SB_.PCCD.PENB, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.B0D3.ABAR, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0.B0D3.BARA, IntObj)    // (from opcode)
+    External (_SB_.PCI0.EPON, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.GFX0.CLID, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.CPL2, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.CPL3, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.CPL4, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.DD1F, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.GHDS, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.GFX0.GSCI, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.GFX0.GSSE, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.IUEH, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.GFX0.STAT, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.TCHE, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0.I2C0.SHUB.PS0X, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.I2C0.SHUB.PS3X, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.LPCB.H_EC.CHRG, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.PAUD.PUAM, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.PEG0.HPME, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.PEG0.PEGP.SGOF, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.PEG1.HPME, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.PEG2.HPME, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.RP03.SCLK, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.RP04.SCLK, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.RP06.SCLK, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.XHC_.DUAM, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.TPM_.PTS_, MethodObj)    // 1 Arguments (from opcode)
+    External (_TZ_.TZ00, UnknownObj)    // (from opcode)
+    External (_TZ_.TZ01, UnknownObj)    // (from opcode)
+    External (ALSE, FieldUnitObj)    // (from opcode)
+    External (DIDX, FieldUnitObj)    // (from opcode)
+    External (GSMI, FieldUnitObj)    // (from opcode)
+    External (IGDS, FieldUnitObj)    // (from opcode)
+    External (INIR, MethodObj)    // 0 Arguments (from opcode)
+    External (LHIH, FieldUnitObj)    // (from opcode)
+    External (LIDS, FieldUnitObj)    // (from opcode)
+    External (LLOW, FieldUnitObj)    // (from opcode)
+    External (M64B, FieldUnitObj)    // (from opcode)
+    External (M64L, FieldUnitObj)    // (from opcode)
+    External (MDBG, IntObj)    // (from opcode)
+    External (PDC0, IntObj)    // (from opcode)
+    External (PDC1, IntObj)    // (from opcode)
+    External (PDC2, IntObj)    // (from opcode)
+    External (PDC3, IntObj)    // (from opcode)
+    External (PDC4, IntObj)    // (from opcode)
+    External (PDC5, IntObj)    // (from opcode)
+    External (PDC6, IntObj)    // (from opcode)
+    External (PDC7, IntObj)    // (from opcode)
+    External (PS0X, MethodObj)    // 0 Arguments (from opcode)
+    External (PS2X, MethodObj)    // 0 Arguments (from opcode)
+    External (PS3X, MethodObj)    // 0 Arguments (from opcode)
+    External (SGMD, FieldUnitObj)    // (from opcode)
 
     Name (PEBS, 0xF8000000)
     Name (PELN, 0x04000000)
@@ -194,10 +175,10 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
     Name (SS3, One)
     Name (SS4, One)
     Name (IOST, 0x4400)
-    Name (TOPM, 0x00000000)
+    Name (TOPM, Zero)
     Name (ROMS, 0xFFE00000)
     Name (VGAF, One)
-    OperationRegion (GNVS, SystemMemory, 0x9C6B7000, 0x035A)
+    OperationRegion (GNVS, SystemMemory, 0x9A6B7000, 0x035A)
     Field (GNVS, AnyAcc, Lock, Preserve)
     {
         OSYS,   16, 
@@ -2672,7 +2653,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     Offset (0x08)
                 }
 
-                OperationRegion (CPSB, SystemMemory, 0x9BAF9F18, 0x10)
+                OperationRegion (CPSB, SystemMemory, 0x99AF9F18, 0x10)
                 Field (CPSB, AnyAcc, NoLock, Preserve)
                 {
                     RTCX,   1, 
@@ -4561,6 +4542,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
     Method (_WAK, 1, NotSerialized)  // _WAK: Wake
     {
+        \_SB.PCI0.PEG0.PEGP.SGOF ()
         RWAK (Arg0)
         \_SB.PCI0.NWAK (Arg0)
         \_SB.PCI0.LPCB.SWAK (Arg0)
@@ -4696,8 +4678,8 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         }
     }
 
-    Name (PNVB, 0x9CCBAD98)
-    Name (PNVL, 0x00E4)
+    Name (PNVB, 0x9ACBAD98)
+    Name (PNVL, 0xE4)
     OperationRegion (PNVA, SystemMemory, PNVB, PNVL)
     Field (PNVA, AnyAcc, Lock, Preserve)
     {
@@ -4820,8 +4802,8 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
     Method (LXDH, 0, NotSerialized)
     {
         \_SB.PCI0.XHC.GPEH ()
-        \_SB.PCI0.EHC1.GPEH ()
-        \_SB.PCI0.EHC2.GPEH ()
+        \_SB.PCI0.EH01.GPEH ()
+        \_SB.PCI0.EH02.GPEH ()
         \_SB.PCI0.HDEF.GPEH ()
         \_SB.PCI0.GLAN.GPEH ()
     }
@@ -5769,7 +5751,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             }
         }
 
-        Device (EHC1)
+        Device (EH01)
         {
             Name (_ADR, 0x001D0000)  // _ADR: Address
             OperationRegion (PWKE, PCI_Config, Zero, 0x0100)
@@ -5798,7 +5780,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 If (LAnd (PMEE, PMES))
                 {
                     Store (One, PMES)
-                    Notify (EHC1, 0x02)
+                    Notify (EH01, 0x02)
                 }
             }
 
@@ -6071,7 +6053,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             }
         }
 
-        Device (EHC2)
+        Device (EH02)
         {
             Name (_ADR, 0x001A0000)  // _ADR: Address
             OperationRegion (PWKE, PCI_Config, Zero, 0x0100)
@@ -6100,7 +6082,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 If (LAnd (PMEE, PMES))
                 {
                     Store (One, PMES)
-                    Notify (EHC2, 0x02)
+                    Notify (EH02, 0x02)
                 }
             }
 
@@ -6321,6 +6303,11 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
             {
                 Store (Arg0, PMEE)
+            }
+
+            Method (_S0W, 0, NotSerialized)  // _S0W: S0 Device Wake State
+            {
+                Return (0x03)
             }
 
             Method (GPEH, 0, NotSerialized)
@@ -10371,6 +10358,52 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Return (GPRW (0x0D, 0x04))
             }
+
+            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+            {
+                If (LEqual (Arg2, Zero))
+                {
+                    Return (Buffer (One)
+                    {
+                         0x03                                           
+                    })
+                }
+
+                Return (Package (0x0C)
+                {
+                    "AAPL,slot-name", 
+                    Buffer (0x09)
+                    {
+                        "Built in"
+                    }, 
+
+                    "layout-id", 
+                    Buffer (0x04)
+                    {
+                         0x03, 0x00, 0x00, 0x00                         
+                    }, 
+
+                    "device_type", 
+                    Buffer (0x11)
+                    {
+                        "Audio Controller"
+                    }, 
+
+                    "built-in", 
+                    Buffer (One)
+                    {
+                         0x00                                           
+                    }, 
+
+                    "PinConfigurations", 
+                    Buffer (Zero){}, 
+                    "hda-gfx", 
+                    Buffer (0x0A)
+                    {
+                        "onboard-1"
+                    }
+                })
+            }
         }
 
         Device (ADSP)
@@ -11381,7 +11414,6 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         If (CondRefOf (MDBG))
         {
             Return (MDBG)
-            Arg0
         }
 
         Return (Zero)
@@ -12271,6 +12303,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
         Method (_INI, 0, Serialized)  // _INI: Initialize
         {
+            ^PEG0.PEGP.SGOF ()
             Store (0x07D9, OSYS)
             If (CondRefOf (\_OSI, Local0))
             {
@@ -13465,59 +13498,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         }
     }
 
-    Scope (_SB.PCI0.HDEF)
-    {
-        Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
-        {
-            If (LEqual (Arg0, ToUUID ("c5c5d98d-360e-43af-b7c1-3ede8f669ad3")))
-            {
-                ADBG ("Audio Player call")
-                Switch (Arg2)
-                {
-                    Case (Zero)
-                    {
-                        If (LEqual (Arg1, Zero))
-                        {
-                            Return (Buffer (One)
-                            {
-                                 0x03                                           
-                            })
-                        }
-                        Else
-                        {
-                            Return (Buffer (One)
-                            {
-                                 0x00                                           
-                            })
-                        }
-                    }
-                    Case (One)
-                    {
-                        If (LEqual (DerefOf (Index (Arg3, Zero)), Zero))
-                        {
-                            ADBG ("Audio not active")
-                            Store (Zero, VBOK)
-                        }
-                        Else
-                        {
-                            ADBG ("Audio is active")
-                            Store (One, VBOK)
-                        }
-                    }
-
-                }
-
-                Return (Zero)
-            }
-
-            Return (Buffer (One)
-            {
-                 0x00                                           
-            })
-        }
-    }
-
-    Scope (_SB.PCI0.EHC1.HUBN.PR01.PR11)
+    Scope (_SB.PCI0.EH01.HUBN.PR01.PR11)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
@@ -13537,15 +13518,15 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Buffer (0x10)
                 {
-                    /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0xE1, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0000 */  0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    /* 0008 */  0x21, 0x1C, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             Return (PLDP)
         }
     }
 
-    Scope (_SB.PCI0.EHC1.HUBN.PR01.PR12)
+    Scope (_SB.PCI0.EH01.HUBN.PR01.PR12)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
@@ -13565,21 +13546,21 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Buffer (0x10)
                 {
-                    /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0xE1, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0000 */  0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    /* 0008 */  0x21, 0x1C, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             Return (PLDP)
         }
     }
 
-    Scope (_SB.PCI0.EHC1.HUBN.PR01.PR13)
+    Scope (_SB.PCI0.EH01.HUBN.PR01.PR13)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
             Name (UPCP, Package (0x04)
             {
-                0xFF, 
+                Zero, 
                 0xFF, 
                 Zero, 
                 Zero
@@ -13594,7 +13575,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0xE1, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0xE0, 0x1D, 0x80, 0x01, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -13607,7 +13588,35 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         }
     }
 
-    Scope (_SB.PCI0.EHC1.HUBN.PR01.PR14)
+    Scope (_SB.PCI0.EH01.HUBN.PR01.PR14)
+    {
+        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
+        {
+            Name (UPCP, Package (0x04)
+            {
+                Zero, 
+                0xFF, 
+                Zero, 
+                Zero
+            })
+            Return (UPCP)
+        }
+
+        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
+        {
+            Name (PLDP, Package (0x01)
+            {
+                Buffer (0x10)
+                {
+                    /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    /* 0008 */  0xE0, 0x1E, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00 
+                }
+            })
+            Return (PLDP)
+        }
+    }
+
+    Scope (_SB.PCI0.EH01.HUBN.PR01.PR15)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
@@ -13627,15 +13636,15 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Buffer (0x10)
                 {
-                    /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0xE1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0000 */  0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    /* 0008 */  0x21, 0x1C, 0x80, 0x02, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             Return (PLDP)
         }
     }
 
-    Scope (_SB.PCI0.EHC1.HUBN.PR01.PR15)
+    Scope (_SB.PCI0.EH01.HUBN.PR01.PR16)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
@@ -13655,21 +13664,21 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Buffer (0x10)
                 {
-                    /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0000 */  0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    /* 0008 */  0x21, 0x1C, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             Return (PLDP)
         }
     }
 
-    Scope (_SB.PCI0.EHC1.HUBN.PR01.PR16)
+    Scope (_SB.PCI0.EH01.HUBN.PR01.PR17)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
             Name (UPCP, Package (0x04)
             {
-                0xFF, 
+                Zero, 
                 0xFF, 
                 Zero, 
                 Zero
@@ -13684,20 +13693,20 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0xB0, 0x1E, 0x80, 0x03, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             Return (PLDP)
         }
     }
 
-    Scope (_SB.PCI0.EHC1.HUBN.PR01.PR17)
+    Scope (_SB.PCI0.EH01.HUBN.PR01.PR18)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
             Name (UPCP, Package (0x04)
             {
-                0xFF, 
+                Zero, 
                 0xFF, 
                 Zero, 
                 Zero
@@ -13712,20 +13721,20 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0xB0, 0x1E, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             Return (PLDP)
         }
     }
 
-    Scope (_SB.PCI0.EHC1.HUBN.PR01.PR18)
+    Scope (_SB.PCI0.EH02.HUBN.PR01.PR11)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
             Name (UPCP, Package (0x04)
             {
-                0xFF, 
+                Zero, 
                 0xFF, 
                 Zero, 
                 Zero
@@ -13740,20 +13749,20 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0xE0, 0x1C, 0x80, 0x04, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             Return (PLDP)
         }
     }
 
-    Scope (_SB.PCI0.EHC2.HUBN.PR01.PR11)
+    Scope (_SB.PCI0.EH02.HUBN.PR01.PR12)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
             Name (UPCP, Package (0x04)
             {
-                0xFF, 
+                Zero, 
                 0xFF, 
                 Zero, 
                 Zero
@@ -13768,20 +13777,20 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0xE1, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0xE0, 0x1D, 0x00, 0x05, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             Return (PLDP)
         }
     }
 
-    Scope (_SB.PCI0.EHC2.HUBN.PR01.PR12)
+    Scope (_SB.PCI0.EH02.HUBN.PR01.PR13)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
             Name (UPCP, Package (0x04)
             {
-                0xFF, 
+                Zero, 
                 0xFF, 
                 Zero, 
                 Zero
@@ -13796,48 +13805,20 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0xE1, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0xE0, 0x1D, 0x80, 0x05, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             Return (PLDP)
         }
     }
 
-    Scope (_SB.PCI0.EHC2.HUBN.PR01.PR13)
+    Scope (_SB.PCI0.EH02.HUBN.PR01.PR14)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
             Name (UPCP, Package (0x04)
             {
-                0xFF, 
-                0xFF, 
                 Zero, 
-                Zero
-            })
-            Return (UPCP)
-        }
-
-        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
-        {
-            Name (PLDP, Package (0x01)
-            {
-                Buffer (0x10)
-                {
-                    /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0xE1, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
-                }
-            })
-            Return (PLDP)
-        }
-    }
-
-    Scope (_SB.PCI0.EHC2.HUBN.PR01.PR14)
-    {
-        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
-        {
-            Name (UPCP, Package (0x04)
-            {
-                0xFF, 
                 0xFF, 
                 Zero, 
                 Zero
@@ -13852,7 +13833,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0x24, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0x24, 0x1D, 0x00, 0x06, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             Return (PLDP)
@@ -13877,7 +13858,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         }
     }
 
-    Scope (_SB.PCI0.EHC2.HUBN.PR01.PR15)
+    Scope (_SB.PCI0.EH02.HUBN.PR01.PR15)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
@@ -13898,20 +13879,20 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0xB0, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0xB0, 0x1E, 0x80, 0x06, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             Return (PLDP)
         }
     }
 
-    Scope (_SB.PCI0.EHC2.HUBN.PR01.PR16)
+    Scope (_SB.PCI0.EH02.HUBN.PR01.PR16)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
             Name (UPCP, Package (0x04)
             {
-                0xFF, 
+                Zero, 
                 0xFF, 
                 Zero, 
                 Zero
@@ -13926,7 +13907,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0xB0, 0x1E, 0x00, 0x07, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             Return (PLDP)
@@ -13999,8 +13980,8 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Buffer (0x10)
                 {
-                    /* 0000 */  0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0x69, 0x0C, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0000 */  0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    /* 0008 */  0x21, 0x1C, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             If (LNot (PRTE (_ADR)))
@@ -14037,8 +14018,8 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Buffer (0x10)
                 {
-                    /* 0000 */  0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0x69, 0x0C, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00 
+                    /* 0000 */  0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    /* 0008 */  0x21, 0x1C, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             If (LNot (PRTE (_ADR)))
@@ -14056,7 +14037,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         {
             Name (HU03, Package (0x04)
             {
-                0xFF, 
+                Zero, 
                 0x03, 
                 Zero, 
                 Zero
@@ -14076,7 +14057,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0x71, 0x0C, 0x80, 0x01, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0x70, 0x0C, 0x80, 0x01, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             If (LNot (PRTE (_ADR)))
@@ -14094,7 +14075,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         {
             Name (HU04, Package (0x04)
             {
-                0xFF, 
+                Zero, 
                 0x03, 
                 Zero, 
                 Zero
@@ -14114,7 +14095,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0x71, 0x0C, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0x70, 0x0C, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             If (LNot (PRTE (_ADR)))
@@ -14195,7 +14176,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             Name (HU05, Package (0x04)
             {
                 0xFF, 
-                Zero, 
+                0xFF, 
                 Zero, 
                 Zero
             })
@@ -14214,7 +14195,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0x71, 0x0C, 0x80, 0x02, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0x75, 0x0C, 0x80, 0x02, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             If (LNot (PRTE (_ADR)))
@@ -14251,8 +14232,8 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Buffer (0x10)
                 {
-                    /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0x69, 0x0C, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00 
+                    /* 0000 */  0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    /* 0008 */  0x21, 0x1C, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             If (LNot (PRTE (_ADR)))
@@ -14270,7 +14251,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         {
             Name (HU07, Package (0x04)
             {
-                0xFF, 
+                Zero, 
                 Zero, 
                 Zero, 
                 Zero
@@ -14290,7 +14271,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0x71, 0x0C, 0x80, 0x03, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0x70, 0x0C, 0x80, 0x03, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             If (LNot (PRTE (_ADR)))
@@ -14308,7 +14289,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         {
             Name (HU08, Package (0x04)
             {
-                0xFF, 
+                Zero, 
                 Zero, 
                 Zero, 
                 Zero
@@ -14328,7 +14309,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Buffer (0x10)
                 {
                     /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0x71, 0x0C, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00 
+                    /* 0008 */  0x70, 0x0C, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             If (LNot (PRTE (_ADR)))
@@ -14348,7 +14329,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Name (HU09, Package (0x04)
                 {
-                    0xFF, 
+                    Zero, 
                     0x03, 
                     Zero, 
                     Zero
@@ -14368,7 +14349,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     Buffer (0x10)
                     {
                         /* 0000 */  0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x71, 0x0C, 0x80, 0x04, 0x00, 0x00, 0x00, 0x00 
+                        /* 0008 */  0x70, 0x0C, 0x80, 0x04, 0x00, 0x00, 0x00, 0x00 
                     }
                 })
                 If (LNot (PRTE (_ADR)))
@@ -14389,7 +14370,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Name (HU10, Package (0x04)
                 {
-                    0xFF, 
+                    Zero, 
                     0x03, 
                     Zero, 
                     Zero
@@ -14409,7 +14390,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     Buffer (0x10)
                     {
                         /* 0000 */  0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x71, 0x0C, 0x00, 0x05, 0x00, 0x00, 0x00, 0x00 
+                        /* 0008 */  0x70, 0x0C, 0x00, 0x05, 0x00, 0x00, 0x00, 0x00 
                     }
                 })
                 If (LNot (PRTE (_ADR)))
@@ -14430,7 +14411,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Name (HU11, Package (0x04)
                 {
-                    0xFF, 
+                    Zero, 
                     0xFF, 
                     Zero, 
                     Zero
@@ -14450,7 +14431,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     Buffer (0x10)
                     {
                         /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x31, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0008 */  0x30, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
                     }
                 })
                 If (LNot (PRTE (_ADR)))
@@ -14471,7 +14452,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Name (HU12, Package (0x04)
                 {
-                    0xFF, 
+                    Zero, 
                     0xFF, 
                     Zero, 
                     Zero
@@ -14491,7 +14472,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     Buffer (0x10)
                     {
                         /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x31, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0008 */  0x30, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
                     }
                 })
                 If (LNot (PRTE (_ADR)))
@@ -14512,7 +14493,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Name (HU13, Package (0x04)
                 {
-                    0xFF, 
+                    Zero, 
                     0xFF, 
                     Zero, 
                     Zero
@@ -14532,7 +14513,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     Buffer (0x10)
                     {
                         /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x31, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0008 */  0x30, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
                     }
                 })
                 If (LNot (PRTE (_ADR)))
@@ -14553,7 +14534,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Name (HU14, Package (0x04)
                 {
-                    0xFF, 
+                    Zero, 
                     0xFF, 
                     Zero, 
                     Zero
@@ -14573,7 +14554,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     Buffer (0x10)
                     {
                         /* 0000 */  0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x31, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0008 */  0x30, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
                     }
                 })
                 If (LNot (PRTE (_ADR)))
@@ -14627,8 +14608,8 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Buffer (0x10)
                 {
-                    /* 0000 */  0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0x69, 0x0C, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00 
+                    /* 0000 */  0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    /* 0008 */  0x21, 0x1C, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             If (LNot (PRTE (_ADR ())))
@@ -14665,8 +14646,8 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Buffer (0x10)
                 {
-                    /* 0000 */  0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
-                    /* 0008 */  0x69, 0x0C, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00 
+                    /* 0000 */  0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    /* 0008 */  0x21, 0x1C, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00 
                 }
             })
             If (LNot (PRTE (_ADR ())))
@@ -14686,7 +14667,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Name (SS03, Package (0x04)
                 {
-                    0xFF, 
+                    Zero, 
                     0x03, 
                     Zero, 
                     Zero
@@ -14706,7 +14687,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     Buffer (0x10)
                     {
                         /* 0000 */  0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x71, 0x0C, 0x80, 0x01, 0x00, 0x00, 0x00, 0x00 
+                        /* 0008 */  0x70, 0x0C, 0x80, 0x01, 0x00, 0x00, 0x00, 0x00 
                     }
                 })
                 If (LNot (PRTE (_ADR ())))
@@ -14727,7 +14708,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Name (SS04, Package (0x04)
                 {
-                    0xFF, 
+                    Zero, 
                     0x03, 
                     Zero, 
                     Zero
@@ -14747,7 +14728,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     Buffer (0x10)
                     {
                         /* 0000 */  0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x71, 0x0C, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00 
+                        /* 0008 */  0x70, 0x0C, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00 
                     }
                 })
                 If (LNot (PRTE (_ADR ())))
@@ -14768,7 +14749,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Name (SS05, Package (0x04)
                 {
-                    0xFF, 
+                    Zero, 
                     0x03, 
                     Zero, 
                     Zero
@@ -14788,7 +14769,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     Buffer (0x10)
                     {
                         /* 0000 */  0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x71, 0x0C, 0x80, 0x01, 0x00, 0x00, 0x00, 0x00 
+                        /* 0008 */  0x70, 0x0C, 0x80, 0x02, 0x00, 0x00, 0x00, 0x00 
                     }
                 })
                 If (LNot (PRTE (_ADR ())))
@@ -14828,8 +14809,8 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x71, 0x0C, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                        /* 0008 */  0x21, 0x1C, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00 
                     }
                 })
                 If (LNot (PRTE (_ADR ())))
@@ -19879,18 +19860,13 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
                                     Store (Zero, IDFU)
                                 }
+                                ElseIf (LEqual (PCHS, One))
+                                {
+                                    Or (GL08, One, GL08)
+                                }
                                 Else
                                 {
-                                    If (LEqual (PCHS, One))
-                                    {
-                                        Or (GL08, One, GL08)
-                                    }
-                                    Else
-                                    {
-                                        WTGP (0x3C, One)
-                                    }
-
-                                    Store (One, IDFU)
+                                    WTGP (0x3C, One)
                                 }
 
                                 Return (Zero)
@@ -21171,8 +21147,8 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 Store (0x80, SCIC)
                 Store (0x80, DBG8)
-                Store (One, CHET)
                 Or (One, PTHR, PTHR)
+                Store (PSNM, \_PR.CPU0._PPC)
                 Notify (\_PR.CPU0, 0x80)
                 Sleep (0x64)
                 Notify (\_PR.CPU1, 0x80)
@@ -23524,6 +23500,18 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     Return (Zero)
                 }
             }
+        }
+    }
+
+    Scope (_SB)
+    {
+        Device (PNLF)
+        {
+            Name (_ADR, Zero)  // _ADR: Address
+            Name (_HID, EisaId ("APP0002"))  // _HID: Hardware ID
+            Name (_CID, "backlight")  // _CID: Compatible ID
+            Name (_UID, 0x0A)  // _UID: Unique ID
+            Name (_STA, 0x0B)  // _STA: Status
         }
     }
 }

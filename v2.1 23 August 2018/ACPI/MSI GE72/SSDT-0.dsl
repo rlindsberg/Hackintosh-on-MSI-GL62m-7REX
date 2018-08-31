@@ -5,190 +5,608 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-0.aml, Fri Aug 31 22:46:12 2018
+ * Disassembly of SSDT-0.aml, Fri Aug 31 22:47:54 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000315 (789)
- *     Revision         0x01
- *     Checksum         0xCC
- *     OEM ID           "SataRe"
- *     OEM Table ID     "SataTabl"
+ *     Length           0x00000E82 (3714)
+ *     Revision         0x02
+ *     Checksum         0x66
+ *     OEM ID           "Ther_R"
+ *     OEM Table ID     "Ther_Rvp"
  *     OEM Revision     0x00001000 (4096)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20120913 (538052883)
+ *     Compiler Version 0x20160422 (538313762)
  */
-DefinitionBlock ("", "SSDT", 1, "SataRe", "SataTabl", 0x00001000)
+DefinitionBlock ("", "SSDT", 2, "Ther_R", "Ther_Rvp", 0x00001000)
 {
-    External (_SB_.PCI0.SAT0, DeviceObj)
-    External (DSSP, UnknownObj)    // Warning: Unknown object
-    External (FHPP, UnknownObj)    // Warning: Unknown object
+    External (_PR_.AAC0, FieldUnitObj)    // (from opcode)
+    External (_PR_.ACRT, FieldUnitObj)    // (from opcode)
+    External (_PR_.APSV, FieldUnitObj)    // (from opcode)
+    External (_PR_.CPU0, ProcessorObj)    // (from opcode)
+    External (_PR_.CPU1, ProcessorObj)    // (from opcode)
+    External (_PR_.CPU2, ProcessorObj)    // (from opcode)
+    External (_PR_.CPU3, ProcessorObj)    // (from opcode)
+    External (_PR_.CPU4, ProcessorObj)    // (from opcode)
+    External (_PR_.CPU5, ProcessorObj)    // (from opcode)
+    External (_PR_.CPU6, ProcessorObj)    // (from opcode)
+    External (_PR_.CPU7, ProcessorObj)    // (from opcode)
+    External (_PR_.DTS1, FieldUnitObj)    // (from opcode)
+    External (_PR_.DTS2, FieldUnitObj)    // (from opcode)
+    External (_PR_.DTS3, FieldUnitObj)    // (from opcode)
+    External (_PR_.DTS4, FieldUnitObj)    // (from opcode)
+    External (_PR_.DTSE, FieldUnitObj)    // (from opcode)
+    External (_PR_.PDTS, FieldUnitObj)    // (from opcode)
+    External (_PR_.PKGA, FieldUnitObj)    // (from opcode)
+    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.LPCB.H_EC.ECRD, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // 2 Arguments (from opcode)
+    External (_SB_.PCI0.LPCB.H_EC.PECH, IntObj)    // (from opcode)
+    External (_SB_.PCI0.LPCB.H_EC.PECL, IntObj)    // (from opcode)
+    External (_SB_.PCI0.LPCB.H_EC.PENV, IntObj)    // (from opcode)
+    External (_SB_.PCI0.LPCB.H_EC.PLMX, IntObj)    // (from opcode)
+    External (AC0F, FieldUnitObj)    // (from opcode)
+    External (AC1F, FieldUnitObj)    // (from opcode)
+    External (ACT1, FieldUnitObj)    // (from opcode)
+    External (ACTT, FieldUnitObj)    // (from opcode)
+    External (CRTT, FieldUnitObj)    // (from opcode)
+    External (CTYP, FieldUnitObj)    // (from opcode)
+    External (ECON, FieldUnitObj)    // (from opcode)
+    External (PSVT, FieldUnitObj)    // (from opcode)
+    External (TC1V, FieldUnitObj)    // (from opcode)
+    External (TC2V, FieldUnitObj)    // (from opcode)
+    External (TCNT, FieldUnitObj)    // (from opcode)
+    External (TSPV, FieldUnitObj)    // (from opcode)
+    External (VFN0, FieldUnitObj)    // (from opcode)
+    External (VFN1, FieldUnitObj)    // (from opcode)
+    External (VFN2, FieldUnitObj)    // (from opcode)
+    External (VFN3, FieldUnitObj)    // (from opcode)
+    External (VFN4, FieldUnitObj)    // (from opcode)
 
-    Scope (\)
+    Scope (\_TZ)
     {
-        Name (STFE, Buffer (0x07)
+        Name (ETMD, One)
+        Method (FOFF, 0, Serialized)
         {
-             0x10, 0x06, 0x00, 0x00, 0x00, 0x00, 0xEF       
-        })
-        Name (STFD, Buffer (0x07)
-        {
-             0x90, 0x06, 0x00, 0x00, 0x00, 0x00, 0xEF       
-        })
-        Name (FZTF, Buffer (0x07)
-        {
-             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF5       
-        })
-        Name (DCFL, Buffer (0x07)
-        {
-             0xC1, 0x00, 0x00, 0x00, 0x00, 0x00, 0xB1       
-        })
-        Name (SCBF, Buffer (0x15){})
-        Name (CMDC, Zero)
-        Method (GTFB, 2, Serialized)
-        {
-            Multiply (CMDC, 0x38, Local0)
-            CreateField (SCBF, Local0, 0x38, CMDX)
-            Multiply (CMDC, 0x07, Local0)
-            CreateByteField (SCBF, Add (Local0, One), A001)
-            Store (Arg0, CMDX)
-            Store (Arg1, A001)
-            Increment (CMDC)
+            \_TZ.FN04._OFF ()
         }
-    }
 
-    Scope (\_SB.PCI0.SAT0)
-    {
-        Name (REGF, One)
-        Method (_REG, 2, NotSerialized)  // _REG: Region Availability
+        PowerResource (FN00, 0x00, 0x0000)
         {
-            If (LEqual (Arg0, 0x02))
+            Method (_STA, 0, Serialized)  // _STA: Status
             {
-                Store (Arg1, REGF)
+                Return (VFN0)
+            }
+
+            Method (_ON, 0, Serialized)  // _ON_: Power On
+            {
+                Store (One, VFN0)
+                If (LAnd (ECON, ETMD))
+                {
+                    \_SB.PCI0.LPCB.H_EC.ECWT (AC0F, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                    \_SB.PCI0.LPCB.H_EC.ECMD (0x1A)
+                }
+            }
+
+            Method (_OFF, 0, Serialized)  // _OFF: Power Off
+            {
+                Store (Zero, VFN0)
+                If (LAnd (ECON, ETMD))
+                {
+                    If (LNotEqual (VFN1, Zero))
+                    {
+                        \_SB.PCI0.LPCB.H_EC.ECWT (AC1F, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                    }
+                    Else
+                    {
+                        \_SB.PCI0.LPCB.H_EC.ECWT (Zero, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                    }
+
+                    \_SB.PCI0.LPCB.H_EC.ECMD (0x1A)
+                }
             }
         }
 
-        Name (TMD0, Buffer (0x14){})
-        CreateDWordField (TMD0, Zero, PIO0)
-        CreateDWordField (TMD0, 0x04, DMA0)
-        CreateDWordField (TMD0, 0x08, PIO1)
-        CreateDWordField (TMD0, 0x0C, DMA1)
-        CreateDWordField (TMD0, 0x10, CHNF)
-        Method (_GTM, 0, NotSerialized)  // _GTM: Get Timing Mode
+        Device (FAN0)
         {
-            Store (0x78, PIO0)
-            Store (0x14, DMA0)
-            Store (0x78, PIO1)
-            Store (0x14, DMA1)
-            Or (CHNF, 0x05, CHNF)
-            Return (TMD0)
-        }
-
-        Method (_STM, 3, NotSerialized)  // _STM: Set Timing Mode
-        {
-        }
-
-        Device (SPT0)
-        {
-            Name (_ADR, 0xFFFF)  // _ADR: Address
-            Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
+            Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
+            Name (_UID, Zero)  // _UID: Unique ID
+            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
             {
-                Store (Zero, CMDC)
-                If (LOr (DSSP, FHPP))
-                {
-                    GTFB (STFD, 0x06)
-                }
-                Else
-                {
-                    GTFB (STFE, 0x06)
-                }
+                FN00
+            })
+        }
 
-                GTFB (FZTF, Zero)
-                GTFB (DCFL, Zero)
-                Return (SCBF)
+        PowerResource (FN01, 0x00, 0x0000)
+        {
+            Method (_STA, 0, Serialized)  // _STA: Status
+            {
+                Return (VFN1)
+            }
+
+            Method (_ON, 0, Serialized)  // _ON_: Power On
+            {
+                Store (One, VFN1)
+                If (LAnd (ECON, ETMD))
+                {
+                    If (LEqual (VFN0, Zero))
+                    {
+                        \_SB.PCI0.LPCB.H_EC.ECWT (AC1F, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                        \_SB.PCI0.LPCB.H_EC.ECMD (0x1A)
+                    }
+                }
+            }
+
+            Method (_OFF, 0, Serialized)  // _OFF: Power Off
+            {
+                Store (Zero, VFN1)
+                If (LAnd (ECON, ETMD))
+                {
+                    If (LNotEqual (VFN2, Zero))
+                    {
+                        \_SB.PCI0.LPCB.H_EC.ECWT (Zero, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                    }
+                    Else
+                    {
+                        \_SB.PCI0.LPCB.H_EC.ECWT (Zero, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                    }
+
+                    \_SB.PCI0.LPCB.H_EC.ECMD (0x1A)
+                }
             }
         }
 
-        Device (SPT1)
+        Device (FAN1)
         {
-            Name (_ADR, 0x0001FFFF)  // _ADR: Address
-            Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
+            Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
+            Name (_UID, One)  // _UID: Unique ID
+            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
             {
-                Store (Zero, CMDC)
-                If (LOr (DSSP, FHPP))
-                {
-                    GTFB (STFD, 0x06)
-                }
-                Else
-                {
-                    GTFB (STFE, 0x06)
-                }
+                FN01
+            })
+        }
 
-                GTFB (FZTF, Zero)
-                GTFB (DCFL, Zero)
-                Return (SCBF)
+        PowerResource (FN02, 0x00, 0x0000)
+        {
+            Method (_STA, 0, Serialized)  // _STA: Status
+            {
+                Return (VFN2)
+            }
+
+            Method (_ON, 0, Serialized)  // _ON_: Power On
+            {
+                Store (One, VFN2)
+                If (LAnd (ECON, ETMD))
+                {
+                    If (LEqual (VFN1, Zero))
+                    {
+                        \_SB.PCI0.LPCB.H_EC.ECWT (Zero, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                        \_SB.PCI0.LPCB.H_EC.ECMD (0x1A)
+                    }
+                }
+            }
+
+            Method (_OFF, 0, Serialized)  // _OFF: Power Off
+            {
+                Store (Zero, VFN2)
+                If (LAnd (ECON, ETMD))
+                {
+                    If (LNotEqual (VFN3, Zero))
+                    {
+                        \_SB.PCI0.LPCB.H_EC.ECWT (Zero, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                    }
+                    Else
+                    {
+                        \_SB.PCI0.LPCB.H_EC.ECWT (Zero, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                    }
+
+                    \_SB.PCI0.LPCB.H_EC.ECMD (0x1A)
+                }
             }
         }
 
-        Device (SPT3)
+        Device (FAN2)
         {
-            Name (_ADR, 0x0003FFFF)  // _ADR: Address
-            Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
+            Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
+            Name (_UID, 0x02)  // _UID: Unique ID
+            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
             {
-                Store (Zero, CMDC)
-                If (LOr (DSSP, FHPP))
-                {
-                    GTFB (STFD, 0x06)
-                }
-                Else
-                {
-                    GTFB (STFE, 0x06)
-                }
+                FN02
+            })
+        }
 
-                GTFB (FZTF, Zero)
-                GTFB (DCFL, Zero)
-                Return (SCBF)
+        PowerResource (FN03, 0x00, 0x0000)
+        {
+            Method (_STA, 0, Serialized)  // _STA: Status
+            {
+                Return (VFN3)
+            }
+
+            Method (_ON, 0, Serialized)  // _ON_: Power On
+            {
+                Store (One, VFN3)
+                If (LAnd (ECON, ETMD))
+                {
+                    If (LEqual (VFN2, Zero))
+                    {
+                        \_SB.PCI0.LPCB.H_EC.ECWT (Zero, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                        \_SB.PCI0.LPCB.H_EC.ECMD (0x1A)
+                    }
+                }
+            }
+
+            Method (_OFF, 0, Serialized)  // _OFF: Power Off
+            {
+                Store (Zero, VFN3)
+                If (LAnd (ECON, ETMD))
+                {
+                    If (LNotEqual (VFN4, Zero))
+                    {
+                        \_SB.PCI0.LPCB.H_EC.ECWT (Zero, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                    }
+                    Else
+                    {
+                        \_SB.PCI0.LPCB.H_EC.ECWT (Zero, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                    }
+
+                    \_SB.PCI0.LPCB.H_EC.ECMD (0x1A)
+                }
             }
         }
 
-        Device (SPT4)
+        Device (FAN3)
         {
-            Name (_ADR, 0x0004FFFF)  // _ADR: Address
-            Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
+            Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
+            Name (_UID, 0x03)  // _UID: Unique ID
+            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
             {
-                Store (Zero, CMDC)
-                If (LOr (DSSP, FHPP))
-                {
-                    GTFB (STFD, 0x06)
-                }
-                Else
-                {
-                    GTFB (STFE, 0x06)
-                }
+                FN03
+            })
+        }
 
-                GTFB (FZTF, Zero)
-                GTFB (DCFL, Zero)
-                Return (SCBF)
+        PowerResource (FN04, 0x00, 0x0000)
+        {
+            Method (_STA, 0, Serialized)  // _STA: Status
+            {
+                Return (VFN4)
+            }
+
+            Method (_ON, 0, Serialized)  // _ON_: Power On
+            {
+                Store (One, VFN4)
+                If (LAnd (ECON, ETMD))
+                {
+                    If (LEqual (VFN3, Zero))
+                    {
+                        \_SB.PCI0.LPCB.H_EC.ECWT (Zero, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                        \_SB.PCI0.LPCB.H_EC.ECMD (0x1A)
+                    }
+                }
+            }
+
+            Method (_OFF, 0, Serialized)  // _OFF: Power Off
+            {
+                Store (Zero, VFN4)
+                If (LAnd (ECON, ETMD))
+                {
+                    \_SB.PCI0.LPCB.H_EC.ECWT (Zero, RefOf (\_SB.PCI0.LPCB.H_EC.PENV))
+                    \_SB.PCI0.LPCB.H_EC.ECMD (0x1A)
+                }
             }
         }
 
-        Device (SPT5)
+        Device (FAN4)
         {
-            Name (_ADR, 0x0005FFFF)  // _ADR: Address
-            Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
+            Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
+            Name (_UID, 0x04)  // _UID: Unique ID
+            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
             {
-                Store (Zero, CMDC)
-                If (LOr (DSSP, FHPP))
+                FN04
+            })
+        }
+
+        ThermalZone (TZ00)
+        {
+            Name (PTMP, 0x0BB8)
+            Method (_SCP, 1, Serialized)  // _SCP: Set Cooling Policy
+            {
+                Store (Arg0, CTYP)
+            }
+
+            Method (_CRT, 0, Serialized)  // _CRT: Critical Temperature
+            {
+                If (CondRefOf (\_PR.ACRT))
                 {
-                    GTFB (STFD, 0x06)
-                }
-                Else
-                {
-                    GTFB (STFE, 0x06)
+                    If (LNotEqual (\_PR.ACRT, Zero))
+                    {
+                        Return (Add (0x0AAC, Multiply (\_PR.ACRT, 0x0A)))
+                    }
                 }
 
-                GTFB (FZTF, Zero)
-                GTFB (DCFL, Zero)
-                Return (SCBF)
+                Return (Add (0x0AAC, Multiply (CRTT, 0x0A)))
+            }
+
+            Method (_AC0, 0, Serialized)  // _ACx: Active Cooling
+            {
+                If (CondRefOf (\_PR.AAC0))
+                {
+                    If (LNotEqual (\_PR.AAC0, Zero))
+                    {
+                        Return (Add (0x0AAC, Multiply (\_PR.AAC0, 0x0A)))
+                    }
+                }
+
+                Return (Add (0x0AAC, Multiply (ACTT, 0x0A)))
+            }
+
+            Method (_AC1, 0, Serialized)  // _ACx: Active Cooling
+            {
+                If (CondRefOf (\_PR.AAC0))
+                {
+                    If (LNot (ETMD))
+                    {
+                        Return (Subtract (Add (0x0AAC, Multiply (\_PR.AAC0, 0x0A)), 0x0A))
+                    }
+                }
+
+                Return (Add (0x0AAC, Multiply (ACT1, 0x0A)))
+            }
+
+            Method (_AC2, 0, Serialized)  // _ACx: Active Cooling
+            {
+                If (CondRefOf (\_PR.AAC0))
+                {
+                    If (LEqual (Zero, ETMD))
+                    {
+                        Return (Subtract (Add (0x0AAC, Multiply (\_PR.AAC0, 0x0A)), 0x14))
+                    }
+                }
+
+                Return (Subtract (Add (0x0AAC, Multiply (ACT1, 0x0A)), 0x32))
+            }
+
+            Method (_AC3, 0, Serialized)  // _ACx: Active Cooling
+            {
+                If (CondRefOf (\_PR.AAC0))
+                {
+                    If (LEqual (ETMD, Zero))
+                    {
+                        Return (Subtract (Add (0x0AAC, Multiply (\_PR.AAC0, 0x0A)), 0x1E))
+                    }
+                }
+
+                Return (Subtract (Add (0x0AAC, Multiply (ACT1, 0x0A)), 0x64))
+            }
+
+            Method (_AC4, 0, Serialized)  // _ACx: Active Cooling
+            {
+                If (CondRefOf (\_PR.AAC0))
+                {
+                    If (LEqual (ETMD, Zero))
+                    {
+                        Return (Subtract (Add (0x0AAC, Multiply (\_PR.AAC0, 0x0A)), 0x28))
+                    }
+                }
+
+                Return (Subtract (Add (0x0AAC, Multiply (ACT1, 0x0A)), 0x96))
+            }
+
+            Name (_AL0, Package (0x01)  // _ALx: Active List
+            {
+                FAN0
+            })
+            Name (_AL1, Package (0x01)  // _ALx: Active List
+            {
+                FAN1
+            })
+            Name (_AL2, Package (0x01)  // _ALx: Active List
+            {
+                FAN2
+            })
+            Name (_AL3, Package (0x01)  // _ALx: Active List
+            {
+                FAN3
+            })
+            Name (_AL4, Package (0x01)  // _ALx: Active List
+            {
+                FAN4
+            })
+            Method (_TMP, 0, Serialized)  // _TMP: Temperature
+            {
+                If (LNot (ETMD))
+                {
+                    Return (0x0BB8)
+                }
+
+                If (LEqual (\_PR.DTSE, 0x03))
+                {
+                    Return (Add (0x0B10, Multiply (CRTT, 0x0A)))
+                }
+
+                If (LEqual (\_PR.DTSE, One))
+                {
+                    If (LEqual (\_PR.PKGA, One))
+                    {
+                        Store (\_PR.PDTS, Local0)
+                        Return (Add (0x0AAC, Multiply (Local0, 0x0A)))
+                    }
+
+                    Store (\_PR.DTS1, Local0)
+                    If (LGreater (\_PR.DTS2, Local0))
+                    {
+                        Store (\_PR.DTS2, Local0)
+                    }
+
+                    If (LGreater (\_PR.DTS3, Local0))
+                    {
+                        Store (\_PR.DTS3, Local0)
+                    }
+
+                    If (LGreater (\_PR.DTS4, Local0))
+                    {
+                        Store (\_PR.DTS4, Local0)
+                    }
+
+                    Return (Add (0x0AAC, Multiply (Local0, 0x0A)))
+                }
+
+                If (ECON)
+                {
+                    Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PLMX)), Local0)
+                    Add (0x0AAC, Multiply (Local0, 0x0A), Local0)
+                    Store (Local0, PTMP)
+                    Return (Local0)
+                }
+
+                Return (0x0BC2)
+            }
+        }
+
+        ThermalZone (TZ01)
+        {
+            Name (PTMP, 0x0BB8)
+            Method (_SCP, 1, Serialized)  // _SCP: Set Cooling Policy
+            {
+                Store (Arg0, CTYP)
+            }
+
+            Method (_CRT, 0, Serialized)  // _CRT: Critical Temperature
+            {
+                If (CondRefOf (\_PR.ACRT))
+                {
+                    If (LNotEqual (\_PR.ACRT, Zero))
+                    {
+                        Return (Add (0x0AAC, Multiply (\_PR.ACRT, 0x0A)))
+                    }
+                }
+
+                Return (Add (0x0AAC, Multiply (CRTT, 0x0A)))
+            }
+
+            Method (_TMP, 0, Serialized)  // _TMP: Temperature
+            {
+                If (LNot (ETMD))
+                {
+                    Return (0x0BCC)
+                }
+
+                If (LEqual (\_PR.DTSE, 0x03))
+                {
+                    Return (Add (0x0B10, Multiply (CRTT, 0x0A)))
+                }
+
+                If (LEqual (\_PR.DTSE, One))
+                {
+                    If (LEqual (\_PR.PKGA, One))
+                    {
+                        Store (\_PR.PDTS, Local0)
+                        Return (Add (0x0AAC, Multiply (Local0, 0x0A)))
+                    }
+
+                    Store (\_PR.DTS1, Local0)
+                    If (LGreater (\_PR.DTS2, Local0))
+                    {
+                        Store (\_PR.DTS2, Local0)
+                    }
+
+                    If (LGreater (\_PR.DTS3, Local0))
+                    {
+                        Store (\_PR.DTS3, Local0)
+                    }
+
+                    If (LGreater (\_PR.DTS4, Local0))
+                    {
+                        Store (\_PR.DTS4, Local0)
+                    }
+
+                    Return (Add (0x0AAC, Multiply (Local0, 0x0A)))
+                }
+
+                If (ECON)
+                {
+                    Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PECH)), Local0)
+                    Multiply (Local0, 0x0A, Local0)
+                    Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PECL)), Local1)
+                    ShiftRight (Local1, 0x02, Local1)
+                    Store (Divide (Multiply (Local1, 0x0A), 0x40, ), Local1)
+                    Add (Local0, Local1, Local0)
+                    Add (0x0AAC, Local0, Local0)
+                    Store (Local0, PTMP)
+                    Return (Local0)
+                }
+
+                Return (0x0BD6)
+            }
+
+            Method (_PSL, 0, Serialized)  // _PSL: Passive List
+            {
+                If (LEqual (TCNT, 0x08))
+                {
+                    Return (Package (0x08)
+                    {
+                        \_PR.CPU0, 
+                        \_PR.CPU1, 
+                        \_PR.CPU2, 
+                        \_PR.CPU3, 
+                        \_PR.CPU4, 
+                        \_PR.CPU5, 
+                        \_PR.CPU6, 
+                        \_PR.CPU7
+                    })
+                }
+
+                If (LEqual (TCNT, 0x04))
+                {
+                    Return (Package (0x04)
+                    {
+                        \_PR.CPU0, 
+                        \_PR.CPU1, 
+                        \_PR.CPU2, 
+                        \_PR.CPU3
+                    })
+                }
+
+                If (LEqual (TCNT, 0x02))
+                {
+                    Return (Package (0x02)
+                    {
+                        \_PR.CPU0, 
+                        \_PR.CPU1
+                    })
+                }
+
+                Return (Package (0x01)
+                {
+                    \_PR.CPU0
+                })
+            }
+
+            Method (_PSV, 0, Serialized)  // _PSV: Passive Temperature
+            {
+                If (CondRefOf (\_PR.APSV))
+                {
+                    If (LNotEqual (\_PR.APSV, Zero))
+                    {
+                        Return (Add (0x0AAC, Multiply (\_PR.APSV, 0x0A)))
+                    }
+                }
+
+                Return (Add (0x0AAC, Multiply (PSVT, 0x0A)))
+            }
+
+            Method (_TC1, 0, Serialized)  // _TC1: Thermal Constant 1
+            {
+                Return (TC1V)
+            }
+
+            Method (_TC2, 0, Serialized)  // _TC2: Thermal Constant 2
+            {
+                Return (TC2V)
+            }
+
+            Method (_TSP, 0, Serialized)  // _TSP: Thermal Sampling Period
+            {
+                Return (TSPV)
             }
         }
     }
