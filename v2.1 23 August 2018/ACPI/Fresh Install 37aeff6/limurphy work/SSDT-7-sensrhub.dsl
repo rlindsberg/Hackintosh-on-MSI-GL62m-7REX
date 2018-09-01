@@ -81,8 +81,7 @@ DefinitionBlock ("", "SSDT", 2, "INTEL ", "sensrhub", 0x00000000)
                                 If (LGreater (PGCD, Zero))
                                 {
                                     Sleep (PGCD)
-                                    \_SB.GGOV (0x02010016)
-                                    OLDV
+                                    \_SB.GGOV (0x02010016, OLDV)
                                 }
 
                                 If (LEqual (\_SB.GGOV (0x02010016), One))
@@ -102,13 +101,11 @@ DefinitionBlock ("", "SSDT", 2, "INTEL ", "sensrhub", 0x00000000)
                                 Store (DerefOf (Index (Arg3, Zero)), DFUE)
                                 Store (DerefOf (Index (Arg3, One)), DFUD)
                                 Store (\_SB.GGOV (0x02010014), OLDV)
-                                \_SB.GGOV (0x02010014)
-                                DFUE
+                                \_SB.GGOV (0x02010014,DFUE)
                                 If (LGreater (DFUD, Zero))
                                 {
                                     Sleep (DFUD)
-                                    \_SB.GGOV (0x02010014)
-                                    OLDV
+                                    \_SB.GGOV (0x02010014, OLDV)
                                 }
 
                                 Return (Zero)
