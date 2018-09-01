@@ -5,18 +5,18 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-0-SataTabl.aml, Fri Aug 31 15:26:56 2018
+ * Disassembly of SSDT-0.aml, Sat Sep  1 18:39:17 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000322 (802)
+ *     Length           0x00000323 (803)
  *     Revision         0x01
- *     Checksum         0x8A
+ *     Checksum         0x25
  *     OEM ID           "SataRe"
  *     OEM Table ID     "SataTabl"
  *     OEM Revision     0x00001000 (4096)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20160422 (538313762)
+ *     Compiler Version 0x20180427 (538444839)
  */
 DefinitionBlock ("", "SSDT", 1, "SataRe", "SataTabl", 0x00001000)
 {

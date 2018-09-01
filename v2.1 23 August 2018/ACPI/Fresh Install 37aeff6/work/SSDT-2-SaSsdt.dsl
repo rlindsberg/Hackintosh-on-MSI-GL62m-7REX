@@ -5,27 +5,27 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-2-SaSsdt.aml, Fri Aug 31 15:26:57 2018
+ * Disassembly of SSDT-2.aml, Sat Sep  1 18:39:18 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x0000317F (12671)
+ *     Length           0x00002DED (11757)
  *     Revision         0x02
- *     Checksum         0x5F
+ *     Checksum         0xA0
  *     OEM ID           "SaSsdt"
  *     OEM Table ID     "SaSsdt "
  *     OEM Revision     0x00003000 (12288)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20160422 (538313762)
+ *     Compiler Version 0x20180427 (538444839)
  */
 DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003000)
 {
     External (_SB_.PCI0, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.B0D3, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.HDOS, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.GFX0.HNOT, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.GFX0.SNXD, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.IGPU, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.HDOS, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU.HNOT, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU.SNXD, MethodObj)    // 1 Arguments
     External (CPSC, UnknownObj)    // (from opcode)
     External (DSEN, UnknownObj)    // (from opcode)
     External (ECON, IntObj)    // (from opcode)
@@ -164,7 +164,7 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003000)
         Offset (0x1F7)
     }
 
-    Scope (\_SB.PCI0.GFX0)
+    Scope (\_SB.PCI0.IGPU)
     {
         Method (_DOS, 1, NotSerialized)  // _DOS: Disable Output Switching
         {
@@ -1708,7 +1708,7 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003000)
             {
                 If (LAnd (LGreaterEqual (Arg0, Zero), LLessEqual (Arg0, 0x64)))
                 {
-                    \_SB.PCI0.GFX0.AINT (One, Arg0)
+                    \_SB.PCI0.IGPU.AINT (One, Arg0)
                     Store (Arg0, BRTL)
                 }
             }
@@ -2416,7 +2416,7 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003000)
             Store (0x03, CSTS)
             If (LAnd (LEqual (CHPD, Zero), LEqual (Arg1, Zero)))
             {
-                Notify (\_SB.PCI0.GFX0, Arg1)
+                Notify (\_SB.PCI0.IGPU, Arg1)
             }
 
             If (CondRefOf (HNOT))
@@ -2425,7 +2425,7 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003000)
             }
             Else
             {
-                Notify (\_SB.PCI0.GFX0, 0x80)
+                Notify (\_SB.PCI0.IGPU, 0x80)
             }
 
             Return (Zero)
@@ -2595,197 +2595,57 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003000)
             Return (Zero)
         }
 
-        Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+        Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
         {
-            If (LEqual (Arg0, ToUUID ("3e5b41c6-eb1d-4260-9d15-c71fbadae414")))
+            If (LEqual (Arg2, Zero))
             {
-                Switch (ToInteger (Arg2))
+                Return (Buffer (One)
                 {
-                    Case (Zero)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("iGfx Supported Functions Bitmap ", Debug)
-                            Return (0x0001E7FF)
-                        }
-                    }
-                    Case (One)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store (" Adapter Power State Notification ", Debug)
-                            If (LAnd (LEqual (S0ID, One), LLess (OSYS, 0x07DF)))
-                            {
-                                If (LEqual (And (DerefOf (Index (Arg3, Zero)), 0xFF), One))
-                                {
-                                    \GUAM (One)
-                                }
-
-                                Store (And (DerefOf (Index (Arg3, One)), 0xFF), Local0)
-                                If (LEqual (Local0, Zero))
-                                {
-                                    \GUAM (Zero)
-                                }
-                            }
-
-                            If (LEqual (DerefOf (Index (Arg3, Zero)), Zero))
-                            {
-                                Store (CLID, Local0)
-                                If (And (0x80000000, Local0))
-                                {
-                                    And (CLID, 0x0F, CLID)
-                                    GLID (CLID)
-                                }
-                            }
-
-                            Return (One)
-                        }
-                    }
-                    Case (0x02)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("Display Power State Notification ", Debug)
-                            Return (One)
-                        }
-                    }
-                    Case (0x03)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("BIOS POST Completion Notification ", Debug)
-                            Return (One)
-                        }
-                    }
-                    Case (0x04)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("Pre-Hires Set Mode ", Debug)
-                            Return (One)
-                        }
-                    }
-                    Case (0x05)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("Post-Hires Set Mode ", Debug)
-                            Return (One)
-                        }
-                    }
-                    Case (0x06)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("SetDisplayDeviceNotification", Debug)
-                            Return (One)
-                        }
-                    }
-                    Case (0x07)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("SetBootDevicePreference ", Debug)
-                            And (DerefOf (Index (Arg3, Zero)), 0xFF, IBTT)
-                            Return (One)
-                        }
-                    }
-                    Case (0x08)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("SetPanelPreference ", Debug)
-                            And (DerefOf (Index (Arg3, Zero)), 0xFF, IPSC)
-                            If (And (DerefOf (Index (Arg3, One)), 0xFF))
-                            {
-                                And (DerefOf (Index (Arg3, One)), 0xFF, IPAT)
-                                Decrement (IPAT)
-                            }
-
-                            And (ShiftRight (DerefOf (Index (Arg3, 0x02)), 0x04), 0x07, IBIA)
-                            Return (One)
-                        }
-                    }
-                    Case (0x09)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("FullScreenDOS ", Debug)
-                            Return (One)
-                        }
-                    }
-                    Case (0x0A)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("APM Complete ", Debug)
-                            Store (ShiftLeft (LIDS, 0x08), Local0)
-                            Add (Local0, 0x0100, Local0)
-                            Return (Local0)
-                        }
-                    }
-                    Case (0x0D)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("GetBootDisplayPreference ", Debug)
-                            Or (ShiftLeft (DerefOf (Index (Arg3, 0x03)), 0x18), ShiftLeft (DerefOf (Index (Arg3, 0x02)), 0x10), Local0)
-                            And (Local0, 0xEFFF0000, Local0)
-                            And (Local0, ShiftLeft (DerefOf (Index (DBTB, IBTT)), 0x10), Local0)
-                            Or (IBTT, Local0, Local0)
-                            Return (Local0)
-                        }
-                    }
-                    Case (0x0E)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("GetPanelDetails ", Debug)
-                            Store (IPSC, Local0)
-                            Or (Local0, ShiftLeft (IPAT, 0x08), Local0)
-                            Add (Local0, 0x0100, Local0)
-                            Or (Local0, ShiftLeft (LIDS, 0x10), Local0)
-                            Add (Local0, 0x00010000, Local0)
-                            Or (Local0, ShiftLeft (IBIA, 0x14), Local0)
-                            Return (Local0)
-                        }
-                    }
-                    Case (0x0F)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("GetInternalGraphics ", Debug)
-                            Store (GIVD, Local0)
-                            XOr (Local0, One, Local0)
-                            Or (Local0, ShiftLeft (GMFN, One), Local0)
-                            Or (Local0, 0x1800, Local0)
-                            Or (Local0, ShiftLeft (IDMS, 0x11), Local0)
-                            Or (ShiftLeft (DerefOf (Index (DerefOf (Index (CDCT, HVCO)), CDVL)), 0x15), Local0, Local0)
-                            Return (Local0)
-                        }
-                    }
-                    Case (0x10)
-                    {
-                        If (LEqual (Arg1, One))
-                        {
-                            Store ("GetAKSV ", Debug)
-                            Name (KSVP, Package (0x02)
-                            {
-                                0x80000000, 
-                                0x8000
-                            })
-                            Store (KSV0, Index (KSVP, Zero))
-                            Store (KSV1, Index (KSVP, One))
-                            Return (KSVP)
-                        }
-                    }
-
-                }
+                     0x03                                           
+                })
             }
 
-            Return (Buffer (One)
+            Return (Package (0x10)
             {
-                 0x00                                           
+                "AAPL,slot-name", 
+                "Built In", 
+                "name", 
+                "Intel Graphics Controller", 
+                "model", 
+                Buffer (0x16)
+                {
+                    "Intel HD Graphics 630"
+                }, 
+
+                "device_type", 
+                Buffer (0x14)
+                {
+                    "Graphics Controller"
+                }, 
+
+                "device-id", 
+                Buffer (0x04)
+                {
+                     0x16, 0x59, 0x00, 0x00                         
+                }, 
+
+                "AAPL,ig-platform-id", 
+                Buffer (0x04)
+                {
+                     0x00, 0x00, 0x1B, 0x59                         
+                }, 
+
+                "AAPL00,DualLink", 
+                Buffer (0x04)
+                {
+                     0x01, 0x00, 0x00, 0x00                         
+                }, 
+
+                "hda-gfx", 
+                Buffer (0x0A)
+                {
+                    "onboard-1"
+                }
             })
         }
     }
@@ -2810,7 +2670,7 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003000)
         }
     }
 
-    Scope (\_SB.PCI0.GFX0)
+    Scope (\_SB.PCI0.IGPU)
     {
         Device (SKC0)
         {

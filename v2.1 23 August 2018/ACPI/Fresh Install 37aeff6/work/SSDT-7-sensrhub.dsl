@@ -5,18 +5,18 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-7-sensrhub.aml, Fri Aug 31 15:26:57 2018
+ * Disassembly of SSDT-7.aml, Sat Sep  1 18:39:18 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
  *     Length           0x0000029F (671)
  *     Revision         0x02
- *     Checksum         0x48
+ *     Checksum         0x41
  *     OEM ID           "INTEL "
  *     OEM Table ID     "sensrhub"
  *     OEM Revision     0x00000000 (0)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20160422 (538313762)
+ *     Compiler Version 0x20180427 (538444839)
  */
 DefinitionBlock ("", "SSDT", 2, "INTEL ", "sensrhub", 0x00000000)
 {

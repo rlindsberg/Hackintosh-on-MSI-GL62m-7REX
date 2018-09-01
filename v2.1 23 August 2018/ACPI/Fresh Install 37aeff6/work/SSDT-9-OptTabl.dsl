@@ -5,18 +5,18 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-9-OptTabl.aml, Fri Aug 31 15:26:58 2018
+ * Disassembly of SSDT-9.aml, Sat Sep  1 18:39:18 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00001A94 (6804)
+ *     Length           0x00001AD4 (6868)
  *     Revision         0x01
- *     Checksum         0x93
+ *     Checksum         0x43
  *     OEM ID           "OptRef"
  *     OEM Table ID     "OptTabl"
  *     OEM Revision     0x00001000 (4096)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20160422 (538313762)
+ *     Compiler Version 0x20180427 (538444839)
  */
 DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
 {
@@ -40,8 +40,8 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
     External (_PR_.CPU7.CPPC, IntObj)    // (from opcode)
     External (_PR_.HWPV, UnknownObj)    // (from opcode)
     External (_SB_.PCI0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0._DSM, MethodObj)    // 4 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU._DSM, MethodObj)    // 4 Arguments (from opcode)
     External (_SB_.PCI0.LPCB.EC__.BE06, UnknownObj)    // (from opcode)
     External (_SB_.PCI0.LPCB.EC__.PSNM, UnknownObj)    // (from opcode)
     External (_SB_.PCI0.LPCB.EC__.QDXF, UnknownObj)    // (from opcode)
@@ -173,17 +173,9 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
 
         Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
         {
-            If (LEqual (OPCE, 0x03))
-            {
-                If (LEqual (DGPS, Zero))
-                {
-                    _OFF ()
-                    Store (One, DGPS)
-                }
-
-                Store (0x02, OPCE)
-            }
-
+            _OFF ()
+            Store (One, DGPS)
+            Store (0x02, OPCE)
             Store (0x03, _PSC)
         }
 
@@ -254,10 +246,32 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
             Return (0x80000001)
         }
 
-        Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+        Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
         {
-            CreateByteField (Arg0, 0x03, GUID)
-            Return (\_SB.PCI0.GFX0.HDSM (Arg0, Arg1, Arg2, Arg3))
+            If (LNot (Arg2))
+            {
+                Return (Buffer (One)
+                {
+                     0x03                                           
+                })
+            }
+
+            Return (Package (0x06)
+            {
+                "name", 
+                Buffer (0x09)
+                {
+                    "#display"
+                }, 
+
+                "IOName", 
+                "#display", 
+                "class-code", 
+                Buffer (0x04)
+                {
+                     0xFF, 0xFF, 0xFF, 0xFF                         
+                }
+            })
         }
 
         Name (CTXT, Zero)
@@ -324,10 +338,11 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
         }
     }
 
-    Scope (\_SB.PCI0.GFX0)
+    Scope (\_SB.PCI0.IGPU)
     {
         Method (_INI, 0, NotSerialized)  // _INI: Initialize
         {
+            \_SB.PCI0.PEG0.PEGP._PS3 ()
             Store (DID1, Index (TLPK, Zero))
             Store (DID2, Index (TLPK, 0x02))
             Store (DID3, Index (TLPK, 0x04))
@@ -642,7 +657,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                     {
                         And (Local0, 0x0F, Local0)
                         Store (Local0, GPSS)
-                        Notify (\_SB.PCI0.GFX0, 0xD9)
+                        Notify (\_SB.PCI0.IGPU, 0xD9)
                         Notify (\_SB.PCI0.WMI1, 0xD9)
                     }
                     Else
@@ -1208,9 +1223,9 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                         CreateDWordField (Arg2, 0x10, REVI)
                         CreateDWordField (Arg2, 0x14, SFNC)
                         CreateField (Arg2, 0xE0, 0x20, XRG0)
-                        If (CondRefOf (\_SB.PCI0.GFX0._DSM))
+                        If (CondRefOf (\_SB.PCI0.IGPU._DSM))
                         {
-                            Return (\_SB.PCI0.GFX0._DSM (MUID, REVI, SFNC, XRG0))
+                            Return (\_SB.PCI0.IGPU._DSM (MUID, REVI, SFNC, XRG0))
                         }
                     }
                 }
