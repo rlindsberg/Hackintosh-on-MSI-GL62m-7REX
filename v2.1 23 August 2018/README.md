@@ -196,7 +196,6 @@ sudo pmset -a autopoweroff 0
 
 ```sh
 sudo spctl --master-disable
-
 ```
 10. Show hidden files
 
