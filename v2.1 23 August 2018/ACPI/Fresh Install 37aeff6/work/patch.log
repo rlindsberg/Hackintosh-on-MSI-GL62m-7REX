@@ -1,0 +1,11 @@
+Linnes-MacBook-Pro:work linnelind$ grep -l Method.*_OFF *.dsl
+DSDT.dsl
+SSDT-3-PegSsdt.dsl
+SSDT-4-RV11Rtd3.dsl
+SSDT-5-Ther_Rvp.dsl
+SSDT-9-OptTabl.dsl
+
+Linnes-MacBook-Pro:work linnelind$ grep -l Method.*_INI *.dsl
+DSDT.dsl
+SSDT-3-PegSsdt.dsl
+SSDT-9-OptTabl.dsl
