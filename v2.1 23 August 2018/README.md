@@ -71,15 +71,50 @@ https://github.com/BarbaraPalvin/IntelGraphicsDVMTFixup
 
 ### BIOS settings
 
+1. Main
+
+2. Advanced
+  * Win/Fn Key Swap = Enabled
+  * VT-d = Disabled
+  * Power & Performance -> CPU -> Boot performance mode = Turbo Performance
+  * Power & Performance -> CPU -> Intel(R) Speed Shift Technology = Enabled
+  * Power & Performance -> CPU -> CPU Lock Configuration -> CFG Lock = Disabled
+  * System Agent (SA) Configuration -> Graphics Configuration -> Skip Scaning of External Gfx Card = Enabled
+  * System Agent (SA) Configuration -> Graphics Configuration -> DVMT Pre-Allocated = 64M
+  * Overclocking Performance Menu -> Overclocking Feature = Enabled
+  * Overclocking Performance Menu -> XTU Interface = Enabled
+  * Overclocking Performance Menu -> Processor -> Core Voltage Offset = 150
+  * Overclocking Performance Menu -> Processor -> Offset Prefix = -
+
+3. Boot
+  * Fast Boot = Disabled
+
+  * FIXED BOOT ORDER Priorities
+    1. Hard Disk
+    2. USB CD/DVD
+    3. USB Hard Disk
+    4. Network
+    5. CD/DVD
+
+  * UEFI Hard Disk Drive BBS Priorities
+    1. UEFI OS (HP SSD...)
+    2. Windows Boot Manager (P2: TS1...)
+
+4. Security
+  * Secure Boot -> Attempt Secure Boot = Disabled
+
+
 In order to boot the Clover from the USB, you should visit your BIOS settings:
 - "VT-d" (virtualization for directed i/o) should be disabled if possible (the config.plist includes dart=0 in case you can't do this)
-- "DEP" (data execution prevention) should be enabled for OS X
 - "secure boot " should be disabled
 - "legacy boot" optional (recommend enabled, but boot UEFI if you have it)
-- "CSM" (compatibility support module) enabled or disabled (varies) (recommend enabled, but boot UEFI)
 - "fast boot" (if available) should be disabled.
 - "boot from USB" or "boot from external" enabled
 - SATA mode (if available) should be AHCI
+
+- "DEP" (data execution prevention) should be enabled for OS X
+- "CSM" (compatibility support module) enabled or disabled (varies) (recommend enabled, but boot UEFI)
+
 
 ### Disable dGPU
 Disable GPU in ACPI as per this guide: https://www.tonymacx86.com/threads/guide-disabling-discrete-graphics-in-dual-gpu-laptops.163772/
@@ -171,6 +206,48 @@ killall Finder
 ```
 
 11. Map keyboard. Install Karabiner, map from key "delete_forward" to key "eject"
+
+
+## Patching LAPTOP DSDT/SSDTs
+Credit: RehabMan (https://www.tonymacx86.com/threads/guide-patching-laptop-dsdt-ssdts.152573/)
+
+Advanced users may wish to implement hotpatching via Clover. See guide here: http://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/
+
+**Keep in mind that even changes you make to your own system (BIOS, hardware, etc.) will require re-extract, re-patch.**
+
+If any of the following is changed, you must re-extract, re-patch, as these changes may cause significant changes to the native ACPI (especially SystemMemory regions):
+- updating BIOS
+- changing any BIOS option
+- changing hardware or memory configuration
+
+The process of patching involves several steps:
+- extracting native files
+- disassembling the native files
+- analysing the native files
+- patching
+- saving (compiling) and installing
+
+Sometimes, Clover F4 will write duplicate SSDTs. These duplicates will cause problems during disassembly. If you run into issues (duplicate definitions) during disassembly, you will need to analyse all SSDTs to eliminate the files which are duplicate. It is easy to see which are duplicates by looking at the file sizes. Files with equal size are likely duplicates.
+
+### Preparing tools for disassembly
+To properly disassemble your extracted files, you need the iasl compiler, which is run from Terminal.
+
+You will need a recent build of iasl to disassemble them properly. There is an appropriate version available here: https://bitbucket.org/RehabMan/acpica/downloads/. It is a good idea to copy the iasl binary to your path (eg. /usr/bin), so it is easily accessed from Terminal.
+
+### Disassembling ACPI files
+Opening an AML file directly in MaciASL will cause MaciASL to disassemble the file (with iasl) standalone, and if the AML has complex references to other AMLs, it will not disassemble it correctly. You'll be left with many hard to fix errors.
+
+Disassemble all files as a group using iasl in Terminal. To prepare, place all DSDT and SSDT files in a single directory (DO NOT copy ACPI files that don't begin with DSDT or SSDT), and change the names such that they have an .aml extension.
+
+Then disassemble in OS X Terminal:
+
+```sh
+iasl -da -dl DSDT.aml SSDT*.aml
+```
+
+Note: Also read the section below regarding refs.txt. Using refs.txt takes little more effort, but can eliminate many common errors.
+
+
 
 
 # Problems remaining:
