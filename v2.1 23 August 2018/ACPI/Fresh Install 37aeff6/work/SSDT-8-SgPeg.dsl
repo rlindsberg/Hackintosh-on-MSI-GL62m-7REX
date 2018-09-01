@@ -5,18 +5,18 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-8-SgPeg.aml, Fri Aug 31 15:26:58 2018
+ * Disassembly of SSDT-8.aml, Sat Sep  1 18:39:18 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
  *     Length           0x000000AE (174)
  *     Revision         0x02
- *     Checksum         0x80
+ *     Checksum         0x79
  *     OEM ID           "SgRef"
  *     OEM Table ID     "SgPeg"
  *     OEM Revision     0x00001000 (4096)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20160422 (538313762)
+ *     Compiler Version 0x20180427 (538444839)
  */
 DefinitionBlock ("", "SSDT", 2, "SgRef", "SgPeg", 0x00001000)
 {

@@ -5,18 +5,18 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Fri Aug 31 15:26:56 2018
+ * Disassembly of DSDT.aml, Sat Sep  1 18:39:17 2018
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x0002818E (164238)
+ *     Length           0x00028940 (166208)
  *     Revision         0x02
- *     Checksum         0xD1
+ *     Checksum         0x46
  *     OEM ID           "MSI_NB"
  *     OEM Table ID     "MEGABOOK"
  *     OEM Revision     0x01072009 (17244169)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20160422 (538313762)
+ *     Compiler Version 0x20180427 (538444839)
  */
 DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 {
@@ -52,50 +52,50 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
     External (_PR_.TRPD, UnknownObj)    // (from opcode)
     External (_PR_.TRPF, UnknownObj)    // (from opcode)
     External (_SB_.IETM, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.ALSI, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.CBLV, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.CDCK, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.CLID, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.CPL2, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.CPL3, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.CPL4, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD01, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD02, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD03, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD04, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD05, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD06, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD07, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD08, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD1F, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.GHDS, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.GFX0.GSCI, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.GFX0.GSSE, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.IUEH, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.GFX0.STAT, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.TCHE, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.HDAS.PPMS, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.HDAS.PS0X, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.HDAS.PS3X, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.HDEF.PS0X, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.HDEF.PS3X, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU._DOS, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU.ALSI, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CBLV, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CDCK, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CLID, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CPL2, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CPL3, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CPL4, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD01, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD02, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD03, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD04, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD05, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD06, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD07, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD08, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD1F, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.GHDS, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU.GSCI, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU.GSSE, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.IUEH, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU.STAT, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.TCHE, UnknownObj)    // (from opcode)
     External (_SB_.PCI0.LPCB.H_EC.CHRG, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.LPCB.H_EC.XDAT, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.LTRE, FieldUnitObj)
+    External (_SB_.PCI0.LTRE, FieldUnitObj)    // (from opcode)
     External (_SB_.PCI0.PAUD.PUAM, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.PEG0.ASPM, UnknownObj)    // (from opcode)
     External (_SB_.PCI0.PEG0.PEGP.DD1F, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.PEG0.PEGP.EASP, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.RP05.PWRG, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCI0.RP05.RSTG, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCI0.RP05.SCLK, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCI0.RP09.PWRG, PkgObj)
-    External (_SB_.PCI0.RP09.RSTG, PkgObj)
-    External (_SB_.PCI0.RP09.SCLK, PkgObj)
-    External (_SB_.PCI0.RP13.PWRG, PkgObj)
-    External (_SB_.PCI0.RP13.RSTG, PkgObj)
-    External (_SB_.PCI0.RP13.SCLK, PkgObj)
-    External (_SB_.PCI0.RP17.PWRG, PkgObj)
-    External (_SB_.PCI0.RP17.RSTG, PkgObj)
-    External (_SB_.PCI0.RP17.SCLK, PkgObj)
+    External (_SB_.PCI0.RP05.PWRG, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.RP05.RSTG, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.RP05.SCLK, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.RP09.PWRG, PkgObj)    // (from opcode)
+    External (_SB_.PCI0.RP09.RSTG, PkgObj)    // (from opcode)
+    External (_SB_.PCI0.RP09.SCLK, PkgObj)    // (from opcode)
+    External (_SB_.PCI0.RP13.PWRG, PkgObj)    // (from opcode)
+    External (_SB_.PCI0.RP13.RSTG, PkgObj)    // (from opcode)
+    External (_SB_.PCI0.RP13.SCLK, PkgObj)    // (from opcode)
+    External (_SB_.PCI0.RP17.PWRG, PkgObj)    // (from opcode)
+    External (_SB_.PCI0.RP17.RSTG, PkgObj)    // (from opcode)
+    External (_SB_.PCI0.RP17.SCLK, PkgObj)    // (from opcode)
     External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // 4 Arguments (from opcode)
     External (_SB_.PCI0.XHC_.DUAM, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.XHC_.PS0X, MethodObj)    // 0 Arguments (from opcode)
@@ -109,7 +109,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
     External (_TZ_.TZ00, DeviceObj)    // (from opcode)
     External (_TZ_.TZ01, DeviceObj)    // (from opcode)
     External (ALSE, UnknownObj)    // (from opcode)
-    External (BNUM, UnknownObj)    // (from opcode)    // Conflicts with a later declaration
+    External (BNUM, UnknownObj)    // (from opcode)
     External (BRTL, UnknownObj)    // (from opcode)
     External (CRBI, UnknownObj)    // (from opcode)
     External (DIDX, UnknownObj)    // (from opcode)
@@ -118,6 +118,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
     External (LHIH, UnknownObj)    // (from opcode)
     External (LIDS, UnknownObj)    // (from opcode)
     External (LLOW, UnknownObj)    // (from opcode)
+    External (LTRE, IntObj)    // (from opcode)
     External (M32B, UnknownObj)    // (from opcode)
     External (M32L, UnknownObj)    // (from opcode)
     External (M64B, UnknownObj)    // (from opcode)
@@ -215,7 +216,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
     Name (SS3, One)
     Name (SS4, One)
     Name (IOST, 0xFFFF)
-    Name (TOPM, 0x00000000)
+    Name (TOPM, Zero)
     Name (ROMS, 0xFFE00000)
     Name (VGAF, One)
     OperationRegion (GNVS, SystemMemory, 0x8AF9D000, 0x06E0)
@@ -4218,9 +4219,214 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
             Scope (\_SB.PCI0)
             {
-                Device (GFX0)
+                Device (IGPU)
                 {
                     Name (_ADR, 0x00020000)  // _ADR: Address
+                    OperationRegion (RMPC, PCI_Config, 0x10, 0x04)
+                    Field (RMPC, AnyAcc, NoLock, Preserve)
+                    {
+                        BAR1,   32
+                    }
+
+                    Device (PNLF)
+                    {
+                        Name (_ADR, Zero)  // _ADR: Address
+                        Name (_HID, EisaId ("APP0002"))  // _HID: Hardware ID
+                        Name (_CID, "backlight")  // _CID: Compatible ID
+                        Name (_UID, 0x0F)  // _UID: Unique ID
+                        Name (_STA, 0x0B)  // _STA: Status
+                        OperationRegion (BRIT, SystemMemory, And (BAR1, 0xFFFFFFFFFFFFFFF0), 0x000E1184)
+                        Field (BRIT, AnyAcc, Lock, Preserve)
+                        {
+                            Offset (0x48250), 
+                            LEV2,   32, 
+                            LEVL,   32, 
+                            Offset (0x70040), 
+                            P0BL,   32, 
+                            Offset (0xC8250), 
+                            LEVW,   32, 
+                            LEVX,   32, 
+                            Offset (0xE1180), 
+                            PCHL,   32
+                        }
+
+                        Name (LMAX, 0x056C)
+                        Name (KMAX, 0x056C)
+                        Method (_INI, 0, NotSerialized)  // _INI: Initialize
+                        {
+                            Store (0xC0000000, LEVW)
+                            If (LNot (LMAX))
+                            {
+                                Store (ShiftRight (LEVX, 0x10), LMAX)
+                            }
+
+                            If (LNot (LMAX))
+                            {
+                                Store (KMAX, LMAX)
+                            }
+
+                            If (LNotEqual (LMAX, KMAX))
+                            {
+                                Store (Zero, Local0)
+                                While (LLess (Local0, SizeOf (_BCL)))
+                                {
+                                    Store (DerefOf (Index (_BCL, Local0)), Local1)
+                                    Divide (Multiply (Local1, LMAX), KMAX, , Local1)
+                                    Store (Local1, Index (_BCL, Local0))
+                                    Increment (Local0)
+                                }
+
+                                Divide (Multiply (XRGL, LMAX), KMAX, , XRGL)
+                                Divide (Multiply (XRGH, LMAX), KMAX, , XRGH)
+                            }
+
+                            Store (ShiftRight (LEVX, 0x10), Local1)
+                            If (LNotEqual (Local1, LMAX))
+                            {
+                                Store (And (LEVX, 0xFFFF), Local0)
+                                If (LOr (LNot (Local0), LNot (Local1)))
+                                {
+                                    Store (LMAX, Local0)
+                                    Store (LMAX, Local1)
+                                }
+
+                                Divide (Multiply (Local0, LMAX), Local1, , Local0)
+                                Store (Or (Local0, ShiftLeft (LMAX, 0x10)), LEVX)
+                            }
+                        }
+
+                        Method (_BCM, 1, NotSerialized)  // _BCM: Brightness Control Method
+                        {
+                            Store (Match (_BCL, MGE, Arg0, MTR, Zero, 0x02), Local0)
+                            If (LEqual (Local0, Ones))
+                            {
+                                Subtract (SizeOf (_BCL), One, Local0)
+                            }
+
+                            Store (Or (DerefOf (Index (_BCL, Local0)), ShiftLeft (LMAX, 0x10)), LEVX)
+                        }
+
+                        Method (_BQC, 0, NotSerialized)  // _BQC: Brightness Query Current
+                        {
+                            Store (Match (_BCL, MGE, And (LEVX, 0xFFFF), MTR, Zero, 0x02), Local0)
+                            If (LEqual (Local0, Ones))
+                            {
+                                Subtract (SizeOf (_BCL), One, Local0)
+                            }
+
+                            Return (DerefOf (Index (_BCL, Local0)))
+                        }
+
+                        Method (_DOS, 1, NotSerialized)  // _DOS: Disable Output Switching
+                        {
+                            ^^_DOS (Arg0)
+                        }
+
+                        Method (XBCM, 1, NotSerialized)
+                        {
+                            If (LGreater (Arg0, XRGH))
+                            {
+                                Store (XRGH, Arg0)
+                            }
+
+                            If (LAnd (Arg0, LLess (Arg0, XRGL)))
+                            {
+                                Store (XRGL, Arg0)
+                            }
+
+                            Store (Or (Arg0, ShiftLeft (LMAX, 0x10)), LEVX)
+                        }
+
+                        Method (XBQC, 0, NotSerialized)
+                        {
+                            Store (And (LEVX, 0xFFFF), Local0)
+                            If (LGreater (Local0, XRGH))
+                            {
+                                Store (XRGH, Local0)
+                            }
+
+                            If (LAnd (Local0, LLess (Local0, XRGL)))
+                            {
+                                Store (XRGL, Local0)
+                            }
+
+                            Return (Local0)
+                        }
+
+                        Name (XOPT, 0x02)
+                        Name (XRGL, 0x19)
+                        Name (XRGH, 0x0AD9)
+                        Name (_BCL, Package (0x43)  // _BCL: Brightness Control Levels
+                        {
+                            0x0AD9, 
+                            0x02EC, 
+                            Zero, 
+                            0x23, 
+                            0x27, 
+                            0x2C, 
+                            0x32, 
+                            0x3A, 
+                            0x43, 
+                            0x4D, 
+                            0x58, 
+                            0x65, 
+                            0x73, 
+                            0x82, 
+                            0x93, 
+                            0xA5, 
+                            0xB8, 
+                            0xCC, 
+                            0xE2, 
+                            0xF9, 
+                            0x0111, 
+                            0x012B, 
+                            0x0146, 
+                            0x0162, 
+                            0x017F, 
+                            0x019E, 
+                            0x01BE, 
+                            0x01DF, 
+                            0x0202, 
+                            0x0225, 
+                            0x024B, 
+                            0x0271, 
+                            0x0299, 
+                            0x02C2, 
+                            0x02EC, 
+                            0x0317, 
+                            0x0344, 
+                            0x0372, 
+                            0x03A2, 
+                            0x03D2, 
+                            0x0404, 
+                            0x0437, 
+                            0x046C, 
+                            0x04A2, 
+                            0x04D9, 
+                            0x0511, 
+                            0x054B, 
+                            0x0586, 
+                            0x05C2, 
+                            0x05FF, 
+                            0x063E, 
+                            0x067E, 
+                            0x06C0, 
+                            0x0702, 
+                            0x0746, 
+                            0x078B, 
+                            0x07D2, 
+                            0x081A, 
+                            0x0863, 
+                            0x08AD, 
+                            0x08F8, 
+                            0x0945, 
+                            0x0994, 
+                            0x09E3, 
+                            0x0A34, 
+                            0x0A86, 
+                            0x0AD9
+                        })
+                    }
                 }
 
                 Device (B0D4)
@@ -10391,12 +10597,20 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
     })
     Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
     {
-        If (Arg0)
+        If (LNotEqual (Arg0, 0x05))
         {
-            \_SB.TPM.TPTS (Arg0)
-            \_SB.PCI0.LPCB.SPTS (Arg0)
-            \_SB.PCI0.NPTS (Arg0)
-            RPTS (Arg0)
+            If (Arg0)
+            {
+                \_SB.TPM.TPTS (Arg0)
+                \_SB.PCI0.LPCB.SPTS (Arg0)
+                \_SB.PCI0.NPTS (Arg0)
+                RPTS (Arg0)
+            }
+        }
+
+        If (LEqual (0x05, Arg0))
+        {
+            Store (Zero, \_SB.PCI0.XHC.PMEE)
         }
     }
 
@@ -10770,7 +10984,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             Name (_HID, "ACPI000C")  // _HID: Hardware ID
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (_OSI ("Processor Aggregator Device"))
+                If (XOSI ("Processor Aggregator Device"))
                 {
                     Return (0x0F)
                 }
@@ -10874,7 +11088,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
     {
         If (LEqual (And (DIDX, 0x0F00), 0x0400))
         {
-            Notify (\_SB.PCI0.GFX0.DD1F, Arg0)
+            Notify (\_SB.PCI0.IGPU.DD1F, Arg0)
         }
     }
 
@@ -12037,7 +12251,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         Method (_L6D, 0, Serialized)  // _Lxx: Level-Triggered GPE
         {
             \_SB.PCI0.XHC.GPEH ()
-            \_SB.PCI0.HDAS.GPEH ()
+            \_SB.PCI0.HDEF.GPEH ()
             \_SB.PCI0.GLAN.GPEH ()
             \_SB.PCI0.XDCI.GPEH ()
         }
@@ -12786,7 +13000,11 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
-                Return (GPRW (0x6D, 0x04))
+                Return (Package (0x02)
+                {
+                    0x6D, 
+                    Zero
+                })
             }
 
             Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
@@ -12929,7 +13147,11 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
-                Return (GPRW (0x6D, 0x03))
+                Return (Package (0x02)
+                {
+                    0x6D, 
+                    Zero
+                })
             }
 
             Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
@@ -13532,7 +13754,11 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
-                Return (GPRW (0x6D, 0x04))
+                Return (Package (0x02)
+                {
+                    0x6D, 
+                    Zero
+                })
             }
 
             Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
@@ -13559,7 +13785,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
     Scope (_SB.PCI0)
     {
-        Device (HDAS)
+        Device (HDEF)
         {
             Name (_ADR, 0x001F0003)  // _ADR: Address
             OperationRegion (HDAR, PCI_Config, Zero, 0x0100)
@@ -13585,7 +13811,11 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
-                Return (GPRW (0x6D, 0x04))
+                Return (Package (0x02)
+                {
+                    0x6D, 
+                    Zero
+                })
             }
 
             Method (GPEH, 0, NotSerialized)
@@ -13599,7 +13829,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 {
                     ADBG ("HDAS GPEH")
                     Store (One, PMES)
-                    Notify (HDAS, 0x02)
+                    Notify (HDEF, 0x02)
                 }
             }
 
@@ -13610,7 +13840,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     VMMH (Zero, One)
                 }
 
-                If (CondRefOf (\_SB.PCI0.HDAS.PS0X))
+                If (CondRefOf (\_SB.PCI0.HDEF.PS0X))
                 {
                     PS0X ()
                 }
@@ -13623,7 +13853,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     VMMH (Zero, Zero)
                 }
 
-                If (CondRefOf (\_SB.PCI0.HDAS.PS3X))
+                If (CondRefOf (\_SB.PCI0.HDEF.PS3X))
                 {
                     PS3X ()
                 }
@@ -13642,9 +13872,9 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
                 ADBG ("HDAS _INI")
-                CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y1A._MIN, NBAS)  // _MIN: Minimum Base Address
-                CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y1A._MAX, NMAS)  // _MAX: Maximum Base Address
-                CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y1A._LEN, NLEN)  // _LEN: Length
+                CreateQWordField (NBUF, \_SB.PCI0.HDEF._Y1A._MIN, NBAS)  // _MIN: Minimum Base Address
+                CreateQWordField (NBUF, \_SB.PCI0.HDEF._Y1A._MAX, NMAS)  // _MAX: Maximum Base Address
+                CreateQWordField (NBUF, \_SB.PCI0.HDEF._Y1A._LEN, NLEN)  // _LEN: Length
                 Store (NHLA, NBAS)
                 Add (NHLA, Subtract (NHLL, One), NMAS)
                 Store (NHLL, NLEN)
@@ -13652,64 +13882,6 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 {
                     VMMH (Zero, One)
                 }
-            }
-
-            Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
-            {
-                ADBG ("HDAS _DSM")
-                If (PCIC (Arg0))
-                {
-                    Return (PCID (Arg0, Arg1, Arg2, Arg3))
-                }
-
-                If (LEqual (Arg0, ToUUID ("a69f886e-6ceb-4594-a41f-7b5dce24c553")))
-                {
-                    Switch (ToInteger (Arg2))
-                    {
-                        Case (Zero)
-                        {
-                            Return (Buffer (One)
-                            {
-                                 0x0F                                           
-                            })
-                        }
-                        Case (One)
-                        {
-                            ADBG ("_DSM Fun 1 NHLT")
-                            Return (NBUF)
-                        }
-                        Case (0x02)
-                        {
-                            ADBG ("_DSM Fun 2 FMSK")
-                            Return (ADFM)
-                        }
-                        Case (0x03)
-                        {
-                            ADBG ("_DSM Fun 3 PPMS")
-                            If (CondRefOf (\_SB.PCI0.HDAS.PPMS))
-                            {
-                                Return (PPMS (Arg3))
-                            }
-
-                            Return (Zero)
-                        }
-                        Default
-                        {
-                            ADBG ("_DSM Fun NOK")
-                            Return (Buffer (One)
-                            {
-                                 0x00                                           
-                            })
-                        }
-
-                    }
-                }
-
-                ADBG ("_DSM UUID NOK")
-                Return (Buffer (One)
-                {
-                     0x00                                           
-                })
             }
         }
 
@@ -17563,7 +17735,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
     Scope (_SB.PCI0)
     {
-        Device (HECI)
+        Device (IMEI)
         {
             Name (_ADR, 0x00160000)  // _ADR: Address
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
@@ -17817,39 +17989,39 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         D8XH (One, 0xAB)
         ADBG ("_WAK")
         \_SB.PCI0.GEXP.INVC ()
-        If (_OSI ("Windows 2015"))
+        If (XOSI ("Windows 2015"))
         {
             Store (0x05, \_SB.PCI0.LPCB.EC.OSVR)
         }
-        ElseIf (_OSI ("Windows 2013"))
+        ElseIf (XOSI ("Windows 2013"))
         {
             Store (0x05, \_SB.PCI0.LPCB.EC.OSVR)
         }
-        ElseIf (_OSI ("Windows 2012"))
+        ElseIf (XOSI ("Windows 2012"))
         {
             Store (0x04, \_SB.PCI0.LPCB.EC.OSVR)
         }
-        ElseIf (_OSI ("Windows 2009"))
+        ElseIf (XOSI ("Windows 2009"))
         {
             Store (0x03, \_SB.PCI0.LPCB.EC.OSVR)
         }
-        ElseIf (_OSI ("Windows 2006"))
+        ElseIf (XOSI ("Windows 2006"))
         {
             Store (0x02, \_SB.PCI0.LPCB.EC.OSVR)
         }
-        ElseIf (_OSI ("Windows 2001"))
+        ElseIf (XOSI ("Windows 2001"))
         {
             Store (One, \_SB.PCI0.LPCB.EC.OSVR)
         }
-        ElseIf (_OSI ("Windows 2001 SP1"))
+        ElseIf (XOSI ("Windows 2001 SP1"))
         {
             Store (One, \_SB.PCI0.LPCB.EC.OSVR)
         }
-        ElseIf (_OSI ("Windows 2001 SP2"))
+        ElseIf (XOSI ("Windows 2001 SP2"))
         {
             Store (One, \_SB.PCI0.LPCB.EC.OSVR)
         }
-        ElseIf (_OSI ("Windows 2001 SP3"))
+        ElseIf (XOSI ("Windows 2001 SP3"))
         {
             Store (One, \_SB.PCI0.LPCB.EC.OSVR)
         }
@@ -17876,12 +18048,12 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         {
             If (And (GBSX, 0x40))
             {
-                \_SB.PCI0.GFX0.IUEH (0x06)
+                \_SB.PCI0.IGPU.IUEH (0x06)
             }
 
             If (And (GBSX, 0x80))
             {
-                \_SB.PCI0.GFX0.IUEH (0x07)
+                \_SB.PCI0.IGPU.IUEH (0x07)
             }
 
             If (LEqual (ECON, One))
@@ -17893,12 +18065,12 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     {
                         If (LEqual (LIDS, Zero))
                         {
-                            Store (0x80000000, \_SB.PCI0.GFX0.CLID)
+                            Store (0x80000000, \_SB.PCI0.IGPU.CLID)
                         }
 
                         If (LEqual (LIDS, One))
                         {
-                            Store (0x80000003, \_SB.PCI0.GFX0.CLID)
+                            Store (0x80000003, \_SB.PCI0.IGPU.CLID)
                         }
                     }
 
@@ -18161,13 +18333,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             Notify (\_PR.CPU0, 0x81)
         }
 
-        If (LEqual (ECON, One))
-        {
-            Notify (\_SB.PCI0.LPCB.H_EC.BAT0, 0x81)
-            Notify (\_SB.PCI0.LPCB.H_EC.BAT1, 0x81)
-            Notify (\_SB.PCI0.LPCB.H_EC.BAT2, 0x81)
-        }
-
+        If (LEqual (ECON, One)){}
         If (LEqual (DPTF, One))
         {
             Notify (\_SB.IETM, 0x86)
@@ -18380,54 +18546,54 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         Method (_INI, 0, Serialized)  // _INI: Initialize
         {
             Store (0x07D0, OSYS)
-            If (CondRefOf (\_OSI))
+            If (CondRefOf (\XOSI))
             {
-                If (_OSI ("Linux"))
+                If (XOSI ("Linux"))
                 {
                     Store (0x03E8, OSYS)
                 }
 
-                If (_OSI ("Windows 2001"))
+                If (XOSI ("Windows 2001"))
                 {
                     Store (0x07D1, OSYS)
                 }
 
-                If (_OSI ("Windows 2001 SP1"))
+                If (XOSI ("Windows 2001 SP1"))
                 {
                     Store (0x07D1, OSYS)
                 }
 
-                If (_OSI ("Windows 2001 SP2"))
+                If (XOSI ("Windows 2001 SP2"))
                 {
                     Store (0x07D2, OSYS)
                 }
 
-                If (_OSI ("Windows 2001.1"))
+                If (XOSI ("Windows 2001.1"))
                 {
                     Store (0x07D3, OSYS)
                 }
 
-                If (_OSI ("Windows 2006"))
+                If (XOSI ("Windows 2006"))
                 {
                     Store (0x07D6, OSYS)
                 }
 
-                If (_OSI ("Windows 2009"))
+                If (XOSI ("Windows 2009"))
                 {
                     Store (0x07D9, OSYS)
                 }
 
-                If (_OSI ("Windows 2012"))
+                If (XOSI ("Windows 2012"))
                 {
                     Store (0x07DC, OSYS)
                 }
 
-                If (_OSI ("Windows 2013"))
+                If (XOSI ("Windows 2013"))
                 {
                     Store (0x07DD, OSYS)
                 }
 
-                If (_OSI ("Windows 2015"))
+                If (XOSI ("Windows 2015"))
                 {
                     Store (0x07DF, OSYS)
                 }
@@ -19831,9 +19997,9 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
         Method (_L66, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            If (LAnd (\_SB.PCI0.GFX0.GSSE, LNot (GSMI)))
+            If (LAnd (\_SB.PCI0.IGPU.GSSE, LNot (GSMI)))
             {
-                \_SB.PCI0.GFX0.GSCI ()
+                \_SB.PCI0.IGPU.GSCI ()
             }
         }
 
@@ -28155,7 +28321,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         }
     }
 
-    Scope (_SB.PCI0.GFX0)
+    Scope (_SB.PCI0.IGPU)
     {
         Method (_DEP, 0, NotSerialized)  // _DEP: Dependencies
         {
@@ -29775,7 +29941,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
                 Package (0x03)
                 {
-                    "\\_SB.PCI0.GFX0", 
+                    "\\_SB.PCI0.IGPU", 
                     One, 
                     Package (0x02)
                     {
@@ -35696,7 +35862,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         }
     }
 
-    Scope (_SB.PCI0.HDAS)
+    Scope (_SB.PCI0.HDEF)
     {
         Method (PPMS, 1, Serialized)
         {
@@ -35754,29 +35920,16 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             Name (_UID, Zero)  // _UID: Unique ID
             Name (BUF0, ResourceTemplate ()
             {
+                IRQNoFlags ()
+                    {0,8,11,15}
                 Memory32Fixed (ReadWrite,
                     0xFED00000,         // Address Base
                     0x00000400,         // Address Length
-                    _Y37)
+                    )
             })
-            Method (_STA, 0, NotSerialized)  // _STA: Status
+            Name (_STA, 0x0F)  // _STA: Status
+            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
-                If (HPTE)
-                {
-                    Return (0x0F)
-                }
-
-                Return (Zero)
-            }
-
-            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
-            {
-                If (HPTE)
-                {
-                    CreateDWordField (BUF0, \_SB.PCI0.LPCB.HPET._Y37._BAS, HPT0)  // _BAS: Base Address
-                    Store (HPTB, HPT0)
-                }
-
                 Return (BUF0)
             }
         }
@@ -35888,8 +36041,6 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     0x01,               // Alignment
                     0x02,               // Length
                     )
-                IRQNoFlags ()
-                    {2}
             })
         }
 
@@ -36060,10 +36211,8 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     0x0070,             // Range Minimum
                     0x0070,             // Range Maximum
                     0x01,               // Alignment
-                    0x08,               // Length
+                    0x02,               // Length
                     )
-                IRQNoFlags ()
-                    {8}
             })
         }
 
@@ -36084,8 +36233,6 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     0x10,               // Alignment
                     0x04,               // Length
                     )
-                IRQNoFlags ()
-                    {0}
             })
         }
 
@@ -36187,7 +36334,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             Name (_UID, One)  // _UID: Unique ID
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                Store (0x03, ^^^GFX0.CLID)
+                Store (0x03, ^^^IGPU.CLID)
                 Return (Zero)
             }
 
@@ -36436,43 +36583,56 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
             }
 
-            Device (BAT0)
+            Method (RE1B, 1, NotSerialized)
             {
-                Name (_HID, EisaId ("PNP0C0A"))  // _HID: Hardware ID
-                Name (_UID, Zero)  // _UID: Unique ID
-                Method (_STA, 0, NotSerialized)  // _STA: Status
+                OperationRegion (ERAM, EmbeddedControl, Arg0, One)
+                Field (ERAM, ByteAcc, NoLock, Preserve)
                 {
-                    Return (Zero)
+                    BYTE,   8
                 }
+
+                Return (BYTE)
             }
 
-            Device (BAT1)
+            Method (RECB, 2, Serialized)
             {
-                Name (_HID, EisaId ("PNP0C0A"))  // _HID: Hardware ID
-                Name (_UID, One)  // _UID: Unique ID
-                Method (_STA, 0, NotSerialized)  // _STA: Status
+                ShiftRight (Arg1, 0x03, Arg1)
+                Name (TEMP, Buffer (Arg1){})
+                Add (Arg0, Arg1, Arg1)
+                Store (Zero, Local0)
+                While (LLess (Arg0, Arg1))
                 {
-                    Return (Zero)
+                    Store (RE1B (Arg0), Index (TEMP, Local0))
+                    Increment (Arg0)
+                    Increment (Local0)
                 }
 
-                Method (_BST, 0, NotSerialized)  // _BST: Battery Status
-                {
-                    Return (BST1 ())
-                }
+                Return (TEMP)
             }
 
-            Device (BAT2)
+            Method (WE1B, 2, NotSerialized)
             {
-                Name (_HID, EisaId ("PNP0C0A"))  // _HID: Hardware ID
-                Name (_UID, 0x02)  // _UID: Unique ID
-                Method (_STA, 0, NotSerialized)  // _STA: Status
+                OperationRegion (ERAM, EmbeddedControl, Arg0, One)
+                Field (ERAM, ByteAcc, NoLock, Preserve)
                 {
-                    Return (Zero)
+                    BYTE,   8
                 }
 
-                Method (_BST, 0, NotSerialized)  // _BST: Battery Status
+                Store (Arg1, BYTE)
+            }
+
+            Method (WECB, 3, Serialized)
+            {
+                ShiftRight (Arg1, 0x03, Arg1)
+                Name (TEMP, Buffer (Arg1){})
+                Store (Arg2, TEMP)
+                Add (Arg0, Arg1, Arg1)
+                Store (Zero, Local0)
+                While (LLess (Arg0, Arg1))
                 {
-                    Return (BST2 ())
+                    WE1B (Arg0, DerefOf (Index (TEMP, Local0)))
+                    Increment (Arg0)
+                    Increment (Local0)
                 }
             }
         }
@@ -36599,36 +36759,36 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             Memory32Fixed (ReadOnly,
                 0x00000000,         // Address Base
                 0x00001000,         // Address Length
-                _Y38)
+                _Y37)
             Memory32Fixed (ReadOnly,
                 0xFED70000,         // Address Base
                 0x00001000,         // Address Length
-                _Y39)
+                _Y38)
         })
         Name (CRSD, ResourceTemplate ()
         {
             Memory32Fixed (ReadOnly,
                 0xFED40000,         // Address Base
                 0x00001000,         // Address Length
-                _Y3A)
+                _Y39)
         })
         Name (CRSI, ResourceTemplate ()
         {
             Memory32Fixed (ReadOnly,
                 0xFED40000,         // Address Base
                 0x00001000,         // Address Length
-                _Y3B)
+                _Y3A)
         })
         Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
         {
             If (LEqual (AMDT, One))
             {
-                CreateDWordField (CRST, \_SB.TPM._Y38._BAS, MTFB)  // _BAS: Base Address
-                CreateDWordField (CRST, \_SB.TPM._Y38._LEN, LTFB)  // _LEN: Length
+                CreateDWordField (CRST, \_SB.TPM._Y37._BAS, MTFB)  // _BAS: Base Address
+                CreateDWordField (CRST, \_SB.TPM._Y37._LEN, LTFB)  // _LEN: Length
                 Store (TPMB, MTFB)
                 Store (0x1000, LTFB)
-                CreateDWordField (CRST, \_SB.TPM._Y39._BAS, MTFC)  // _BAS: Base Address
-                CreateDWordField (CRST, \_SB.TPM._Y39._LEN, LTFC)  // _LEN: Length
+                CreateDWordField (CRST, \_SB.TPM._Y38._BAS, MTFC)  // _BAS: Base Address
+                CreateDWordField (CRST, \_SB.TPM._Y38._LEN, LTFC)  // _LEN: Length
                 Store (TPMC, MTFC)
                 Store (0x1000, LTFC)
                 Return (CRST)
@@ -36637,23 +36797,23 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             {
                 If (LEqual (DTPT, One))
                 {
-                    CreateDWordField (CRSD, \_SB.TPM._Y3A._BAS, MTFE)  // _BAS: Base Address
-                    CreateDWordField (CRSD, \_SB.TPM._Y3A._LEN, LTFE)  // _LEN: Length
+                    CreateDWordField (CRSD, \_SB.TPM._Y39._BAS, MTFE)  // _BAS: Base Address
+                    CreateDWordField (CRSD, \_SB.TPM._Y39._LEN, LTFE)  // _LEN: Length
                     Store (0xFED40000, MTFE)
                     Store (0x0880, LTFE)
                     Return (CRSD)
                 }
                 ElseIf (LEqual (TTPF, One))
                 {
-                    CreateDWordField (CRSI, \_SB.TPM._Y3B._BAS, MTFD)  // _BAS: Base Address
-                    CreateDWordField (CRSI, \_SB.TPM._Y3B._LEN, LTFD)  // _LEN: Length
+                    CreateDWordField (CRSI, \_SB.TPM._Y3A._BAS, MTFD)  // _BAS: Base Address
+                    CreateDWordField (CRSI, \_SB.TPM._Y3A._LEN, LTFD)  // _LEN: Length
                     Store (0xFED40000, MTFD)
                     Store (0x5000, LTFD)
                     Return (CRSI)
                 }
                 ElseIf (LEqual (TTPF, Zero))
                 {
-                    CreateDWordField (CRSI, \_SB.TPM._Y3B._BAS, MTFF)  // _BAS: Base Address
+                    CreateDWordField (CRSI, \_SB.TPM._Y3A._BAS, MTFF)  // _BAS: Base Address
                     Store (TPMM, MTFF)
                     Return (CRSI)
                 }
@@ -37111,39 +37271,39 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     Store (Arg1, MYEC)
                     If (LEqual (Arg1, One))
                     {
-                        If (_OSI ("Windows 2015"))
+                        If (XOSI ("Windows 2015"))
                         {
                             Store (0x05, OSVR)
                         }
-                        ElseIf (_OSI ("Windows 2013"))
+                        ElseIf (XOSI ("Windows 2013"))
                         {
                             Store (0x05, OSVR)
                         }
-                        ElseIf (_OSI ("Windows 2012"))
+                        ElseIf (XOSI ("Windows 2012"))
                         {
                             Store (0x04, OSVR)
                         }
-                        ElseIf (_OSI ("Windows 2009"))
+                        ElseIf (XOSI ("Windows 2009"))
                         {
                             Store (0x03, OSVR)
                         }
-                        ElseIf (_OSI ("Windows 2006"))
+                        ElseIf (XOSI ("Windows 2006"))
                         {
                             Store (0x02, OSVR)
                         }
-                        ElseIf (_OSI ("Windows 2001"))
+                        ElseIf (XOSI ("Windows 2001"))
                         {
                             Store (One, OSVR)
                         }
-                        ElseIf (_OSI ("Windows 2001 SP1"))
+                        ElseIf (XOSI ("Windows 2001 SP1"))
                         {
                             Store (One, OSVR)
                         }
-                        ElseIf (_OSI ("Windows 2001 SP2"))
+                        ElseIf (XOSI ("Windows 2001 SP2"))
                         {
                             Store (One, OSVR)
                         }
-                        ElseIf (_OSI ("Windows 2001 SP3"))
+                        ElseIf (XOSI ("Windows 2001 SP3"))
                         {
                             Store (One, OSVR)
                         }
@@ -37151,20 +37311,6 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 }
 
                 Store (Zero, CTSD)
-                Store (LIDS, ^^^GFX0.CLID)
-                If (POWS)
-                {
-                    Store (One, PWRS)
-                    Store (Zero, ^^^PEG0.ASPM)
-                    Store (Zero, ^^^PEG0.PEGP.EASP)
-                }
-                Else
-                {
-                    Store (Zero, PWRS)
-                    Store (0x03, ^^^PEG0.ASPM)
-                    Store (0x02, ^^^PEG0.PEGP.EASP)
-                }
-
                 PNOT ()
             }
 
@@ -37400,21 +37546,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 })
                 Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
-                    If (MYEC)
-                    {
-                        If (MBTS)
-                        {
-                            Return (0x1F)
-                        }
-                        Else
-                        {
-                            Return (0x0F)
-                        }
-                    }
-                    Else
-                    {
-                        Return (0x0F)
-                    }
+                    Return (0x1F)
                 }
 
                 Method (_BIF, 0, NotSerialized)  // _BIF: Battery Information
@@ -37830,10 +37962,10 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     }
                     Else
                     {
-                        If (LAnd (LAnd (LEqual (^^^GFX0.CPL2, Zero), LEqual (^^^GFX0.CPL3, Zero)), LEqual (^^^GFX0.CPL4, Zero))){}
+                        If (LAnd (LAnd (LEqual (^^^IGPU.CPL2, Zero), LEqual (^^^IGPU.CPL3, Zero)), LEqual (^^^IGPU.CPL4, Zero))){}
                         Else
                         {
-                            ^^^GFX0.GHDS (Zero)
+                            ^^^IGPU.GHDS (Zero)
                         }
 
                         Store (0xC2, DBG8)
@@ -38078,30 +38210,54 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     TD35,   8, 
                     TD36,   8, 
                     Offset (0x38), 
-                    TD38,   16, 
-                    TD3A,   16, 
-                    TD3C,   16, 
-                    TD3E,   16, 
-                    TD40,   16, 
-                    TD42,   16, 
-                    TD44,   16, 
-                    TD46,   16, 
-                    TD48,   16, 
-                    TD4A,   16, 
-                    TD4C,   16, 
-                    TD4E,   16, 
-                    TD50,   16, 
-                    TD52,   16, 
-                    TD54,   16, 
-                    TD56,   16, 
-                    TD58,   16, 
-                    TD5A,   16, 
-                    TD5C,   16, 
-                    TD5E,   16, 
-                    TD60,   16, 
-                    TD62,   16, 
-                    TD64,   16, 
-                    TD66,   16, 
+                    D380,   8, 
+                    D381,   8, 
+                    D3A0,   8, 
+                    D3A1,   8, 
+                    D3C0,   8, 
+                    D3C1,   8, 
+                    D3E0,   8, 
+                    D3E1,   8, 
+                    D400,   8, 
+                    D401,   8, 
+                    D420,   8, 
+                    D421,   8, 
+                    D440,   8, 
+                    D441,   8, 
+                    D460,   8, 
+                    D461,   8, 
+                    D480,   8, 
+                    D481,   8, 
+                    D4A0,   8, 
+                    D4A1,   8, 
+                    D4C0,   8, 
+                    D4C1,   8, 
+                    D4E0,   8, 
+                    D4E1,   8, 
+                    D500,   8, 
+                    D501,   8, 
+                    D520,   8, 
+                    D521,   8, 
+                    D540,   8, 
+                    D541,   8, 
+                    D560,   8, 
+                    D561,   8, 
+                    D580,   8, 
+                    D581,   8, 
+                    D5A0,   8, 
+                    D5A1,   8, 
+                    D5C0,   8, 
+                    D5C1,   8, 
+                    D5E0,   8, 
+                    D5E1,   8, 
+                    D600,   8, 
+                    D601,   8, 
+                    D620,   8, 
+                    D621,   8, 
+                    D640,   8, 
+                    D641,   8, 
+                    D660,   8, 
+                    D661,   8, 
                     TD68,   8, 
                     TD69,   8, 
                     TD6A,   8, 
@@ -38476,67 +38632,67 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
                     If (LEqual (Arg0, One))
                     {
-                        Store (TD38, Local0)
+                        Store (B1B2 (D380, D381), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x02))
                     {
-                        Store (TD3A, Local0)
+                        Store (B1B2 (D3A0, D3A1), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x03))
                     {
-                        Store (TD3C, Local0)
+                        Store (B1B2 (D3C0, D3C1), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x04))
                     {
-                        Store (TD3E, Local0)
+                        Store (B1B2 (D3E0, D3E1), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x05))
                     {
-                        Store (TD40, Local0)
+                        Store (B1B2 (D400, D401), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x06))
                     {
-                        Store (TD42, Local0)
+                        Store (B1B2 (D420, D421), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x07))
                     {
-                        Store (TD44, Local0)
+                        Store (B1B2 (D440, D441), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x08))
                     {
-                        Store (TD46, Local0)
+                        Store (B1B2 (D460, D461), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x09))
                     {
-                        Store (TD48, Local0)
+                        Store (B1B2 (D480, D481), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x0A))
                     {
-                        Store (TD4A, Local0)
+                        Store (B1B2 (D4A0, D4A1), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x0B))
                     {
-                        Store (TD4C, Local0)
+                        Store (B1B2 (D4C0, D4C1), Local0)
                         Return (Local0)
                     }
 
@@ -38560,7 +38716,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
                     If (LEqual (Arg0, 0x0F))
                     {
-                        Store (TD4E, Local0)
+                        Store (B1B2 (D4E0, D4E1), Local0)
                         Return (Local0)
                     }
                 }
@@ -38575,67 +38731,67 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
                     If (LEqual (Arg0, One))
                     {
-                        Store (TD50, Local0)
+                        Store (B1B2 (D500, D501), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x02))
                     {
-                        Store (TD52, Local0)
+                        Store (B1B2 (D520, D521), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x03))
                     {
-                        Store (TD54, Local0)
+                        Store (B1B2 (D540, D541), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x04))
                     {
-                        Store (TD56, Local0)
+                        Store (B1B2 (D560, D561), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x05))
                     {
-                        Store (TD58, Local0)
+                        Store (B1B2 (D580, D581), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x06))
                     {
-                        Store (TD5A, Local0)
+                        Store (B1B2 (D5A0, D5A1), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x07))
                     {
-                        Store (TD5C, Local0)
+                        Store (B1B2 (D5C0, D5C1), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x08))
                     {
-                        Store (TD5E, Local0)
+                        Store (B1B2 (D5E0, D5E1), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x09))
                     {
-                        Store (TD60, Local0)
+                        Store (B1B2 (D600, D601), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x0A))
                     {
-                        Store (TD62, Local0)
+                        Store (B1B2 (D620, D621), Local0)
                         Return (Local0)
                     }
 
                     If (LEqual (Arg0, 0x0B))
                     {
-                        Store (TD64, Local0)
+                        Store (B1B2 (D640, D641), Local0)
                         Return (Local0)
                     }
 
@@ -38647,7 +38803,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
                     If (LEqual (Arg0, 0x0D))
                     {
-                        Store (TD66, Local0)
+                        Store (B1B2 (D660, D661), Local0)
                         Return (Local0)
                     }
                 }
@@ -39326,68 +39482,79 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
                     If (LEqual (Arg0, One))
                     {
-                        Store (Arg1, TD38)
-                        Return (TD38)
+                        Store (ShiftRight (Arg1, 0x08), D381)
+                        Store (Arg1, D380)
+                        Return (B1B2 (D380, D381))
                     }
 
                     If (LEqual (Arg0, 0x02))
                     {
-                        Store (Arg1, TD3A)
-                        Return (TD3A)
+                        Store (ShiftRight (Arg1, 0x08), D3A1)
+                        Store (Arg1, D3A0)
+                        Return (B1B2 (D3A0, D3A1))
                     }
 
                     If (LEqual (Arg0, 0x03))
                     {
-                        Store (Arg1, TD3C)
-                        Return (TD3C)
+                        Store (ShiftRight (Arg1, 0x08), D3C1)
+                        Store (Arg1, D3C0)
+                        Return (B1B2 (D3C0, D3C1))
                     }
 
                     If (LEqual (Arg0, 0x04))
                     {
-                        Store (Arg1, TD3E)
-                        Return (TD3E)
+                        Store (ShiftRight (Arg1, 0x08), D3E1)
+                        Store (Arg1, D3E0)
+                        Return (B1B2 (D3E0, D3E1))
                     }
 
                     If (LEqual (Arg0, 0x05))
                     {
-                        Store (Arg1, TD40)
-                        Return (TD40)
+                        Store (ShiftRight (Arg1, 0x08), D401)
+                        Store (Arg1, D400)
+                        Return (B1B2 (D400, D401))
                     }
 
                     If (LEqual (Arg0, 0x06))
                     {
-                        Store (Arg1, TD42)
-                        Return (TD42)
+                        Store (ShiftRight (Arg1, 0x08), D421)
+                        Store (Arg1, D420)
+                        Return (B1B2 (D420, D421))
                     }
 
                     If (LEqual (Arg0, 0x07))
                     {
-                        Store (Arg1, TD44)
-                        Return (TD44)
+                        Store (ShiftRight (Arg1, 0x08), D441)
+                        Store (Arg1, D440)
+                        Return (B1B2 (D440, D441))
                     }
 
                     If (LEqual (Arg0, 0x08))
                     {
-                        Store (Arg1, TD46)
-                        Return (TD46)
+                        Store (ShiftRight (Arg1, 0x08), D461)
+                        Store (Arg1, D460)
+                        Return (B1B2 (D460, D461))
                     }
 
                     If (LEqual (Arg0, 0x09))
                     {
-                        Store (Arg1, TD48)
-                        Return (TD48)
+                        Store (ShiftRight (Arg1, 0x08), D481)
+                        Store (Arg1, D480)
+                        Return (B1B2 (D480, D481))
                     }
 
                     If (LEqual (Arg0, 0x0A))
                     {
-                        Store (Arg1, TD4A)
-                        Return (TD4A)
+                        Store (ShiftRight (Arg1, 0x08), D4A1)
+                        Store (Arg1, D4A0)
+                        Return (B1B2 (D4A0, D4A1))
                     }
 
                     If (LEqual (Arg0, 0x0B))
                     {
-                        Store (Arg1, TD4C)
-                        Return (TD4C)
+                        Store (ShiftRight (Arg1, 0x08), D4C1)
+                        Store (Arg1, D4C0)
+                        Return (B1B2 (D4C0, D4C1))
                     }
 
                     If (LEqual (Arg0, 0x0C))
@@ -39410,8 +39577,9 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
                     If (LEqual (Arg0, 0x0F))
                     {
-                        Store (Arg1, TD4E)
-                        Return (TD4E)
+                        Store (ShiftRight (Arg1, 0x08), D4E1)
+                        Store (Arg1, D4E0)
+                        Return (B1B2 (D4E0, D4E1))
                     }
                 }
 
@@ -39425,68 +39593,79 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
                     If (LEqual (Arg0, One))
                     {
-                        Store (Arg1, TD50)
-                        Return (TD50)
+                        Store (ShiftRight (Arg1, 0x08), D501)
+                        Store (Arg1, D500)
+                        Return (B1B2 (D500, D501))
                     }
 
                     If (LEqual (Arg0, 0x02))
                     {
-                        Store (Arg1, TD52)
-                        Return (TD52)
+                        Store (ShiftRight (Arg1, 0x08), D521)
+                        Store (Arg1, D520)
+                        Return (B1B2 (D520, D521))
                     }
 
                     If (LEqual (Arg0, 0x03))
                     {
-                        Store (Arg1, TD54)
-                        Return (TD54)
+                        Store (ShiftRight (Arg1, 0x08), D541)
+                        Store (Arg1, D540)
+                        Return (B1B2 (D540, D541))
                     }
 
                     If (LEqual (Arg0, 0x04))
                     {
-                        Store (Arg1, TD56)
-                        Return (TD56)
+                        Store (ShiftRight (Arg1, 0x08), D561)
+                        Store (Arg1, D560)
+                        Return (B1B2 (D560, D561))
                     }
 
                     If (LEqual (Arg0, 0x05))
                     {
-                        Store (Arg1, TD58)
-                        Return (TD58)
+                        Store (ShiftRight (Arg1, 0x08), D581)
+                        Store (Arg1, D580)
+                        Return (B1B2 (D580, D581))
                     }
 
                     If (LEqual (Arg0, 0x06))
                     {
-                        Store (Arg1, TD5A)
-                        Return (TD5A)
+                        Store (ShiftRight (Arg1, 0x08), D5A1)
+                        Store (Arg1, D5A0)
+                        Return (B1B2 (D5A0, D5A1))
                     }
 
                     If (LEqual (Arg0, 0x07))
                     {
-                        Store (Arg1, TD5C)
-                        Return (TD5C)
+                        Store (ShiftRight (Arg1, 0x08), D5C1)
+                        Store (Arg1, D5C0)
+                        Return (B1B2 (D5C0, D5C1))
                     }
 
                     If (LEqual (Arg0, 0x08))
                     {
-                        Store (Arg1, TD5E)
-                        Return (TD5E)
+                        Store (ShiftRight (Arg1, 0x08), D5E1)
+                        Store (Arg1, D5E0)
+                        Return (B1B2 (D5E0, D5E1))
                     }
 
                     If (LEqual (Arg0, 0x09))
                     {
-                        Store (Arg1, TD60)
-                        Return (TD60)
+                        Store (ShiftRight (Arg1, 0x08), D601)
+                        Store (Arg1, D600)
+                        Return (B1B2 (D600, D601))
                     }
 
                     If (LEqual (Arg0, 0x0A))
                     {
-                        Store (Arg1, TD62)
-                        Return (TD62)
+                        Store (ShiftRight (Arg1, 0x08), D621)
+                        Store (Arg1, D620)
+                        Return (B1B2 (D620, D621))
                     }
 
                     If (LEqual (Arg0, 0x0B))
                     {
-                        Store (Arg1, TD64)
-                        Return (TD64)
+                        Store (ShiftRight (Arg1, 0x08), D641)
+                        Store (Arg1, D640)
+                        Return (B1B2 (D640, D641))
                     }
 
                     If (LEqual (Arg0, 0x0C))
@@ -39497,8 +39676,9 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
                     If (LEqual (Arg0, 0x0D))
                     {
-                        Store (Arg1, TD66)
-                        Return (TD66)
+                        Store (ShiftRight (Arg1, 0x08), D661)
+                        Store (Arg1, D660)
+                        Return (B1B2 (D660, D661))
                     }
                 }
 
@@ -39988,6 +40168,59 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     Return (Zero)
                 }
             }
+
+            Method (RE1B, 1, NotSerialized)
+            {
+                OperationRegion (ERAM, EmbeddedControl, Arg0, One)
+                Field (ERAM, ByteAcc, NoLock, Preserve)
+                {
+                    BYTE,   8
+                }
+
+                Return (BYTE)
+            }
+
+            Method (RECB, 2, Serialized)
+            {
+                ShiftRight (Arg1, 0x03, Arg1)
+                Name (TEMP, Buffer (Arg1){})
+                Add (Arg0, Arg1, Arg1)
+                Store (Zero, Local0)
+                While (LLess (Arg0, Arg1))
+                {
+                    Store (RE1B (Arg0), Index (TEMP, Local0))
+                    Increment (Arg0)
+                    Increment (Local0)
+                }
+
+                Return (TEMP)
+            }
+
+            Method (WE1B, 2, NotSerialized)
+            {
+                OperationRegion (ERAM, EmbeddedControl, Arg0, One)
+                Field (ERAM, ByteAcc, NoLock, Preserve)
+                {
+                    BYTE,   8
+                }
+
+                Store (Arg1, BYTE)
+            }
+
+            Method (WECB, 3, Serialized)
+            {
+                ShiftRight (Arg1, 0x03, Arg1)
+                Name (TEMP, Buffer (Arg1){})
+                Store (Arg2, TEMP)
+                Add (Arg0, Arg1, Arg1)
+                Store (Zero, Local0)
+                While (LLess (Arg0, Arg1))
+                {
+                    WE1B (Arg0, DerefOf (Index (TEMP, Local0)))
+                    Increment (Arg0)
+                    Increment (Local0)
+                }
+            }
         }
     }
 
@@ -40356,6 +40589,52 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 Return (GPLD (Zero, 0x14))
             }
         }
+    }
+
+    Method (XOSI, 1, NotSerialized)
+    {
+        Store (Package (0x10)
+            {
+                "Windows", 
+                "Windows 2001", 
+                "Windows 2001 SP2", 
+                "Windows 2001.1", 
+                "Windows 2001.1 SP1", 
+                "Windows 2006", 
+                "Windows 2006 SP1", 
+                "Windows 2006.1", 
+                "Windows 2009", 
+                "Windows 2012", 
+                "Windows 2013", 
+                "Windows 2015", 
+                "Windows 2016", 
+                "Windows 2017", 
+                "Windows 2017.2", 
+                "Windows 2018"
+            }, Local0)
+        Return (LNotEqual (Ones, Match (Local0, MEQ, Arg0, MTR, Zero, Zero)))
+    }
+
+    Method (B1B2, 2, NotSerialized)
+    {
+        Return (Or (Arg0, ShiftLeft (Arg1, 0x08)))
+    }
+
+    Method (B1B3, 3, NotSerialized)
+    {
+        Store (Arg2, Local0)
+        Or (Arg1, ShiftLeft (Local0, 0x08), Local0)
+        Or (Arg0, ShiftLeft (Local0, 0x08), Local0)
+        Return (Local0)
+    }
+
+    Method (B1B4, 4, NotSerialized)
+    {
+        Store (Arg3, Local0)
+        Or (Arg2, ShiftLeft (Local0, 0x08), Local0)
+        Or (Arg1, ShiftLeft (Local0, 0x08), Local0)
+        Or (Arg0, ShiftLeft (Local0, 0x08), Local0)
+        Return (Local0)
     }
 }
 

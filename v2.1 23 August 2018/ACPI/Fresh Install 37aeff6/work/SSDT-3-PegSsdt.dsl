@@ -5,26 +5,26 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-3-PegSsdt.aml, Fri Aug 31 15:26:57 2018
+ * Disassembly of SSDT-3.aml, Sat Sep  1 18:39:18 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00002771 (10097)
+ *     Length           0x00002795 (10133)
  *     Revision         0x02
- *     Checksum         0x6D
+ *     Checksum         0xB9
  *     OEM ID           "PegSsd"
  *     OEM Table ID     "PegSsdt"
  *     OEM Revision     0x00001000 (4096)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20160422 (538313762)
+ *     Compiler Version 0x20180427 (538444839)
  */
 DefinitionBlock ("", "SSDT", 2, "PegSsd", "PegSsdt", 0x00001000)
 {
     External (_SB_.GGOV, MethodObj)    // 1 Arguments (from opcode)
     External (_SB_.ISME, MethodObj)    // 1 Arguments (from opcode)
     External (_SB_.PCI0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LTRZ, IntObj)
-    External (_SB_.PCI0.OBFZ, IntObj)
+    External (_SB_.PCI0.LTRZ, IntObj)    // (from opcode)
+    External (_SB_.PCI0.OBFZ, IntObj)    // (from opcode)
     External (_SB_.PCI0.PEG0, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.PEG0.PEGP, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.PEG1, DeviceObj)    // (from opcode)
