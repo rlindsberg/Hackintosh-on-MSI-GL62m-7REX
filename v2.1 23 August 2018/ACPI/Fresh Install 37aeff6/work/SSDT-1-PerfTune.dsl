@@ -5,18 +5,18 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-1-PerfTune.aml, Fri Aug 31 15:26:56 2018
+ * Disassembly of SSDT-1.aml, Sat Sep  1 18:39:17 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000758 (1880)
+ *     Length           0x0000075E (1886)
  *     Revision         0x02
- *     Checksum         0x12
+ *     Checksum         0xE6
  *     OEM ID           "Intel"
  *     OEM Table ID     "PerfTune"
  *     OEM Revision     0x00001000 (4096)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20160422 (538313762)
+ *     Compiler Version 0x20180427 (538444839)
  */
 DefinitionBlock ("", "SSDT", 2, "Intel", "PerfTune", 0x00001000)
 {
