@@ -5,18 +5,18 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-4-RV11Rtd3.aml, Fri Aug 31 15:26:57 2018
+ * Disassembly of SSDT-4.aml, Sat Sep  1 18:39:18 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00005DFB (24059)
+ *     Length           0x00005E2A (24106)
  *     Revision         0x02
- *     Checksum         0xFD
+ *     Checksum         0xB4
  *     OEM ID           "INTEL "
  *     OEM Table ID     "RV11Rtd3"
  *     OEM Revision     0x00001000 (4096)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20160422 (538313762)
+ *     Compiler Version 0x20180427 (538444839)
  */
 DefinitionBlock ("", "SSDT", 2, "INTEL ", "RV11Rtd3", 0x00001000)
 {
@@ -280,8 +280,8 @@ DefinitionBlock ("", "SSDT", 2, "INTEL ", "RV11Rtd3", 0x00001000)
     External (IC1D, FieldUnitObj)    // (from opcode)
     External (IC1S, FieldUnitObj)    // (from opcode)
     External (IVDG, UnknownObj)    // (from opcode)
-    External (L23E, IntObj)    // Warning: Unknown object
-    External (L23R, IntObj)    // Warning: Unknown object
+    External (L23E, IntObj)    // (from opcode)
+    External (L23R, IntObj)    // (from opcode)
     External (OSYS, UnknownObj)    // (from opcode)
     External (PAPE, UnknownObj)    // (from opcode)
     External (PCHG, UnknownObj)    // (from opcode)
