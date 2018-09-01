@@ -294,7 +294,7 @@
 		<key>BiosVersion</key>
 		<string>MBP141.88Z.0173.B00.1802081002</string>
 		<key>Board-ID</key>
-		<string>Mac-B4831CEBD52A0C4C</string>
+		<string><Board_ID></string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
@@ -326,7 +326,7 @@
 		<key>ProductName</key>
 		<string>MacBookPro14,1</string>
 		<key>SerialNumber</key>
-		<string>C02TG18THV29</string>
+		<string><SERIAL_NUMBER></string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
