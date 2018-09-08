@@ -1,0 +1,58 @@
+
+Clover EFI installer log - Thu Aug 30 15:18:39 CEST 2018
+Installer version: v2.4k r4444.RM-4652.c1f8602f EFI bootloader
+======================================================
+/dev/disk0 (internal):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                         512.1 GB   disk0
+   1:                        EFI EFI                     209.7 MB   disk0s1
+   2:                 Apple_APFS Container disk2         350.1 GB   disk0s2
+   3:                  Apple_HFS Windows Data            161.6 GB   disk0s3
+
+/dev/disk1 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *128.0 GB   disk1
+   1:                        EFI SYSTEM                  314.6 MB   disk1s1
+   2:         Microsoft Reserved                         134.2 MB   disk1s2
+   3:       Microsoft Basic Data Windows                 126.6 GB   disk1s3
+   4:           Windows Recovery                         943.7 MB   disk1s4
+
+/dev/disk2 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +350.1 GB   disk2
+                                 Physical Store disk0s2
+   1:                APFS Volume Macintosh SSD           11.7 GB    disk2s1
+   2:                APFS Volume Preboot                 129.8 MB   disk2s2
+   3:                APFS Volume Recovery                3.1 GB     disk2s3
+   4:                APFS Volume VM                      20.5 KB    disk2s4
+
+/dev/disk3 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *1.0 TB     disk3
+   1:                        EFI EFI                     209.7 MB   disk3s1
+   2:                  Apple_HFS Marc the File Exchanger 400.0 GB   disk3s2
+   3:                  Apple_HFS Alice the Time Machine  530.0 GB   disk3s3
+   4:                  Apple_HFS Macintosh HDD           61.1 GB    disk3s4
+   5:                 Apple_Boot Recovery HD             650.0 MB   disk3s5
+   6:                  Apple_HFS Install macOS High S... 7.9 GB     disk3s6
+
+Target volume /Volumes/Macintosh SSD on disk2 is APFS on physical store disk0s2
+======================================================
+Backing up EFI files
+
+======================================================
+Installing BootSectors/BootLoader
+
+Stage 0 - Don't write any of boot0af, boot0md, boot0ss to /
+Stage 1 - Don't write any of boot1h2, boot1f32alt, boot1xalt to /
+======================================================
+Installing RC Scripts
+
+Installing RC scripts on target volume '/'
+
+
+Theme 'metal' (defined in config.plist) not found !
+Using default theme 'random'
+======================================================
+=========== Clover EFI Installation Finish ===========
+======================================================
