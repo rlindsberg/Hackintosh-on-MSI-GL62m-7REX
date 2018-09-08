@@ -274,6 +274,8 @@
 			<integer>1</integer>
 			<key>#UseSystemIO</key>
 			<false/>
+			<key>DropOem</key>
+			<true/>
 			<key>Generate</key>
 			<dict>
 				<key>#APLF</key>
@@ -860,14 +862,22 @@
 			<dict>
 				<key>Comment</key>
 				<string>disable port limit in XHCI kext (credit RehabMan, based prior PMHeart patch)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				g32IDw+DpwQAAA==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.13.6</string>
 				<key>Name</key>
 				<string>com.apple.driver.usb.AppleUSBXHCI</string>
-				<key>Find</key>
-				<data>g32IDw+DpwQAAA==</data>
 				<key>Replace</key>
-				<data>g32ID5CQkJCQkA==</data>
+				<data>
+				g32ID5CQkJCQkA==
+				</data>
 			</dict>
 		</array>
 	</dict>
