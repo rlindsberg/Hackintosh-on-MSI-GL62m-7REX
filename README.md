@@ -1,66 +1,47 @@
 # Installing macOS Sierra
 
-## Step 1 Download macOS image and write it to a usb stick
-https://7labs.io/tips-tricks/macos-sierra-direct-download.html
+## Step 1 Download macOS High Sierra image and write it to a usb stick
+https://7labs.io/tips-tricks/macos-high-sierra-direct-download.html
 
-## Step 2 Add kexts to EFI folder
-Problem solved:
-  Internal trackpad not working
-  USB mouse not working
+## Step 2 Add kexts to EFI folder and install to hard drive
+Did:
+  Install macOS from Seagate to Samsung500G
+  Boot macOS Install again and run /Volumes/Image\ Volume/No-Convert
+Solved:
+  Auto-convert to apfs
+Remaining:
+  Cannot unmount a partition
 
-Problem remaining:
-  CPU kinda slow
-  No sound
-  Cannot dim the screen
-  "Your keyboard cannot be identified and will not be usable..."
-  Energy saver, no option when using battery
-  IG not identified, showing 7MB in system overview
-  Display showing 30.5 inch
-  Cannot boot from USB
-
-  Fix: has to inject intel fakeid 0x12345678 to boot.
-
-## Step 3 Boot the usb stick and install macOS to another hard drive
-https://www.tonymacx86.com/threads/unibeast-install-macos-sierra-on-any-supported-intel-based-pc.200564/
-
-  Add: IntelGraphicsDVMTFixup.kext IntelGraphicsFixup.kext IntelMausiEthernet.kext Lilu.kext to EFI, updated config.plist,
-
+## Step 3
+  Did:
+    Install kexts
+    Modify config.plist
+    Use clover efi 4509 to install bootloader EMU and RC Scripts.
+    Change nvram to Always in Clover pane directly after EMU and RC. Then reboot.
+      http://bbs.pcbeta.com/viewthread-1701188-1-7.html
+      http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1712515
+    Install nvidia webdriver https://github.com/Benjamin-Dobell/nvidia-update
+    Install CUDA 396.64 https://hackintosher.com/guides/get-nvidia-graphic-cards-working-hackintosh/
   Solved:
-    IG showing 7MB
-    CPU speedstep from 1500 to 3500
-
+    IG wrong memory
   Remaining:
-  No sound
-  Cannot dim the screen
-  Energy saver, no option when using battery
-  Display showing 30.5 inch
-  Cannot boot from USB
-  Warning, cpu unknown
-  system swap 0K
-  CPU 2 cache 0M
+    Cannot unmount a partition
+    No audio output or input
+    No Bluetooth or Wi-Fi
+    Cannot adjust brightness
+    DisplayPort doesn't work
 
-Motion Mark 427.89pts
+## Step 4
+  Did:
+    In Clover, patch "change HDAS to HDEF"
+    Put AppleALC.kext into Other https://bitbucket.org/RehabMan/os-x-eapd-codec-commander
+  Solved: Sound
+  Remaining:
+    Cannot unmount a partition
+    No audio input
+    No Bluetooth or Wi-Fi
+    Cannot adjust brightness
+    DisplayPort doesn't work
 
 
-
-how to configure smbios
-https://www.tonymacx86.com/threads/guide-how-to-configure-your-systems-smbios-correctly.198155/
-
-iMessage
-http://bbs.pcbeta.com/viewthread-1776418-1-3.html
-
-  Solving NVIDIA driver install problems
-
-  When doing OS updates I always make sure to wait for the Nvidia update, then drop it onto the desktop. I won't install before the update (stupid), so you always end up with a black screen, or laggy native drivers.
-
-  But, you can install the drivers after the OS X update reboot, without needing to fully login:
-
-  The installer command runs from the command line, which means we can do any of the following:
-
-  1. Boot into safe mode to install
-  2. SSH in remotely to install (I use my iPhone and a terminal app)
-  3. Console login (usename: >console; no password).
-
-  Then run something like:
-
-  sudo /usr/sbin/installer -pkg $HOME/Desktop/WebDriver-346.01.02f02.pkg -target /
+fix wifi and bluetooth https://blog.daliansky.net/Broadcom-WiFi-BlueTooth-BCM94352z-DW1560-the%20correct-drive-posture.html
