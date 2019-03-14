@@ -135,11 +135,11 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 nv_disable=1</string>
+		<string>dart=0 nv_disable=1 -v</string>
 		<key>Debug</key>
 		<true/>
 		<key>DefaultVolume</key>
-		<string>MacHDD</string>
+		<string>macOS 128</string>
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>Secure</key>
@@ -299,7 +299,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string><Board_Serial_Number></string>
+		<string>Board_Serial_Number</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -327,9 +327,9 @@
 		<key>ProductName</key>
 		<string>MacBookPro14,1</string>
 		<key>SerialNumber</key>
-		<string><SERIAL_NUMBER></string>
+		<string>SERIAL_NUMBER</string>
 		<key>SmUUID</key>
-		<string><SmUUID></string>
+		<string>SmUUID</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
