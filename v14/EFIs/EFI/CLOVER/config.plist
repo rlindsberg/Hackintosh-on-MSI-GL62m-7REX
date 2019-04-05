@@ -299,7 +299,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string><Board_Serial_Number></string>
+		<string>C02TG18THV29652A8</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -327,9 +327,9 @@
 		<key>ProductName</key>
 		<string>MacBookPro14,1</string>
 		<key>SerialNumber</key>
-		<string><SERIAL_NUMBER></string>
+		<string>C02TG18THV29</string>
 		<key>SmUUID</key>
-		<string><SmUUID></string>
+		<string>1E58914B-6EEA-50E8-9392-8C2937EAB1B4</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
