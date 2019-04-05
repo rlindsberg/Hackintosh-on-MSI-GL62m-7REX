@@ -1,0 +1,136 @@
+12:474  4:578  Found UEFI Acpi 2.0 RSDP at 7ABBC000
+12:478  0:004  Saving ACPI tables from RSDP 7ABBC000 to EFI\CLOVER\ACPI\origin ...
+12:483  0:004   7ABBC000: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36 -> RSDP.aml
+12:514  0:031    (Xsdt: 7ABBC0B8, Rsdt: 7ABBC028)
+12:518  0:004    7ABBC0B8: 'XSDT', 'MEGABOOK', Rev: 1, Len: 236 -> XSDT.aml
+12:545  0:026    7ABBC028: 'RSDT', 'MEGABOOK', Rev: 1, Len: 136 -> RSDT.aml
+12:572  0:027    Tables in Xsdt: 25
+12:576  0:004    0. 7ABE43C0: 'FACP', 'MEGABOOK', Rev: 6, Len: 276 -> FACP.aml
+12:603  0:027        (Dsdt: 7ABBC238, Facs: 7AF8AC40, XDsdt: 7ABBC238, XFacs: 0)
+12:616  0:012        7ABBC238: 'DSDT', 'MEGABOOK', Rev: 2, Len: 164232 -> DSDT.aml
+12:647  0:030        7AF8AC40: 'FACS', Ver: 2, Len: 64 -> FACS.aml
+12:669  0:022    1. 7ABE44D8: 'APIC', 'MEGABOOK', Rev: 3, Len: 132 -> APIC.aml
+12:695  0:026    2. 7ABE4560: 'FPDT', 'MEGABOOK', Rev: 1, Len: 68 -> FPDT.aml
+12:722  0:026    3. 7ABE45A8: 'ECDT', 'MEGABOOK', Rev: 1, Len: 193 -> ECDT.aml
+12:760  0:037    4. 7ABE4670: 'MCFG', 'MEGABOOK', Rev: 1, Len: 60 -> MCFG.aml
+12:786  0:026    5. 7ABE46B0: 'SSDT', 'SataTabl', Rev: 1, Len: 802 -> SSDT-0-SataTabl.aml
+12:813  0:026    6. 7ABE49D8: 'FIDT', 'MEGABOOK', Rev: 1, Len: 156 -> FIDT.aml
+12:841  0:027    7. 7ABE4A78: 'SLIC', 'MEGABOOK', Rev: 1, Len: 374 -> SLIC.aml
+12:868  0:027    8. 7ABE4BF0: 'SSDT', 'SaSsdt', Rev: 2, Len: 12671 -> SSDT-1-SaSsdt.aml
+12:896  0:027    9. 7ABE7D70: 'SSDT', 'PegSsdt', Rev: 2, Len: 10097 -> SSDT-2-PegSsdt.aml
+12:923  0:027    10. 7ABEA4E8: 'HPET', 'KBL', Rev: 1, Len: 56 -> HPET.aml
+12:950  0:026    11. 7ABEA520: 'SSDT', 'RV11Rtd3', Rev: 2, Len: 24059 -> SSDT-3-RV11Rtd3.aml
+12:978  0:027    12. 7ABF0320: 'SSDT', 'Ther_Rvp', Rev: 2, Len: 3557 -> SSDT-4-Ther_Rvp.aml
+13:005  0:026    13. 7ABF1108: 'UEFI', 'EDK2', Rev: 1, Len: 66 -> UEFI.aml
+13:032  0:026    14. 7ABF1150: 'SSDT', 'CpuSsdt', Rev: 2, Len: 3806 -> SSDT-5-CpuSsdt.aml (Found hidden SSDT 7 pcs)
+13:059  0:027        * 7AAB4398: 'SSDT', 'Cpu0Ist', Rev: 2, Len: 1536  53 53 44 54 00 06 00 00 02 5A 50 6D 52 65 66 00 Internal length = 1536 -> SSDT-x5_0-Cpu0Ist.aml
+13:156  0:096        * 7A49C018: 'SSDT', 'ApIst', Rev: 2, Len: 1628  53 53 44 54 5C 06 00 00 02 B6 50 6D 52 65 66 00 Internal length = 1628 -> SSDT-x5_1-ApIst.aml
+13:253  0:097        * 7A49C898: 'SSDT', 'Cpu0Cst', Rev: 2, Len: 1023  53 53 44 54 FF 03 00 00 02 AF 50 6D 52 65 66 00 Internal length = 1023 -> SSDT-x5_2-Cpu0Cst.aml
+13:351  0:097        * 7A49CDD8: 'SSDT', 'ApCst', Rev: 2, Len: 394  53 53 44 54 8A 01 00 00 02 39 50 6D 52 65 66 00 Internal length = 394 -> SSDT-x5_3-ApCst.aml
+13:449  0:098        * 7898BDD8: 'SSDT', 'Cpu0Hwp', Rev: 2, Len: 277  53 53 44 54 15 01 00 00 02 AE 50 6D 52 65 66 00 Internal length = 277 -> SSDT-x5_4-Cpu0Hwp.aml
+13:546  0:096        * 7898B218: 'SSDT', 'ApHwp', Rev: 2, Len: 407  53 53 44 54 97 01 00 00 02 F1 50 6D 52 65 66 00 Internal length = 407 -> SSDT-x5_5-ApHwp.aml
+13:642  0:096        * 78985DD8: 'SSDT', 'HwpLvt', Rev: 2, Len: 420  53 53 44 54 A4 01 00 00 02 3C 50 6D 52 65 66 00 Internal length = 420 -> SSDT-x5_6-HwpLvt.aml
+13:739  0:096  
+13:744  0:004    15. 7ABF2030: 'LPIT', 'KBL', Rev: 1, Len: 148 -> LPIT.aml
+13:771  0:027    16. 7ABF20C8: 'WSMT', 'KBL', Rev: 1, Len: 40 -> WSMT.aml
+13:798  0:026    17. 7ABF20F0: 'SSDT', 'sensrhub', Rev: 2, Len: 671 -> SSDT-6-sensrhub.aml
+13:825  0:027    18. 7ABF2390: 'DBGP', '', Rev: 1, Len: 52 -> DBGP.aml
+13:852  0:027    19. 7ABF23C8: 'DBG2', '', Rev: 0, Len: 84 -> DBG2.aml
+13:879  0:026    20. 7ABF2420: 'BGRT', 'MEGABOOK', Rev: 1, Len: 56 -> BGRT.aml
+13:907  0:027    21. 7ABF2458: 'SSDT', 'SgPeg', Rev: 2, Len: 174 -> SSDT-7-SgPeg.aml
+13:934  0:027    22. 7ABF2508: 'TPM2', 'Tpm2Tabl', Rev: 3, Len: 52 -> TPM2.aml
+13:961  0:026    23. 7ABF2540: 'SSDT', 'OptTabl', Rev: 1, Len: 6804 -> SSDT-8-OptTabl.aml
+13:989  0:027    24. 7ABF3FD8: 'ASF!', ' HCG', Rev: 32, Len: 160 -> ASF!.aml
+14:016  0:026    Tables in Rsdt: 25
+14:020  0:004    0. 7ABBC1B0: 'FACP', 'MEGABOOK', Rev: 2, Len: 132 -> RSDT-FACP.aml
+14:047  0:027        (Dsdt: 7ABBC238, Facs: 7AF8AC00)
+14:056  0:008        7ABBC238: 'DSDT', 'MEGABOOK', Rev: 2, Len: 164232
+14:072  0:016        7AF8AC00: 'FACS', Ver: 0, Len: 64 -> RSDT-FACS.aml
+14:095  0:022    1. 7ABE44D8: 'APIC', 'MEGABOOK', Rev: 3, Len: 132
+14:107  0:012    2. 7ABE4560: 'FPDT', 'MEGABOOK', Rev: 1, Len: 68
+14:120  0:012    3. 7ABE45A8: 'ECDT', 'MEGABOOK', Rev: 1, Len: 193
+14:133  0:012    4. 7ABE4670: 'MCFG', 'MEGABOOK', Rev: 1, Len: 60
+14:146  0:013    5. 7ABE46B0: 'SSDT', 'SataTabl', Rev: 1, Len: 802
+14:160  0:013    6. 7ABE49D8: 'FIDT', 'MEGABOOK', Rev: 1, Len: 156
+14:173  0:012    7. 7ABE4A78: 'SLIC', 'MEGABOOK', Rev: 1, Len: 374
+14:186  0:012    8. 7ABE4BF0: 'SSDT', 'SaSsdt', Rev: 2, Len: 12671
+14:198  0:012    9. 7ABE7D70: 'SSDT', 'PegSsdt', Rev: 2, Len: 10097
+14:211  0:012    10. 7ABEA4E8: 'HPET', 'KBL', Rev: 1, Len: 56
+14:224  0:012    11. 7ABEA520: 'SSDT', 'RV11Rtd3', Rev: 2, Len: 24059
+14:237  0:013    12. 7ABF0320: 'SSDT', 'Ther_Rvp', Rev: 2, Len: 3557
+14:251  0:013    13. 7ABF1108: 'UEFI', 'EDK2', Rev: 1, Len: 66
+14:264  0:013    14. 7ABF1150: 'SSDT', 'CpuSsdt', Rev: 2, Len: 3806
+14:277  0:012    15. 7ABF2030: 'LPIT', 'KBL', Rev: 1, Len: 148
+14:290  0:012    16. 7ABF20C8: 'WSMT', 'KBL', Rev: 1, Len: 40
+14:302  0:012    17. 7ABF20F0: 'SSDT', 'sensrhub', Rev: 2, Len: 671
+14:315  0:012    18. 7ABF2390: 'DBGP', '', Rev: 1, Len: 52
+14:329  0:013    19. 7ABF23C8: 'DBG2', '', Rev: 0, Len: 84
+14:342  0:013    20. 7ABF2420: 'BGRT', 'MEGABOOK', Rev: 1, Len: 56
+14:356  0:014    21. 7ABF2458: 'SSDT', 'SgPeg', Rev: 2, Len: 174
+14:370  0:013    22. 7ABF2508: 'TPM2', 'Tpm2Tabl', Rev: 3, Len: 52
+14:382  0:012    23. 7ABF2540: 'SSDT', 'OptTabl', Rev: 1, Len: 6804
+14:395  0:012    24. 7ABF3FD8: 'ASF!', ' HCG', Rev: 32, Len: 160
+14:418  0:023  Found UEFI Acpi 1.0 RSDP at 7ABBC000
+14:423  0:004  Printing ACPI tables from RSDP 7ABBC000 ...
+14:427  0:004   7ABBC000: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36
+14:445  0:017    (Xsdt: 7ABBC0B8, Rsdt: 7ABBC028)
+14:449  0:004    7ABBC0B8: 'XSDT', 'MEGABOOK', Rev: 1, Len: 236
+14:463  0:013    7ABBC028: 'RSDT', 'MEGABOOK', Rev: 1, Len: 136
+14:476  0:013    Tables in Xsdt: 25
+14:480  0:004    0. 7ABE43C0: 'FACP', 'MEGABOOK', Rev: 6, Len: 276
+14:493  0:013        (Dsdt: 7ABBC238, Facs: 7AF8AC40, XDsdt: 7ABBC238, XFacs: 0)
+14:506  0:013        7ABBC238: 'DSDT', 'MEGABOOK', Rev: 2, Len: 164232
+14:523  0:016        7AF8AC40: 'FACS', Ver: 2, Len: 64
+14:532  0:008    1. 7ABE44D8: 'APIC', 'MEGABOOK', Rev: 3, Len: 132
+14:545  0:012    2. 7ABE4560: 'FPDT', 'MEGABOOK', Rev: 1, Len: 68
+14:558  0:013    3. 7ABE45A8: 'ECDT', 'MEGABOOK', Rev: 1, Len: 193
+14:571  0:013    4. 7ABE4670: 'MCFG', 'MEGABOOK', Rev: 1, Len: 60
+14:584  0:012    5. 7ABE46B0: 'SSDT', 'SataTabl', Rev: 1, Len: 802
+14:597  0:012    6. 7ABE49D8: 'FIDT', 'MEGABOOK', Rev: 1, Len: 156
+14:611  0:014    7. 7ABE4A78: 'SLIC', 'MEGABOOK', Rev: 1, Len: 374
+14:624  0:012    8. 7ABE4BF0: 'SSDT', 'SaSsdt', Rev: 2, Len: 12671
+14:637  0:012    9. 7ABE7D70: 'SSDT', 'PegSsdt', Rev: 2, Len: 10097
+14:650  0:013    10. 7ABEA4E8: 'HPET', 'KBL', Rev: 1, Len: 56
+14:663  0:012    11. 7ABEA520: 'SSDT', 'RV11Rtd3', Rev: 2, Len: 24059
+14:676  0:012    12. 7ABF0320: 'SSDT', 'Ther_Rvp', Rev: 2, Len: 3557
+14:689  0:013    13. 7ABF1108: 'UEFI', 'EDK2', Rev: 1, Len: 66
+14:703  0:013    14. 7ABF1150: 'SSDT', 'CpuSsdt', Rev: 2, Len: 3806
+14:715  0:012    15. 7ABF2030: 'LPIT', 'KBL', Rev: 1, Len: 148
+14:728  0:012    16. 7ABF20C8: 'WSMT', 'KBL', Rev: 1, Len: 40
+14:741  0:012    17. 7ABF20F0: 'SSDT', 'sensrhub', Rev: 2, Len: 671
+14:755  0:013    18. 7ABF2390: 'DBGP', '', Rev: 1, Len: 52
+14:767  0:012    19. 7ABF23C8: 'DBG2', '', Rev: 0, Len: 84
+14:781  0:013    20. 7ABF2420: 'BGRT', 'MEGABOOK', Rev: 1, Len: 56
+14:794  0:013    21. 7ABF2458: 'SSDT', 'SgPeg', Rev: 2, Len: 174
+14:807  0:012    22. 7ABF2508: 'TPM2', 'Tpm2Tabl', Rev: 3, Len: 52
+14:820  0:012    23. 7ABF2540: 'SSDT', 'OptTabl', Rev: 1, Len: 6804
+14:833  0:012    24. 7ABF3FD8: 'ASF!', ' HCG', Rev: 32, Len: 160
+14:846  0:012    Tables in Rsdt: 25
+14:851  0:004    0. 7ABBC1B0: 'FACP', 'MEGABOOK', Rev: 2, Len: 132
+14:863  0:012        (Dsdt: 7ABBC238, Facs: 7AF8AC00)
+14:872  0:009        7ABBC238: 'DSDT', 'MEGABOOK', Rev: 2, Len: 164232
+14:888  0:015        7AF8AC00: 'FACS', Ver: 0, Len: 64
+14:897  0:008    1. 7ABE44D8: 'APIC', 'MEGABOOK', Rev: 3, Len: 132
+14:910  0:012    2. 7ABE4560: 'FPDT', 'MEGABOOK', Rev: 1, Len: 68
+14:922  0:012    3. 7ABE45A8: 'ECDT', 'MEGABOOK', Rev: 1, Len: 193
+14:935  0:012    4. 7ABE4670: 'MCFG', 'MEGABOOK', Rev: 1, Len: 60
+14:949  0:013    5. 7ABE46B0: 'SSDT', 'SataTabl', Rev: 1, Len: 802
+14:962  0:013    6. 7ABE49D8: 'FIDT', 'MEGABOOK', Rev: 1, Len: 156
+14:975  0:013    7. 7ABE4A78: 'SLIC', 'MEGABOOK', Rev: 1, Len: 374
+14:988  0:012    8. 7ABE4BF0: 'SSDT', 'SaSsdt', Rev: 2, Len: 12671
+15:001  0:012    9. 7ABE7D70: 'SSDT', 'PegSsdt', Rev: 2, Len: 10097
+15:014  0:012    10. 7ABEA4E8: 'HPET', 'KBL', Rev: 1, Len: 56
+15:027  0:012    11. 7ABEA520: 'SSDT', 'RV11Rtd3', Rev: 2, Len: 24059
+15:040  0:013    12. 7ABF0320: 'SSDT', 'Ther_Rvp', Rev: 2, Len: 3557
+15:053  0:013    13. 7ABF1108: 'UEFI', 'EDK2', Rev: 1, Len: 66
+15:066  0:013    14. 7ABF1150: 'SSDT', 'CpuSsdt', Rev: 2, Len: 3806
+15:079  0:012    15. 7ABF2030: 'LPIT', 'KBL', Rev: 1, Len: 148
+15:092  0:012    16. 7ABF20C8: 'WSMT', 'KBL', Rev: 1, Len: 40
+15:105  0:012    17. 7ABF20F0: 'SSDT', 'sensrhub', Rev: 2, Len: 671
+15:118  0:012    18. 7ABF2390: 'DBGP', '', Rev: 1, Len: 52
+15:130  0:012    19. 7ABF23C8: 'DBG2', '', Rev: 0, Len: 84
+15:144  0:014    20. 7ABF2420: 'BGRT', 'MEGABOOK', Rev: 1, Len: 56
+15:158  0:013    21. 7ABF2458: 'SSDT', 'SgPeg', Rev: 2, Len: 174
+15:171  0:012    22. 7ABF2508: 'TPM2', 'Tpm2Tabl', Rev: 3, Len: 52
+15:183  0:012    23. 7ABF2540: 'SSDT', 'OptTabl', Rev: 1, Len: 6804
+15:196  0:012    24. 7ABF3FD8: 'ASF!', ' HCG', Rev: 32, Len: 160
