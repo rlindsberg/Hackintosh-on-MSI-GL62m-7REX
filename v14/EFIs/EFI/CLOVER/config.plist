@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- tonymacx86 UniBeast UEFI Mode - 2018-10-01 -->
 <plist version="1.0">
 <dict>
 	<key>ACPI</key>
@@ -74,8 +73,6 @@
 				<false/>
 				<key>FixHPET</key>
 				<false/>
-				<key>FixHeaders</key>
-				<false/>
 				<key>FixIDE</key>
 				<false/>
 				<key>FixIPIC</key>
@@ -117,6 +114,8 @@
 				<string>MATS</string>
 			</dict>
 		</array>
+		<key>FixHeaders</key>
+		<false/>
 		<key>HaltEnabler</key>
 		<false/>
 		<key>SSDT</key>
@@ -135,11 +134,11 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 nv_disable=1</string>
+		<string>dart=0 nv_disable=1 -v</string>
 		<key>Debug</key>
 		<true/>
 		<key>DefaultVolume</key>
-		<string>MacHDD</string>
+		<string>macOS 128</string>
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>Secure</key>
@@ -147,14 +146,14 @@
 		<key>Timeout</key>
 		<integer>3</integer>
 		<key>XMPDetection</key>
-		<string>NO</string>
+		<false/>
 	</dict>
 	<key>Devices</key>
 	<dict>
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
-			<string>1</string>
+			<integer>1</integer>
 		</dict>
 		<key>FakeID</key>
 		<dict>
@@ -250,10 +249,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>External icons patch</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				RXh0ZXJuYWw=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>AppleAHCIPort</string>
 				<key>Replace</key>
@@ -264,10 +267,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>Remove USB port limit in XHCI kext</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				g/sPD4MDBQAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.14.x</string>
 				<key>Name</key>
@@ -299,7 +306,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string><Board_Serial_Number></string>
+		<string>Board_Serial_Number</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -327,9 +334,9 @@
 		<key>ProductName</key>
 		<string>MacBookPro14,1</string>
 		<key>SerialNumber</key>
-		<string><SERIAL_NUMBER></string>
+		<string>SERIAL_NUMBER</string>
 		<key>SmUUID</key>
-		<string><SmUUID></string>
+		<string>SmUUID</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
@@ -339,8 +346,6 @@
 		<string>Detect</string>
 		<key>InjectSystemID</key>
 		<true/>
-		<key>NvidiaWeb</key>
-		<false/>
 	</dict>
 </dict>
 </plist>
