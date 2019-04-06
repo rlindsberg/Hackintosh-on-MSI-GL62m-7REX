@@ -2,7 +2,7 @@
  * Intel ACPI Component Architecture
  * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
  * Copyright (c) 2000 - 2018 Intel Corporation
- * 
+ *
  * Disassembling to non-symbolic legacy ASL operators
  *
  * Disassembly of SSDT-6-sensrhub.aml, Sat Apr  6 20:23:06 2019
@@ -69,7 +69,7 @@ DefinitionBlock ("", "SSDT", 2, "INTEL ", "sensrhub", 0x00000000)
                             {
                                 Return (Buffer (One)
                                 {
-                                     0x0F                                           
+                                     0x0F
                                 })
                             }
                             Case (One)
@@ -82,7 +82,7 @@ DefinitionBlock ("", "SSDT", 2, "INTEL ", "sensrhub", 0x00000000)
                                 {
                                     Sleep (PGCD)
                                     \_SB.GGOV (0x02010016)
-                                    OLDV
+
                                 }
 
                                 If (LEqual (\_SB.GGOV (0x02010016), One))
@@ -103,12 +103,12 @@ DefinitionBlock ("", "SSDT", 2, "INTEL ", "sensrhub", 0x00000000)
                                 Store (DerefOf (Index (Arg3, One)), DFUD)
                                 Store (\_SB.GGOV (0x02010014), OLDV)
                                 \_SB.GGOV (0x02010014)
-                                DFUE
+
                                 If (LGreater (DFUD, Zero))
                                 {
                                     Sleep (DFUD)
                                     \_SB.GGOV (0x02010014)
-                                    OLDV
+                                    
                                 }
 
                                 Return (Zero)
@@ -119,7 +119,7 @@ DefinitionBlock ("", "SSDT", 2, "INTEL ", "sensrhub", 0x00000000)
                                 Store (\_SB.GGOV (0x02010016), PGCV)
                                 Return (Package (0x02)
                                 {
-                                    PGCV, 
+                                    PGCV,
                                     DFUV
                                 })
                             }
@@ -134,10 +134,9 @@ DefinitionBlock ("", "SSDT", 2, "INTEL ", "sensrhub", 0x00000000)
 
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00
                 })
             }
         }
     }
 }
-
