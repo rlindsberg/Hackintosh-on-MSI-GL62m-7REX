@@ -342,6 +342,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
     {
         Method (_INI, 0, NotSerialized)  // _INI: Initialize
         {
+            \_SB.PCI0.PEG0.PEGP._PS3 ()
             Store (DID1, Index (TLPK, Zero))
             Store (DID2, Index (TLPK, 0x02))
             Store (DID3, Index (TLPK, 0x04))
