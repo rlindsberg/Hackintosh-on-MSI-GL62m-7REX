@@ -173,17 +173,9 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
 
         Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
         {
-            If (LEqual (OPCE, 0x03))
-            {
-                If (LEqual (DGPS, Zero))
-                {
-                    _OFF ()
-                    Store (One, DGPS)
-                }
-
-                Store (0x02, OPCE)
-            }
-
+            _OFF ()
+            Store (One, DGPS)
+            Store (0x02, OPCE)
             Store (0x03, _PSC)
         }
 
