@@ -2,7 +2,7 @@
  * Intel ACPI Component Architecture
  * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
  * Copyright (c) 2000 - 2018 Intel Corporation
- * 
+ *
  * Disassembling to non-symbolic legacy ASL operators
  *
  * Disassembly of SSDT-8.aml, Sun Apr  7 10:03:10 2019
@@ -102,34 +102,34 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
         OperationRegion (PCI2, SystemMemory, EBAS, 0x0500)
         Field (PCI2, DWordAcc, Lock, Preserve)
         {
-            Offset (0x04), 
-            CMDR,   8, 
-            VGAR,   2000, 
-            Offset (0x48B), 
-                ,   1, 
+            Offset (0x04),
+            CMDR,   8,
+            VGAR,   2000,
+            Offset (0x48B),
+                ,   1,
             NHDA,   1
         }
 
         Name (VGAB, Buffer (0xFA)
         {
-             0x00                                           
+             0x00
         })
         Name (GPRF, Zero)
         OperationRegion (NVHM, SystemMemory, NVHA, 0x00030400)
         Field (NVHM, DWordAcc, NoLock, Preserve)
         {
-            NVSG,   128, 
-            NVSZ,   32, 
-            NVVR,   32, 
-            NVHO,   32, 
-            RVBS,   32, 
-            RBF1,   262144, 
-            RBF2,   262144, 
-            RBF3,   262144, 
-            RBF4,   262144, 
-            RBF5,   262144, 
-            RBF6,   262144, 
-            MXML,   32, 
+            NVSG,   128,
+            NVSZ,   32,
+            NVVR,   32,
+            NVHO,   32,
+            RVBS,   32,
+            RBF1,   262144,
+            RBF2,   262144,
+            RBF3,   262144,
+            RBF4,   262144,
+            RBF5,   262144,
+            RBF6,   262144,
+            MXML,   32,
             MXM3,   1600
         }
 
@@ -173,17 +173,10 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
 
         Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
         {
-            If (LEqual (OPCE, 0x03))
-            {
-                If (LEqual (DGPS, Zero))
-                {
-                    _OFF ()
-                    Store (One, DGPS)
-                }
-
-                Store (0x02, OPCE)
-            }
-
+            _OFF ()
+            Store (One, DGPS)
+            Store (0x02, OPCE)
+            
             Store (0x03, _PSC)
         }
 
@@ -200,18 +193,18 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
             {
                 Return (Buffer (Local1)
                 {
-                     0x00                                           
+                     0x00
                 })
             }
 
             Multiply (Local1, 0x08, Local3)
             Name (ROM1, Buffer (0x8000)
             {
-                 0x00                                           
+                 0x00
             })
             Name (ROM2, Buffer (Local1)
             {
-                 0x00                                           
+                 0x00
             })
             If (LLess (Local0, 0x8000))
             {
@@ -352,59 +345,59 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
         OperationRegion (NVIG, SystemMemory, NVGA, 0x45)
         Field (NVIG, DWordAcc, NoLock, Preserve)
         {
-            NISG,   128, 
-            NISZ,   32, 
-            NIVR,   32, 
-            GPSS,   32, 
-            GACD,   16, 
-            GATD,   16, 
-            LDES,   8, 
-            DKST,   8, 
-            DACE,   8, 
-            DHPE,   8, 
-            DHPS,   8, 
-            SGNC,   8, 
-            GPPO,   8, 
-            USPM,   8, 
-            GPSP,   8, 
-            TLSN,   8, 
-            DOSF,   8, 
+            NISG,   128,
+            NISZ,   32,
+            NIVR,   32,
+            GPSS,   32,
+            GACD,   16,
+            GATD,   16,
+            LDES,   8,
+            DKST,   8,
+            DACE,   8,
+            DHPE,   8,
+            DHPS,   8,
+            SGNC,   8,
+            GPPO,   8,
+            USPM,   8,
+            GPSP,   8,
+            TLSN,   8,
+            DOSF,   8,
             ELCL,   16
         }
 
         Name (TLPK, Package (0x20)
         {
-            Ones, 
-            0x2C, 
-            Ones, 
-            0x2C, 
-            Ones, 
-            0x2C, 
-            Ones, 
-            0x2C, 
-            Ones, 
-            0x2C, 
-            Ones, 
-            0x2C, 
-            Ones, 
-            0x2C, 
-            Ones, 
-            Ones, 
-            0x2C, 
-            Ones, 
-            Ones, 
-            0x2C, 
-            Ones, 
-            Ones, 
-            0x2C, 
-            Ones, 
-            Ones, 
-            0x2C, 
-            Ones, 
-            Ones, 
-            0x2C, 
-            Ones, 
-            Ones, 
+            Ones,
+            0x2C,
+            Ones,
+            0x2C,
+            Ones,
+            0x2C,
+            Ones,
+            0x2C,
+            Ones,
+            0x2C,
+            Ones,
+            0x2C,
+            Ones,
+            0x2C,
+            Ones,
+            Ones,
+            0x2C,
+            Ones,
+            Ones,
+            0x2C,
+            Ones,
+            Ones,
+            0x2C,
+            Ones,
+            Ones,
+            0x2C,
+            Ones,
+            Ones,
+            0x2C,
+            Ones,
+            Ones,
             0x2C
         })
         Method (INDL, 0, Serialized)
@@ -590,21 +583,21 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                     {
                         Return (Buffer (0x04)
                         {
-                             0x7F, 0x00, 0x04, 0x00                         
+                             0x7F, 0x00, 0x04, 0x00
                         })
                     }
                     ElseIf (NBCI)
                     {
                         Return (Buffer (0x04)
                         {
-                             0x73, 0x00, 0x05, 0x00                         
+                             0x73, 0x00, 0x05, 0x00
                         })
                     }
                     ElseIf (OPCI)
                     {
                         Return (Buffer (0x04)
                         {
-                             0x61, 0x18, 0x03, 0x0C                         
+                             0x61, 0x18, 0x03, 0x0C
                         })
                     }
                 }
@@ -613,7 +606,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                 {
                     Name (TEMP, Buffer (0x04)
                     {
-                         0x00, 0x00, 0x00, 0x00                         
+                         0x00, 0x00, 0x00, 0x00
                     })
                     CreateDWordField (TEMP, Zero, STS0)
                     If (SGCI)
@@ -633,7 +626,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                 {
                     Name (TMP1, Buffer (0x04)
                     {
-                         0x00, 0x00, 0x00, 0x00                         
+                         0x00, 0x00, 0x00, 0x00
                     })
                     CreateDWordField (TMP1, Zero, STS1)
                     ToInteger (Arg3, Local0)
@@ -664,7 +657,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                 {
                     Name (TMP2, Buffer (0x04)
                     {
-                         0x00, 0x00, 0x00, 0x00                         
+                         0x00, 0x00, 0x00, 0x00
                     })
                     CreateDWordField (TMP2, Zero, STS2)
                     ToInteger (Arg3, Local0)
@@ -696,7 +689,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                 {
                     Name (TMP3, Buffer (0x04)
                     {
-                         0x00, 0x00, 0x00, 0x00                         
+                         0x00, 0x00, 0x00, 0x00
                     })
                     CreateDWordField (TMP3, Zero, STS3)
                     ToInteger (Arg3, Local0)
@@ -726,7 +719,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                 {
                     Name (TMP4, Buffer (0x04)
                     {
-                         0x00, 0x00, 0x00, 0x00                         
+                         0x00, 0x00, 0x00, 0x00
                     })
                     CreateDWordField (TMP4, Zero, STS4)
                     ToInteger (Arg3, Local0)
@@ -794,7 +787,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                         /* 0078 */  0x69, 0x67, 0x68, 0x74, 0x73, 0x20, 0x52, 0x65,
                         /* 0080 */  0x73, 0x65, 0x72, 0x76, 0x65, 0x64, 0x2D, 0x31,
                         /* 0088 */  0x30, 0x33, 0x37, 0x35, 0x36, 0x33, 0x38, 0x35,
-                        /* 0090 */  0x36, 0x35, 0x32, 0x28, 0x52, 0x29             
+                        /* 0090 */  0x36, 0x35, 0x32, 0x28, 0x52, 0x29
                     })
                     Name (OPDR, Buffer (0xA1)
                     {
@@ -818,7 +811,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                         /* 0088 */  0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                         /* 0090 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                         /* 0098 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 00A0 */  0x00                                           
+                        /* 00A0 */  0x00
                     })
                     If (LEqual (USRG, 0x564B))
                     {
@@ -842,15 +835,15 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                 {
                     Return (Package (0x0A)
                     {
-                        0xD0, 
-                        ToUUID ("921a2f40-0dc4-402d-ac18-b48444ef9ed2"), 
-                        0xD9, 
-                        ToUUID ("c12ad361-9fa9-4c74-901f-95cb0945cf3e"), 
-                        0xDB, 
-                        ToUUID ("42848006-8886-490e-8c72-2bdca93a8a09"), 
-                        0xEF, 
-                        ToUUID ("b3e485d2-3cc1-4b54-8f31-77ba2fdc9ebe"), 
-                        0xF0, 
+                        0xD0,
+                        ToUUID ("921a2f40-0dc4-402d-ac18-b48444ef9ed2"),
+                        0xD9,
+                        ToUUID ("c12ad361-9fa9-4c74-901f-95cb0945cf3e"),
+                        0xDB,
+                        ToUUID ("42848006-8886-490e-8c72-2bdca93a8a09"),
+                        0xEF,
+                        ToUUID ("b3e485d2-3cc1-4b54-8f31-77ba2fdc9ebe"),
+                        0xF0,
                         ToUUID ("360d6fb6-1d4e-4fa6-b848-1be33dd8ec7b")
                     })
                 }
@@ -868,7 +861,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
 
                     Store (Buffer (0x04)
                         {
-                             0x00, 0x00, 0x00, 0x00                         
+                             0x00, 0x00, 0x00, 0x00
                         }, Local0)
                     CreateField (Local0, Zero, One, OPEN)
                     CreateField (Local0, 0x03, 0x02, CGCS)
@@ -959,7 +952,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                     Store ("GPS fun 0", Debug)
                     Return (Buffer (0x08)
                     {
-                         0x01, 0x00, 0x08, 0x00, 0x0F, 0x04, 0x00, 0x00 
+                         0x01, 0x00, 0x08, 0x00, 0x0F, 0x04, 0x00, 0x00
                     })
                 }
                 Case (0x13)
@@ -1114,7 +1107,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                 /* 0008 */  0xB1, 0x2F, 0x6F, 0x16, 0x47, 0x5F, 0x35, 0x1B,
                 /* 0010 */  0x4F, 0x50, 0x01, 0x02, 0xF8, 0xD8, 0x86, 0xA4,
                 /* 0018 */  0xDA, 0x0B, 0x1B, 0x47, 0xA7, 0x2B, 0x60, 0x42,
-                /* 0020 */  0xA6, 0xB5, 0xBE, 0xE0, 0x53, 0x4D, 0x01, 0x00 
+                /* 0020 */  0xA6, 0xB5, 0xBE, 0xE0, 0x53, 0x4D, 0x01, 0x00
             })
             Method (WMOP, 3, NotSerialized)
             {
@@ -1173,7 +1166,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                 /* 00C8 */  0x73, 0x20, 0x52, 0x65, 0x73, 0x65, 0x72, 0x76,
                 /* 00D0 */  0x65, 0x64, 0x2D, 0x32, 0x37, 0x34, 0x35, 0x39,
                 /* 00D8 */  0x31, 0x32, 0x35, 0x33, 0x36, 0x38, 0x37, 0x28,
-                /* 00E0 */  0x52, 0x29                                     
+                /* 00E0 */  0x52, 0x29
             })
         }
 
@@ -1185,7 +1178,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
             {
                 /* 0000 */  0x3C, 0x5C, 0xCB, 0xF6, 0xAE, 0x9C, 0xBD, 0x4E,
                 /* 0008 */  0xB5, 0x77, 0x93, 0x1E, 0xA3, 0x2A, 0x2C, 0xC0,
-                /* 0010 */  0x4D, 0x58, 0x01, 0x02                         
+                /* 0010 */  0x4D, 0x58, 0x01, 0x02
             })
             Method (WMMX, 3, NotSerialized)
             {
@@ -1220,4 +1213,3 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
         }
     }
 }
-
