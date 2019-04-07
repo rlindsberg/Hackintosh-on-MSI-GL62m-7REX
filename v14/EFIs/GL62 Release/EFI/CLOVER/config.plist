@@ -309,7 +309,7 @@
 		<key>SSDT</key>
 		<dict>
 			<key>DropOem</key>
-			<false/>
+			<true/>
 			<key>EnableC2</key>
 			<false/>
 			<key>EnableC4</key>
@@ -344,13 +344,13 @@
 		<key>Arguments</key>
 		<string>dart=0 nv_disable=1 -disablegfxfirmware -cdfon -igfxnohdmi lilucpu=8 -v</string>
 		<key>DefaultVolume</key>
-		<string>Install macOS</string>
-		<key>Fast</key>
-		<false/>
+		<string>Macintosh SSD</string>
 		<key>NeverHibernate</key>
 		<true/>
 		<key>Secure</key>
 		<false/>
+		<key>Timeout</key>
+		<integer>2</integer>
 	</dict>
 	<key>Comment</key>
 	<string>This file is for 10.12.6+ with native KabyLake support</string>
