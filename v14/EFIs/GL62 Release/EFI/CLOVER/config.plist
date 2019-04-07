@@ -309,7 +309,7 @@
 		<key>SSDT</key>
 		<dict>
 			<key>DropOem</key>
-			<true/>
+			<false/>
 			<key>EnableC2</key>
 			<false/>
 			<key>EnableC4</key>
