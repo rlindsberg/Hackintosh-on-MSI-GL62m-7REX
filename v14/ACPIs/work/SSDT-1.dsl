@@ -22,10 +22,10 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003000)
 {
     External (_SB_.PCI0, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.B0D3, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.HDOS, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.GFX0.HNOT, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.GFX0.SNXD, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.IGPU, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.HDOS, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU.HNOT, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU.SNXD, MethodObj)    // 1 Arguments
     External (CPSC, UnknownObj)    // (from opcode)
     External (DSEN, UnknownObj)    // (from opcode)
     External (ECON, IntObj)    // (from opcode)
@@ -164,7 +164,7 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003000)
         Offset (0x1F7)
     }
 
-    Scope (\_SB.PCI0.GFX0)
+    Scope (\_SB.PCI0.IGPU)
     {
         Method (_DOS, 1, NotSerialized)  // _DOS: Disable Output Switching
         {
@@ -1708,7 +1708,7 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003000)
             {
                 If (LAnd (LGreaterEqual (Arg0, Zero), LLessEqual (Arg0, 0x64)))
                 {
-                    \_SB.PCI0.GFX0.AINT (One, Arg0)
+                    \_SB.PCI0.IGPU.AINT (One, Arg0)
                     Store (Arg0, BRTL)
                 }
             }
@@ -2416,7 +2416,7 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003000)
             Store (0x03, CSTS)
             If (LAnd (LEqual (CHPD, Zero), LEqual (Arg1, Zero)))
             {
-                Notify (\_SB.PCI0.GFX0, Arg1)
+                Notify (\_SB.PCI0.IGPU, Arg1)
             }
 
             If (CondRefOf (HNOT))
@@ -2425,7 +2425,7 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003000)
             }
             Else
             {
-                Notify (\_SB.PCI0.GFX0, 0x80)
+                Notify (\_SB.PCI0.IGPU, 0x80)
             }
 
             Return (Zero)
@@ -2810,7 +2810,7 @@ DefinitionBlock ("", "SSDT", 2, "SaSsdt", "SaSsdt ", 0x00003000)
         }
     }
 
-    Scope (\_SB.PCI0.GFX0)
+    Scope (\_SB.PCI0.IGPU)
     {
         Device (SKC0)
         {

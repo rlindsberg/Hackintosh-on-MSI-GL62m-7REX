@@ -52,28 +52,28 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
     External (_PR_.TRPD, UnknownObj)    // (from opcode)
     External (_PR_.TRPF, UnknownObj)    // (from opcode)
     External (_SB_.IETM, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.ALSI, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.CBLV, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.CDCK, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.CLID, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.CPL2, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.CPL3, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.CPL4, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD01, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD02, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD03, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD04, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD05, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD06, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD07, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD08, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD1F, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.GHDS, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.GFX0.GSCI, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.GFX0.GSSE, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.IUEH, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.GFX0.STAT, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.TCHE, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.ALSI, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CBLV, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CDCK, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CLID, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CPL2, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CPL3, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.CPL4, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD01, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD02, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD03, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD04, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD05, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD06, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD07, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD08, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.DD1F, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.GHDS, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU.GSCI, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU.GSSE, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.IUEH, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.IGPU.STAT, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.IGPU.TCHE, UnknownObj)    // (from opcode)
     External (_SB_.PCI0.HDAS.PPMS, MethodObj)    // 1 Arguments (from opcode)
     External (_SB_.PCI0.HDAS.PS0X, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.HDAS.PS3X, MethodObj)    // 0 Arguments (from opcode)
@@ -4218,7 +4218,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
             Scope (\_SB.PCI0)
             {
-                Device (GFX0)
+                Device (IGPU)
                 {
                     Name (_ADR, 0x00020000)  // _ADR: Address
                 }
@@ -10874,7 +10874,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
     {
         If (LEqual (And (DIDX, 0x0F00), 0x0400))
         {
-            Notify (\_SB.PCI0.GFX0.DD1F, Arg0)
+            Notify (\_SB.PCI0.IGPU.DD1F, Arg0)
         }
     }
 
@@ -17876,12 +17876,12 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         {
             If (And (GBSX, 0x40))
             {
-                \_SB.PCI0.GFX0.IUEH (0x06)
+                \_SB.PCI0.IGPU.IUEH (0x06)
             }
 
             If (And (GBSX, 0x80))
             {
-                \_SB.PCI0.GFX0.IUEH (0x07)
+                \_SB.PCI0.IGPU.IUEH (0x07)
             }
 
             If (LEqual (ECON, One))
@@ -17893,12 +17893,12 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     {
                         If (LEqual (LIDS, Zero))
                         {
-                            Store (0x80000000, \_SB.PCI0.GFX0.CLID)
+                            Store (0x80000000, \_SB.PCI0.IGPU.CLID)
                         }
 
                         If (LEqual (LIDS, One))
                         {
-                            Store (0x80000003, \_SB.PCI0.GFX0.CLID)
+                            Store (0x80000003, \_SB.PCI0.IGPU.CLID)
                         }
                     }
 
@@ -19831,9 +19831,9 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
         Method (_L66, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            If (LAnd (\_SB.PCI0.GFX0.GSSE, LNot (GSMI)))
+            If (LAnd (\_SB.PCI0.IGPU.GSSE, LNot (GSMI)))
             {
-                \_SB.PCI0.GFX0.GSCI ()
+                \_SB.PCI0.IGPU.GSCI ()
             }
         }
 
@@ -28155,7 +28155,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
         }
     }
 
-    Scope (_SB.PCI0.GFX0)
+    Scope (_SB.PCI0.IGPU)
     {
         Method (_DEP, 0, NotSerialized)  // _DEP: Dependencies
         {
@@ -29775,7 +29775,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
 
                 Package (0x03)
                 {
-                    "\\_SB.PCI0.GFX0", 
+                    "\\_SB.PCI0.IGPU", 
                     One, 
                     Package (0x02)
                     {
@@ -36187,7 +36187,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
             Name (_UID, One)  // _UID: Unique ID
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                Store (0x03, ^^^GFX0.CLID)
+                Store (0x03, ^^^IGPU.CLID)
                 Return (Zero)
             }
 
@@ -37151,7 +37151,7 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                 }
 
                 Store (Zero, CTSD)
-                Store (LIDS, ^^^GFX0.CLID)
+                Store (LIDS, ^^^IGPU.CLID)
                 If (POWS)
                 {
                     Store (One, PWRS)
@@ -37830,10 +37830,10 @@ DefinitionBlock ("", "DSDT", 2, "MSI_NB", "MEGABOOK", 0x01072009)
                     }
                     Else
                     {
-                        If (LAnd (LAnd (LEqual (^^^GFX0.CPL2, Zero), LEqual (^^^GFX0.CPL3, Zero)), LEqual (^^^GFX0.CPL4, Zero))){}
+                        If (LAnd (LAnd (LEqual (^^^IGPU.CPL2, Zero), LEqual (^^^IGPU.CPL3, Zero)), LEqual (^^^IGPU.CPL4, Zero))){}
                         Else
                         {
-                            ^^^GFX0.GHDS (Zero)
+                            ^^^IGPU.GHDS (Zero)
                         }
 
                         Store (0xC2, DBG8)
