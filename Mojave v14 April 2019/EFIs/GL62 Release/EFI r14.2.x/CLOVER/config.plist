@@ -342,7 +342,7 @@
 		<key>#DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Arguments</key>
-		<string>dart=0 nv_disable=1 -disablegfxfirmware -cdfon -igfxnohdmi lilucpu=9 -v</string>
+		<string>dart=0 nv_disable=1 -disablegfxfirmware -cdfon -igfxnohdmi lilucpu=9 -v -igfxdump</string>
 		<key>DefaultVolume</key>
 		<string>Macintosh SSD</string>
 		<key>NeverHibernate</key>
@@ -618,7 +618,7 @@
 				</data>
 				<key>device-id</key>
 				<data>
-				FlkAAA==
+				G1kAAA==
 				</data>
 				<key>framebuffer-fbmem</key>
 				<data>
@@ -630,12 +630,16 @@
 				<data>
 				AAAwAQ==
 				</data>
+				<key>framebuffer-unifiedmem</key>
+				<data>
+				AAAAgA==
+				</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
 				<key>layout-id</key>
 				<data>
-				YgAAAA==
+				ABAAAw==
 				</data>
 			</dict>
 		</dict>
