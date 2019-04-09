@@ -342,7 +342,7 @@
 		<key>#DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Arguments</key>
-		<string>dart=0 nv_disable=1 -disablegfxfirmware -cdfon -igfxnohdmi lilucpu=8 -v</string>
+		<string>dart=0 nv_disable=1 -disablegfxfirmware -cdfon -igfxnohdmi lilucpu=9 -v</string>
 		<key>DefaultVolume</key>
 		<string>Macintosh SSD</string>
 		<key>NeverHibernate</key>
@@ -614,11 +614,11 @@
 				<string>onboard-1</string>
 				<key>AAPL,ig-platform-id</key>
 				<data>
-				AAAWGQ==
+				AAAbWQ==
 				</data>
 				<key>device-id</key>
 				<data>
-				FhkAAA==
+				FlkAAA==
 				</data>
 				<key>framebuffer-fbmem</key>
 				<data>
@@ -738,8 +738,6 @@
 		<true/>
 		<key>DellSMBIOSPatch</key>
 		<false/>
-		<key>FakeCPUID</key>
-		<string>0x0506e3</string>
 		<key>ForceKextsToLoad</key>
 		<array>
 			<string>\System\Library\Extensions\IONetworkingFamily.kext</string>
