@@ -166,14 +166,14 @@ So...the kexts there I tend to not update as often and the full set is not there
 ## Disable Hibernation
 Be aware that hibernation (suspend to disk or S4 sleep) is not supported on hackintosh. Always check your hibernatemode after updates and disable it. System updates tend to re-enable it.
 
-7. Disable sleep in Settings and hibernation in Command line using following commands
+4. Disable sleep in Settings and hibernation in Command line using following commands
 ```sh
 sudo pmset -a hibernatemode 0
 sudo rm /var/vm/sleepimage
 sudo mkdir /var/vm/sleepimage
 ```
 
-8. And it may be a good idea to disable the other hibernation related options:
+5. And it may be a good idea to disable the other hibernation related options:
 
 ```sh
 sudo pmset -a standby 0
@@ -181,15 +181,128 @@ sudo pmset -a autopoweroff 0
 ```
 
 ## System Settings
-9. Run Apps from Anywhere
+6. Run Apps from Anywhere
 
 ```sh
 sudo spctl --master-disable
 
 ```
-10. Show hidden files
+7. Show hidden files
 
 ```sh
 defaults write com.apple.Finder AppleShowAllFiles true
 killall Finder
 ```
+
+8. Map keyboard. Install Karabiner, map from key "delete_forward" to key "eject"
+
+
+## Patching LAPTOP DSDT/SSDTs
+Credit: RehabMan (https://www.tonymacx86.com/threads/guide-patching-laptop-dsdt-ssdts.152573/)
+
+Advanced users may wish to implement hotpatching via Clover. See guide here: http://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/
+
+**Keep in mind that even changes you make to your own system (BIOS, hardware, etc.) will require re-extract, re-patch.**
+
+If any of the following is changed, you must re-extract, re-patch, as these changes may cause significant changes to the native ACPI (especially SystemMemory regions):
+- updating BIOS
+- changing any BIOS option
+- changing hardware or memory configuration
+
+The process of patching involves several steps:
+- extracting native files
+- disassembling the native files
+- analysing the native files
+- patching
+- saving (compiling) and installing
+
+Sometimes, Clover F4 will write duplicate SSDTs. These duplicates will cause problems during disassembly. If you run into issues (duplicate definitions) during disassembly, you will need to analyse all SSDTs to eliminate the files which are duplicate. It is easy to see which are duplicates by looking at the file sizes. Files with equal size are likely duplicates.
+
+### Preparing tools for disassembly
+To properly disassemble your extracted files, you need the iasl compiler, which is run from Terminal.
+
+You will need a recent build of iasl to disassemble them properly. There is an appropriate version available here: https://bitbucket.org/RehabMan/acpica/downloads/. It is a good idea to copy the iasl binary to your path (eg. /usr/bin), so it is easily accessed from Terminal.
+
+### Disassembling ACPI files
+Opening an AML file directly in MaciASL will cause MaciASL to disassemble the file (with iasl) standalone, and if the AML has complex references to other AMLs, it will not disassemble it correctly. You'll be left with many hard to fix errors.
+
+Disassemble all files as a group using iasl in Terminal. To prepare, place all DSDT and SSDT files in a single directory (DO NOT copy ACPI files that don't begin with DSDT or SSDT), and change the names such that they have an .aml extension.
+
+Then disassemble in OS X Terminal:
+
+```sh
+iasl -da -dl DSDT.aml SSDT*.aml
+```
+
+Note: Also read the section below regarding refs.txt. Using refs.txt takes little more effort, but can eliminate many common errors.
+
+
+
+
+# Problems remaining:
+
+**Processor**
+
+&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS Mojave 10.14.4
+
+&nbsp;&nbsp;&nbsp;&nbsp; Impact: Cinebench r20 only recognises 2 cores, 4 threads. No impact on performance known
+
+&nbsp;&nbsp;&nbsp;&nbsp; Description: Unknown. It is believed that this CPU is not natively supported by macOS
+
+&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2019-1452
+
+
+
+**DisplayPort**
+
+&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS High Sierra 10.13.6
+
+&nbsp;&nbsp;&nbsp;&nbsp; Impact: System freezes when unplugging the cable from Mini DisplayPort
+
+&nbsp;&nbsp;&nbsp;&nbsp; Description: Unknown
+
+&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2019-1453
+
+
+
+# Problem Solved:
+
+**Screen Brightness**
+
+&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS Mojave 10.14.4
+
+&nbsp;&nbsp;&nbsp;&nbsp; Impact: User may not be able to adjust screen brightness without a re-configuration in BIOS
+
+&nbsp;&nbsp;&nbsp;&nbsp; Description: Device ID and Vendor ID are unknown to macOS
+
+&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2019-1451
+
+&nbsp;&nbsp;&nbsp;&nbsp; Resolving Note: Solved in commit ae8dd19. R.K. Apr<sup>6</sup> 2019
+
+
+
+**Audio**
+
+&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS Mojave 10.14.4
+
+&nbsp;&nbsp;&nbsp;&nbsp; Impact: Speaker and microphone has no functionality
+
+&nbsp;&nbsp;&nbsp;&nbsp; Description: Drivers for the built-in speaker and microphone miss in macOS.
+
+&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2019-1454
+
+&nbsp;&nbsp;&nbsp;&nbsp; Resolving Note: Solved in commit 6fdf813. R.K. Apr<sup>19</sup> 2019
+
+
+
+**iMessage**
+
+&nbsp;&nbsp;&nbsp;&nbsp; Available for: macOS Mojave 10.14.4
+
+&nbsp;&nbsp;&nbsp;&nbsp; Impact: User may not be able to sign in iMessage
+
+&nbsp;&nbsp;&nbsp;&nbsp; Description: Apple<sup>®</sup>'s iMessage server do not recognise the device because of incomplete SMBIOS
+
+&nbsp;&nbsp;&nbsp;&nbsp; Issue Code: COI-2019-1455
+
+&nbsp;&nbsp;&nbsp;&nbsp; Resolving Note: Solved by add SMBIOS to config.plist. R.K. Apr<sup>6</sup> 2019
